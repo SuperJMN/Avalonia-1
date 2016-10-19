@@ -55,16 +55,6 @@
     <Compile Include="Data\SourceBindingEndpoint.cs" />
     <Compile Include="Data\StyleResourceBinding.cs" />
     <Compile Include="Data\TargetBindingEndpoint.cs" />
-    <Compile Include="glass\Glass.Core\AutoKeyDictionary.cs" />
-    <Compile Include="glass\Glass.Core\DependencySorter.cs" />
-    <Compile Include="glass\Glass.Core\EnumExtensions.cs" />
-    <Compile Include="glass\Glass.Core\Extensions.cs" />
-    <Compile Include="glass\Glass.Core\Guard.cs" />
-    <Compile Include="glass\Glass.Core\IAdd.cs" />
-    <Compile Include="glass\Glass.Core\IDependency.cs" />
-    <Compile Include="glass\Glass.Core\ReflectionExtensions.cs" />
-    <Compile Include="glass\Glass.Core\StackingLinkedList.cs" />
-    <Compile Include="glass\Glass.Core\StackingLinkedListMixin.cs" />
     <Compile Include="MarkupExtensions\BindingExtension.cs" />
     <Compile Include="Parsers\SelectorGrammar.cs" />
     <Compile Include="Parsers\SelectorParser.cs" />
@@ -72,7 +62,6 @@
     <Compile Include="Templates\DataTemplate.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="glass\Glass.Core\Glass.Core.nuspec" />
     <None Include="project.json" />
   </ItemGroup>
   <ItemGroup>
@@ -141,9 +130,6 @@
       <HintPath>..\..\..\packages\System.Reactive.PlatformServices.3.0.0\lib\netstandard1.0\System.Reactive.PlatformServices.dll</HintPath>
       <Private>True</Private>
     </Reference>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="glass\Glass.Core\Glass.Core.csproj" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="MarkupExtensions\Standard\" />
