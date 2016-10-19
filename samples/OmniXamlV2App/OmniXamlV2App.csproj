@@ -1,0 +1,189 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{20BCAE3F-614D-4C8F-90F3-1552838D619A}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AvaloniaApp</RootNamespace>
+    <AssemblyName>AvaloniaApp</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Serilog, Version=1.5.0.0, Culture=neutral, PublicKeyToken=24c2f752a8e58a10, processorArchitecture=MSIL">
+      <HintPath>..\packages\Serilog.1.5.14\lib\net45\Serilog.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Serilog.FullNetFx, Version=1.5.0.0, Culture=neutral, PublicKeyToken=24c2f752a8e58a10, processorArchitecture=MSIL">
+      <HintPath>..\packages\Serilog.1.5.14\lib\net45\Serilog.FullNetFx.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="SharpDX, Version=3.0.2.0, Culture=neutral, PublicKeyToken=b4dcf0f35e5521f1, processorArchitecture=MSIL">
+      <HintPath>..\packages\SharpDX.3.0.2\lib\net45\SharpDX.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="SharpDX.Direct2D1, Version=3.0.2.0, Culture=neutral, PublicKeyToken=b4dcf0f35e5521f1, processorArchitecture=MSIL">
+      <HintPath>..\packages\SharpDX.Direct2D1.3.0.2\lib\net45\SharpDX.Direct2D1.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="SharpDX.DXGI, Version=3.0.2.0, Culture=neutral, PublicKeyToken=b4dcf0f35e5521f1, processorArchitecture=MSIL">
+      <HintPath>..\packages\SharpDX.DXGI.3.0.2\lib\net45\SharpDX.DXGI.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Splat, Version=1.6.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Splat.1.6.2\lib\Net45\Splat.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Sprache, Version=2.0.0.50, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Sprache.2.0.0.50\lib\portable-net4+netcore45+win8+wp8+sl5+MonoAndroid+Xamarin.iOS10+MonoTouch\Sprache.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Reactive.Core, Version=3.0.0.0, Culture=neutral, PublicKeyToken=94bc3704cddfc263, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Reactive.Core.3.0.0\lib\net45\System.Reactive.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Reactive.Interfaces, Version=3.0.0.0, Culture=neutral, PublicKeyToken=94bc3704cddfc263, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Reactive.Interfaces.3.0.0\lib\net45\System.Reactive.Interfaces.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Reactive.Linq, Version=3.0.0.0, Culture=neutral, PublicKeyToken=94bc3704cddfc263, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Reactive.Linq.3.0.0\lib\net45\System.Reactive.Linq.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Reactive.PlatformServices, Version=3.0.0.0, Culture=neutral, PublicKeyToken=94bc3704cddfc263, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Reactive.PlatformServices.3.0.0\lib\net45\System.Reactive.PlatformServices.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Reactive.Windows.Threading, Version=3.0.0.0, Culture=neutral, PublicKeyToken=94bc3704cddfc263, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Reactive.Windows.Threading.3.0.0\lib\net45\System.Reactive.Windows.Threading.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="App.xaml" />
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Sample.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\OmniXaml2\OmniXaml\OmniXaml.csproj">
+      <Project>{84ae3f65-b4dc-43e0-b2d0-df0b188e8602}</Project>
+      <Name>OmniXaml</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\src\Avalonia.Animation\Avalonia.Animation.csproj">
+      <Project>{D211E587-D8BC-45B9-95A4-F297C8FA5200}</Project>
+      <Name>Avalonia.Animation</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\src\Avalonia.Base\Avalonia.Base.csproj">
+      <Project>{B09B78D8-9B26-48B0-9149-D64A2F120F3F}</Project>
+      <Name>Avalonia.Base</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\src\Avalonia.Controls\Avalonia.Controls.csproj">
+      <Project>{d2221c82-4a25-4583-9b43-d791e3f6820c}</Project>
+      <Name>Avalonia.Controls</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\src\Avalonia.Diagnostics\Avalonia.Diagnostics.csproj">
+      <Project>{7062AE20-5DCC-4442-9645-8195BDECE63E}</Project>
+      <Name>Avalonia.Diagnostics</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\src\Avalonia.DotNetFrameworkRuntime\Avalonia.DotNetFrameworkRuntime.csproj">
+      <Project>{4A1ABB09-9047-4BD5-A4AD-A055E52C5EE0}</Project>
+      <Name>Avalonia.DotNetFrameworkRuntime</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\src\Avalonia.Input\Avalonia.Input.csproj">
+      <Project>{62024B2D-53EB-4638-B26B-85EEAA54866E}</Project>
+      <Name>Avalonia.Input</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\src\Avalonia.Interactivity\Avalonia.Interactivity.csproj">
+      <Project>{6B0ED19D-A08B-461C-A9D9-A9EE40B0C06B}</Project>
+      <Name>Avalonia.Interactivity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\src\Avalonia.Layout\Avalonia.Layout.csproj">
+      <Project>{42472427-4774-4C81-8AFF-9F27B8E31721}</Project>
+      <Name>Avalonia.Layout</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\src\Avalonia.Logging.Serilog\Avalonia.Logging.Serilog.csproj">
+      <Project>{B61B66A3-B82D-4875-8001-89D3394FE0C9}</Project>
+      <Name>Avalonia.Logging.Serilog</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\src\Avalonia.SceneGraph\Avalonia.SceneGraph.csproj">
+      <Project>{EB582467-6ABB-43A1-B052-E981BA910E3A}</Project>
+      <Name>Avalonia.SceneGraph</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\src\Avalonia.Styling\Avalonia.Styling.csproj">
+      <Project>{F1BAA01A-F176-4C6A-B39D-5B40BB1B148F}</Project>
+      <Name>Avalonia.Styling</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\src\Avalonia.Themes.Default\Avalonia.Themes.Default.csproj">
+      <Project>{3e10a5fa-e8da-48b1-ad44-6a5b6cb7750f}</Project>
+      <Name>Avalonia.Themes.Default</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\src\Markup\Avalonia.Markup.Xaml\Avalonia.Markup.Xaml.csproj">
+      <Project>{3E53A01A-B331-47F3-B828-4A5717E77A24}</Project>
+      <Name>Avalonia.Markup.Xaml</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\src\Markup\OmniXaml.Avalonia.Xaml\OmniXaml.Avalonia.Xaml.csproj">
+      <Project>{fb8a5225-7584-49a4-8978-fa1861aa91b4}</Project>
+      <Name>OmniXaml.Avalonia.Xaml</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\src\Windows\Avalonia.Direct2D1\Avalonia.Direct2D1.csproj">
+      <Project>{3e908f67-5543-4879-a1dc-08eace79b3cd}</Project>
+      <Name>Avalonia.Direct2D1</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\src\Windows\Avalonia.Win32\Avalonia.Win32.csproj">
+      <Project>{811a76cf-1cf6-440f-963b-bbe31bd72a82}</Project>
+      <Name>Avalonia.Win32</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="mario.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
