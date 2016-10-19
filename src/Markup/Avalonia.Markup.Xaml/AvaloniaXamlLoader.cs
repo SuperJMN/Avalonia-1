@@ -6,16 +6,17 @@ using System.Collections.Generic;
 using System.IO;
 using System.Reflection;
 using System.Text;
-using OmniXaml;
 using Avalonia.Platform;
 using Avalonia.Markup.Xaml.Context;
 using Avalonia.Markup.Xaml.Styling;
-using OmniXaml.ObjectAssembler;
 using Avalonia.Controls;
 using Avalonia.Markup.Xaml.Data;
 
 namespace Avalonia.Markup.Xaml
 {
+    using OmniXAML.Source.OmniXaml;
+    using OmniXAML.Source.OmniXaml.ObjectAssembler;
+
     /// <summary>
     /// Loads XAML for a avalonia application.
     /// </summary>

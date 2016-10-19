@@ -2,13 +2,14 @@
 // Licensed under the MIT license. See licence.md file in the project root for full license information.
 
 using System;
-using OmniXaml;
-using OmniXaml.Attributes;
-using OmniXaml.Typing;
-using Glass.Core;
 
 namespace Avalonia.Markup.Xaml.MarkupExtensions
 {
+    using glass.Glass.Core;
+    using OmniXAML.Source.OmniXaml;
+    using OmniXAML.Source.OmniXaml.Attributes;
+    using OmniXAML.Source.OmniXaml.Typing;
+
     [ContentProperty("TargetType")]
     public class TypeExtension : MarkupExtension
     {

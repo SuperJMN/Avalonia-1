@@ -1,10 +1,11 @@
 using System;
 using System.Globalization;
-using OmniXaml.TypeConversion;
 using Avalonia.Input;
 
 namespace Avalonia.Markup.Xaml.Converters
 {
+    using OmniXAML.Source.OmniXaml.TypeConversion;
+
     class KeyGestureConverter : ITypeConverter
     {
         public bool CanConvertFrom(IValueContext context, Type sourceType)

@@ -1,9 +1,10 @@
-﻿using OmniXaml.TypeConversion;
-using System;
+﻿using System;
 using System.Globalization;
 
 namespace Avalonia.Markup.Xaml.Converters
 {
+    using OmniXAML.Source.OmniXaml.TypeConversion;
+
     public class DateTimeTypeConverter : ITypeConverter
     {
         public object ConvertFrom(IValueContext context, CultureInfo culture, object value)

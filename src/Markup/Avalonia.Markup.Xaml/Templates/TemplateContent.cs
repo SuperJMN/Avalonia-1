@@ -2,13 +2,14 @@
 // Licensed under the MIT license. See licence.md file in the project root for full license information.
 
 using System.Collections.Generic;
-using OmniXaml;
-using OmniXaml.ObjectAssembler;
 using Avalonia.Controls;
 using Avalonia.Markup.Xaml.Context;
 
 namespace Avalonia.Markup.Xaml.Templates
 {
+    using OmniXAML.Source.OmniXaml;
+    using OmniXAML.Source.OmniXaml.ObjectAssembler;
+
     public class TemplateContent
     {
         private readonly IEnumerable<Instruction> nodes;

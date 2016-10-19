@@ -3,12 +3,13 @@
 
 using System;
 using System.Globalization;
-using OmniXaml.TypeConversion;
 using Avalonia.Media.Imaging;
 using Avalonia.Platform;
 
 namespace Avalonia.Markup.Xaml.Converters
 {
+    using OmniXAML.Source.OmniXaml.TypeConversion;
+
     public class BitmapTypeConverter : ITypeConverter
     {
         public bool CanConvertFrom(IValueContext context, Type sourceType)

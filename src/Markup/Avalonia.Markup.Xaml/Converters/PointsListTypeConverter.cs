@@ -4,10 +4,11 @@
 using System;
 using System.Collections.Generic;
 using System.Globalization;
-using OmniXaml.TypeConversion;
 
 namespace Avalonia.Markup.Xaml.Converters
 {
+    using OmniXAML.Source.OmniXaml.TypeConversion;
+
     public class PointsListTypeConverter : ITypeConverter
     {
         public bool CanConvertFrom(IValueContext context, Type sourceType)

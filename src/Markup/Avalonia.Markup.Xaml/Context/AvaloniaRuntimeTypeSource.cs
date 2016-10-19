@@ -2,26 +2,10 @@ namespace Avalonia.Markup.Xaml.Context
 {
     using System;
     using System.Collections.Generic;
-    using System.Linq;
     using System.Reflection;
-    using Collections;
-    using Controls;
-    using Controls.Primitives;
-    using Controls.Templates;
-    using Converters;
-    using Data;
-    using Glass;
-    using Input;
-    using Media;
-    using Media.Imaging;
-    using Metadata;
-    using OmniXaml;
-    using OmniXaml.Builder;
-    using OmniXaml.TypeConversion;
-    using OmniXaml.Typing;
-    using Avalonia.Styling;
-    using Platform;
-    using Templates;
+    using OmniXAML.Source.OmniXaml;
+    using OmniXAML.Source.OmniXaml.Builder;
+    using OmniXAML.Source.OmniXaml.Typing;
 
     public class AvaloniaRuntimeTypeSource : IRuntimeTypeSource
     {

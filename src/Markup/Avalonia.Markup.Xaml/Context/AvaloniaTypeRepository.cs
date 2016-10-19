@@ -2,12 +2,13 @@
 // Licensed under the MIT license. See licence.md file in the project root for full license information.
 
 using System;
-using OmniXaml;
-using OmniXaml.Typing;
-using Glass.Core;
 
 namespace Avalonia.Markup.Xaml.Context
 {
+    using glass.Glass.Core;
+    using OmniXAML.Source.OmniXaml;
+    using OmniXAML.Source.OmniXaml.Typing;
+
     public class AvaloniaTypeRepository : TypeRepository
     {
         private readonly ITypeFactory _typeFactory;

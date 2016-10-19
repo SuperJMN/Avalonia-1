@@ -4,11 +4,12 @@
 using System;
 using System.Linq;
 using System.Reflection;
-using OmniXaml;
-using Glass.Core;
 
 namespace Avalonia.Markup.Xaml.MarkupExtensions.Standard
 {
+    using glass.Glass.Core;
+    using OmniXAML.Source.OmniXaml;
+
     public class StaticExtension : MarkupExtension
     {
         public StaticExtension()

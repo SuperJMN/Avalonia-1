@@ -2,10 +2,11 @@
 // Licensed under the MIT license. See licence.md file in the project root for full license information.
 
 using System;
-using OmniXaml;
 
 namespace Avalonia.Markup.Xaml.Context
 {
+    using OmniXAML.Source.OmniXaml;
+
     public class AvaloniaLifeCycleListener : IInstanceLifeCycleListener
     {
         public void OnAfterProperties(object instance)

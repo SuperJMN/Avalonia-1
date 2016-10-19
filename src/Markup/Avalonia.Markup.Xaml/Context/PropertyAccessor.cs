@@ -5,9 +5,6 @@ using System;
 using System.Linq;
 using System.Reflection;
 using System.Runtime.CompilerServices;
-using OmniXaml.ObjectAssembler;
-using OmniXaml.TypeConversion;
-using OmniXaml.Typing;
 using Avalonia.Controls;
 using Avalonia.Data;
 using Avalonia.Markup.Xaml.Data;
@@ -15,6 +12,9 @@ using Avalonia.Styling;
 
 namespace Avalonia.Markup.Xaml.Context
 {
+    using OmniXAML.Source.OmniXaml.TypeConversion;
+    using OmniXAML.Source.OmniXaml.Typing;
+
     internal static class PropertyAccessor
     {
         public static void SetValue(

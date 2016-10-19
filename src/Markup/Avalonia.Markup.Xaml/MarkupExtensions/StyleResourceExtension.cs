@@ -3,13 +3,14 @@
 
 using System;
 using System.Reactive.Linq;
-using OmniXaml;
 using Avalonia.LogicalTree;
 using Avalonia.Markup.Xaml.Data;
 using Avalonia.Styling;
 
 namespace Avalonia.Markup.Xaml.MarkupExtensions
 {
+    using OmniXAML.Source.OmniXaml;
+
     public class StyleResourceExtension : MarkupExtension
     {
         public StyleResourceExtension(string name)

@@ -1,9 +1,9 @@
 ﻿namespace Avalonia.Markup.Xaml.Converters
 {
     using Avalonia.Media;
-    using OmniXaml.TypeConversion;
     using System;
     using System.Globalization;
+    using OmniXAML.Source.OmniXaml.TypeConversion;
 
     public class FontWeightConverter : ITypeConverter
     {

@@ -4,10 +4,6 @@
 using System;
 using System.Reactive;
 using Moq;
-using OmniXaml;
-using OmniXaml.ObjectAssembler.Commands;
-using OmniXaml.TypeConversion;
-using OmniXaml.Typing;
 using Avalonia.Collections;
 using Avalonia.Controls;
 using Avalonia.Markup.Xaml.Converters;
@@ -16,6 +12,11 @@ using Xunit;
 
 namespace Avalonia.Markup.Xaml.UnitTests.Converters
 {
+    using OmniXAML.Source.OmniXaml;
+    using OmniXAML.Source.OmniXaml.ObjectAssembler.Commands;
+    using OmniXAML.Source.OmniXaml.TypeConversion;
+    using OmniXAML.Source.OmniXaml.Typing;
+
     public class AvaloniaPropertyConverterTest
     {
         public AvaloniaPropertyConverterTest()

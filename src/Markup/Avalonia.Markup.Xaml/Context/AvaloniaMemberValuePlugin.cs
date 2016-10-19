@@ -2,11 +2,12 @@
 // Licensed under the MIT license. See licence.md file in the project root for full license information.
 
 using System;
-using OmniXaml.TypeConversion;
-using OmniXaml.Typing;
 
 namespace Avalonia.Markup.Xaml.Context
 {
+    using OmniXAML.Source.OmniXaml.TypeConversion;
+    using OmniXAML.Source.OmniXaml.Typing;
+
     public class AvaloniaMemberValuePlugin : MemberValuePlugin
     {
         private readonly MutableMember _xamlMember;

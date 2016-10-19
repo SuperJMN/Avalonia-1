@@ -3,12 +3,13 @@
 
 using System;
 using System.Reflection;
-using OmniXaml;
-using OmniXaml.Typing;
 using Avalonia.Controls;
 
 namespace Avalonia.Markup.Xaml.Context
 {
+    using OmniXAML.Source.OmniXaml;
+    using OmniXAML.Source.OmniXaml.Typing;
+
     public class AvaloniaXamlType : XamlType
     {
         public AvaloniaXamlType(Type type,
@@ -18,9 +19,9 @@ namespace Avalonia.Markup.Xaml.Context
         {
         }
 
-        public override OmniXaml.INameScope GetNamescope(object instance)
+        public override INameScope GetNamescope(object instance)
         {
-            var result = instance as OmniXaml.INameScope;
+            var result = instance as INameScope;
 
             if (result == null)
             {

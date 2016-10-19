@@ -5,18 +5,19 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
-using OmniXaml.Builder;
-using OmniXaml.Typing;
 using Avalonia.Controls;
 using Avalonia.Markup.Xaml.Templates;
 using Avalonia.Media;
 using Avalonia.Metadata;
 using Avalonia.Platform;
 using Avalonia.Styling;
-using Glass.Core;
 
 namespace Avalonia.Markup.Xaml.Context
 {
+    using glass.Glass.Core;
+    using OmniXAML.Source.OmniXaml.Builder;
+    using OmniXAML.Source.OmniXaml.Typing;
+
     public class AvaloniaNamespaceRegistry : INamespaceRegistry
     {
         private const string ClrNamespace = "clr-namespace:";

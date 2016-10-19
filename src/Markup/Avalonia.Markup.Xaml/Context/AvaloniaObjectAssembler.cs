@@ -2,16 +2,17 @@
 // Licensed under the MIT license. See licence.md file in the project root for full license information.
 
 using System;
-using OmniXaml;
-using OmniXaml.ObjectAssembler;
-using OmniXaml.ObjectAssembler.Commands;
-using OmniXaml.TypeConversion;
 using Avalonia.Markup.Xaml.Templates;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 
 namespace Avalonia.Markup.Xaml.Context
 {
+    using OmniXAML.Source.OmniXaml;
+    using OmniXAML.Source.OmniXaml.ObjectAssembler;
+    using OmniXAML.Source.OmniXaml.ObjectAssembler.Commands;
+    using OmniXAML.Source.OmniXaml.TypeConversion;
+
     public class AvaloniaObjectAssembler : IObjectAssembler
     {
         private readonly TemplateHostingObjectAssembler objectAssembler;

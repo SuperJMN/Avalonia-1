@@ -4,12 +4,13 @@
 using System;
 using System.Globalization;
 using System.Linq;
-using OmniXaml;
-using OmniXaml.TypeConversion;
 using Avalonia.Styling;
 
 namespace Avalonia.Markup.Xaml.Converters
 {
+    using OmniXAML.Source.OmniXaml;
+    using OmniXAML.Source.OmniXaml.TypeConversion;
+
     public class AvaloniaPropertyTypeConverter : ITypeConverter
     {
         public bool CanConvertFrom(IValueContext context, Type sourceType)

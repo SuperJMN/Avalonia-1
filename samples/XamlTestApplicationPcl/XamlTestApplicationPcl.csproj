@@ -78,10 +78,6 @@
       <Project>{d2221c82-4a25-4583-9b43-d791e3f6820c}</Project>
       <Name>Avalonia.Controls</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\src\Avalonia.DesignerSupport\Avalonia.DesignerSupport.csproj">
-      <Project>{799a7bb5-3c2c-48b6-85a7-406a12c420da}</Project>
-      <Name>Avalonia.DesignerSupport</Name>
-    </ProjectReference>
     <ProjectReference Include="..\..\src\Avalonia.Diagnostics\Avalonia.Diagnostics.csproj">
       <Project>{7062ae20-5dcc-4442-9645-8195bdece63e}</Project>
       <Name>Avalonia.Diagnostics</Name>

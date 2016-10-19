@@ -3,7 +3,9 @@
 
 namespace Avalonia.Markup.Xaml.Context
 {
-    internal class NameScopeWrapper : OmniXaml.INameScope
+    using OmniXAML.Source.OmniXaml;
+
+    internal class NameScopeWrapper : INameScope
     {
         private readonly Avalonia.Controls.INameScope _inner;
 

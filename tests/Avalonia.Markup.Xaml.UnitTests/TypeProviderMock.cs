@@ -1,11 +1,12 @@
 // Copyright (c) The Avalonia Project. All rights reserved.
 // Licensed under the MIT license. See licence.md file in the project root for full license information.
 
-using OmniXaml;
 using System;
 
 namespace Avalonia.Markup.Xaml.UnitTests
 {
+    using OmniXAML.Source.OmniXaml;
+
     internal class TypeProviderMock : ITypeProvider
     {
         private readonly string _typeName;

@@ -14,15 +14,16 @@ using Avalonia.Media;
 using Avalonia.Media.Imaging;
 using Avalonia.Metadata;
 using Avalonia.Styling;
-using OmniXaml;
-using OmniXaml.Builder;
-using OmniXaml.TypeConversion;
-using OmniXaml.TypeConversion.BuiltInConverters;
-using OmniXaml.Typing;
-using OmniMetadata = OmniXaml.Typing.Metadata;
+using OmniMetadata = Avalonia.Markup.Xaml.OmniXAML.Source.OmniXaml.Typing.Metadata;
 
 namespace Avalonia.Markup.Xaml.Context
 {
+    using OmniXAML.Source.OmniXaml;
+    using OmniXAML.Source.OmniXaml.Builder;
+    using OmniXAML.Source.OmniXaml.TypeConversion;
+    using OmniXAML.Source.OmniXaml.TypeConversion.BuiltInConverters;
+    using OmniXAML.Source.OmniXaml.Typing;
+
     public class AvaloniaTypeFeatureProvider : ITypeFeatureProvider
     {
         private Dictionary<Type, OmniMetadata> _metadata =
