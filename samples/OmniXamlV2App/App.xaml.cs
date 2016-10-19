@@ -2,12 +2,12 @@
 {
     using System.IO;
     using System.Linq;
-    using Context;
     using Avalonia;
     using Avalonia.Controls;
     using Avalonia.Diagnostics;
     using Avalonia.Logging.Serilog;
     using Avalonia.Markup.Xaml;
+    using OmniXaml.Avalonia.Context;
     using Serilog;
 
     class App : Application

@@ -173,7 +173,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Avalonia.DotNetFrameworkRun
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ControlCatalog.Android", "samples\ControlCatalog.Android\ControlCatalog.Android.csproj", "{29132311-1848-4FD6-AE0C-4FF841151BD3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OmniXaml.Avalonia.Xaml", "src\Markup\OmniXaml.Avalonia.Xaml\OmniXaml.Avalonia.Xaml.csproj", "{FB8A5225-7584-49A4-8978-FA1861AA91B4}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OmniXaml.Avalonia", "src\Markup\OmniXaml.Avalonia.Xaml\OmniXaml.Avalonia.csproj", "{FB8A5225-7584-49A4-8978-FA1861AA91B4}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OmniXamlV2App", "samples\OmniXamlV2App\OmniXamlV2App.csproj", "{20BCAE3F-614D-4C8F-90F3-1552838D619A}"
 EndProject

@@ -160,9 +160,9 @@
       <Project>{3E53A01A-B331-47F3-B828-4A5717E77A24}</Project>
       <Name>Avalonia.Markup.Xaml</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\src\Markup\OmniXaml.Avalonia.Xaml\OmniXaml.Avalonia.Xaml.csproj">
+    <ProjectReference Include="..\..\src\Markup\OmniXaml.Avalonia.Xaml\OmniXaml.Avalonia.csproj">
       <Project>{fb8a5225-7584-49a4-8978-fa1861aa91b4}</Project>
-      <Name>OmniXaml.Avalonia.Xaml</Name>
+      <Name>OmniXaml.Avalonia</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\src\Windows\Avalonia.Direct2D1\Avalonia.Direct2D1.csproj">
       <Project>{3e908f67-5543-4879-a1dc-08eace79b3cd}</Project>
