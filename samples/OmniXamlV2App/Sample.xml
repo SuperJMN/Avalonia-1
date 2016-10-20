@@ -40,7 +40,7 @@
         <DataTemplate>
           <Button>
             <Button.Content>
-              <BindingExtension Path="Title"></BindingExtension>
+              <BindingExtension Path="."></BindingExtension>
             </Button.Content>
           </Button>
         </DataTemplate>

@@ -2,14 +2,14 @@
 {
     using System.Reflection;
     using global::Avalonia.Controls;
-    using OmniXaml;
+    using MarkupExtensions;
     using Templates;
     using TypeLocation;
 
     public class XamlLoader
     {
-        private readonly MetadataProvider metadataProvider;
         private readonly TypeDirectory directory;
+        private readonly MetadataProvider metadataProvider;
 
         public XamlLoader()
         {
@@ -20,7 +20,7 @@
         private TypeDirectory RegisterTypeLocation()
         {
             var typeDirectory = new TypeDirectory();
-            
+
             var type = typeof(Window);
             var ass = type.GetTypeInfo().Assembly;
             typeDirectory.AddNamespace(
@@ -34,8 +34,8 @@
                             .Assembly(typeof(DataTemplate).GetTypeInfo().Assembly)
                             .WithNamespaces(
                                 typeof(DataTemplate).Namespace,
-                                typeof(MarkupExtensions.BindingExtension).Namespace)));
-          
+                                typeof(BindingExtension).Namespace)));
+
 
             typeDirectory.RegisterPrefix(new PrefixRegistration(string.Empty, "root"));
 
@@ -44,8 +44,7 @@
 
         public object Load(string xaml)
         {
-            
-            var objectBuilder = new ExtendedObjectBuilder(new InstanceCreator(), Registrator.GetSourceValueConverter(), metadataProvider);
+            var objectBuilder = new AvaloniaObjectBuilder(new InstanceCreator(), Registrator.GetSourceValueConverter(), metadataProvider);
             var cons = GetConstructionNode(xaml);
             return objectBuilder.Create(cons);
         }
@@ -56,5 +55,7 @@
             var tree = sut.Parse(xaml);
             return tree;
         }
+
+
     }
 }

@@ -6,6 +6,7 @@ namespace OmniXaml.Avalonia.Converters
     using System;
     using System.Globalization;
     using global::Avalonia.Controls;
+    using global::Avalonia.Markup.Xaml.OmniXAML.Source.OmniXaml.ObjectAssembler;
 
     public class GridLengthTypeConverter : ITypeConverter
     {
@@ -32,6 +33,7 @@ namespace OmniXaml.Avalonia.Converters
 
     public interface IValueContext
     {
+        TopDownValueContext TopDownValueContext { get; set; } 
     }
 
     public interface ITypeConverter

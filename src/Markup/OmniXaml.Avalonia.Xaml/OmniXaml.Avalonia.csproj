@@ -44,6 +44,7 @@
     <Compile Include="Adapters\ConstructionFragmentLoader.cs" />
     <Compile Include="Adapters\OmniDataTemplate.cs" />
     <Compile Include="Adapters\TemplateContent.cs" />
+    <Compile Include="Context\AvaloniaObjectBuilder.cs" />
     <Compile Include="Context\MetadataProvider.cs" />
     <Compile Include="Context\Registrator.cs" />
     <Compile Include="Context\XamlLoader.cs" />
@@ -100,6 +101,10 @@
     <ProjectReference Include="..\..\Avalonia.Styling\Avalonia.Styling.csproj">
       <Project>{F1BAA01A-F176-4C6A-B39D-5B40BB1B148F}</Project>
       <Name>Avalonia.Styling</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Avalonia.Markup.Xaml\Avalonia.Markup.Xaml.csproj">
+      <Project>{3E53A01A-B331-47F3-B828-4A5717E77A24}</Project>
+      <Name>Avalonia.Markup.Xaml</Name>
     </ProjectReference>
     <ProjectReference Include="..\Avalonia.Markup\Avalonia.Markup.csproj">
       <Project>{6417e941-21bc-467b-a771-0de389353ce6}</Project>
