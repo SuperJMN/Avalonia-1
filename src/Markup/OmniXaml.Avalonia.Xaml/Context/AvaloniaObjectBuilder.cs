@@ -7,17 +7,17 @@
     using global::Avalonia;
     using global::Avalonia.Controls;
     using global::Avalonia.Data;
-    using global::Avalonia.Styling;
+    using Glass.Core;
     using Metadata;
 
     public class AvaloniaObjectBuilder : ExtendedObjectBuilder
     {
-        public AvaloniaObjectBuilder(IInstanceCreator creator, ISourceValueConverter sourceValueConverter, IMetadataProvider metadataProvider)
-            : base(creator, sourceValueConverter, metadataProvider)
+        public AvaloniaObjectBuilder(IInstanceCreator creator, ISourceValueConverter sourceValueConverter, IMetadataProvider metadataProvider, IInstanceLifecycleSignaler signaler)
+            : base(creator, sourceValueConverter, metadataProvider, signaler)
         {
         }
 
-        protected override void OnPropertyAssignment(AssignmentTarget assignmentTarget)
+        protected override void Assign(Assignment assignmentTarget)
         {
             var transform = base.Transform(assignmentTarget);
 
@@ -27,16 +27,23 @@
             }
             else
             {
-                transform.ExecuteAssignment();
-            }                    
+                if (assignmentTarget.Property.PropertyType.IsCollection())
+                {
+                    Utils.UniversalAdd(assignmentTarget.Property.GetValue(assignmentTarget.Instance), assignmentTarget.Value);
+                }
+                else
+                {
+                    transform.ExecuteAssignment();
+                }
+            }
         }
-      
-        private void SetBinding(AssignmentTarget assignmentTarget)
+
+        private void SetBinding(Assignment assignmentTarget)
         {
-            var control = (IControl) assignmentTarget.Instance;
+            var control = (IControl)assignmentTarget.Instance;
 
             var avaloniaProperty = AvaloniaPropertyRegistry.Instance.FindRegistered(control.GetType(), assignmentTarget.Property.PropertyName);
-            SetBinding(assignmentTarget.Instance, assignmentTarget.Property, avaloniaProperty, (IBinding) assignmentTarget.Value);
+            SetBinding(assignmentTarget.Instance, assignmentTarget.Property, avaloniaProperty, (IBinding)assignmentTarget.Value);
         }
 
         private static void SetBinding(

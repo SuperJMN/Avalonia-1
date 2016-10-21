@@ -44,11 +44,14 @@
     <Compile Include="Adapters\ConstructionFragmentLoader.cs" />
     <Compile Include="Adapters\OmniDataTemplate.cs" />
     <Compile Include="Adapters\TemplateContent.cs" />
+    <Compile Include="Context\AvaloniaLifeCycleSignaler.cs" />
     <Compile Include="Context\AvaloniaObjectBuilder.cs" />
     <Compile Include="Context\MetadataProvider.cs" />
     <Compile Include="Context\Registrator.cs" />
     <Compile Include="Context\XamlLoader.cs" />
+    <Compile Include="Converters\ColumnDefinitionsTypeConverter.cs" />
     <Compile Include="Converters\GridLengthTypeConverter.cs" />
+    <Compile Include="Converters\RowDefinitionsTypeConverter.cs" />
     <Compile Include="Data\Binding.cs" />
     <Compile Include="Data\DelayedBinding.cs" />
     <Compile Include="Data\MultiBinding.cs" />

@@ -1,19 +1,30 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 
-<Window Title="Window" Height="300" Width="300">
+<Window Width="600" Height="400">
+  <!--<Window.Title>
+    <BindingExtension Path="Title" />
+  </Window.Title>-->
+
   <Grid>
     <Grid.RowDefinitions>
       <RowDefinition Height="Auto"/>
       <RowDefinition />
     </Grid.RowDefinitions>
-    <Menu >
-      <MenuItem Header="Archivo">
-        <MenuItem Header="Abrir" />
-        <MenuItem Header="Guardar" />
-        <MenuItem Header="Guardar como…" />
-        <MenuItem Header="Salir" />
-      </MenuItem>
-    </Menu>
+    <StackPanel>
+      <Menu>
+        <MenuItem Header="Archivo">
+          <MenuItem.Items>
+            <BindingExtension Path="Items"></BindingExtension>
+          </MenuItem.Items>
+        </MenuItem>
+      </Menu>
+      <Button>
+        <Button.Content>
+          <BindingExtension Path="Title" />
+        </Button.Content>
+      </Button>
+
+    </StackPanel>
     <ListBox Grid.Row="1">
       <!--<ListBoxItem>
         <Grid>
@@ -36,16 +47,22 @@
           </TextBox>
         </Grid>
       </ListBoxItem>-->
+      <ListBox.Items>
+        <BindingExtension Path="Items" />
+      </ListBox.Items>
       <ListBox.ItemTemplate>
         <DataTemplate>
-          <Button>
-            <Button.Content>
-              <BindingExtension Path="."></BindingExtension>
-            </Button.Content>
-          </Button>
+          <Grid ColumnDefinitions="Auto,*">
+
+            <CheckBox />
+            <Button Grid.Column="1">
+              <BindingExtension Path="." />
+            </Button>
+          </Grid>
         </DataTemplate>
       </ListBox.ItemTemplate>
     </ListBox>
   </Grid>
+
 </Window>
 

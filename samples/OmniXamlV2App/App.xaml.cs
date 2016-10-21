@@ -28,11 +28,12 @@
                 .SetupWithoutStarting();
 
             var window = (Window)new XamlLoader().Load(File.ReadAllText("Sample.xml"));
+            window.DataContext = new MainViewModel();
 
-            var grid = (Grid)window.Content;
-            var listBox = grid.Children.OfType<ListBox>().First();
-            listBox.Items = new[] { "hola", "tío", "cómo estás?" };
-            listBox.DataContext = new MainViewModel();
+            //var grid = (Grid)window.Content;
+            //var listBox = grid.Children.OfType<ListBox>().First();
+            //listBox.Items = new[] { "hola", "tío", "cómo estás?" };
+            //listBox.DataContext = new MainViewModel();
 
             window.Show();
 

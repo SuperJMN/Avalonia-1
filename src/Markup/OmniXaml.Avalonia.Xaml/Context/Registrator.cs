@@ -10,9 +10,12 @@
         public static ISourceValueConverter GetSourceValueConverter()
         {
             var sourceValueConverter = new SourceValueConverter();
+
             //sourceValueConverter.Add(typeof(Thickness), value => new ThicknessTypeConverter().ConvertFrom(null, CultureInfo.CurrentCulture, value));
             //sourceValueConverter.Add(typeof(Brush), value => new BrushTypeConverter().ConvertFrom(null, CultureInfo.CurrentCulture, value));
             sourceValueConverter.Add(typeof(GridLength), value => new GridLengthTypeConverter().ConvertFrom(null, CultureInfo.CurrentCulture, value));
+            sourceValueConverter.Add(typeof(ColumnDefinitions), value => new ColumnDefinitionsTypeConverter().ConvertFrom(null, CultureInfo.CurrentCulture, value));
+            sourceValueConverter.Add(typeof(RowDefinitions), value => new RowDefinitionsTypeConverter().ConvertFrom(null, CultureInfo.CurrentCulture, value));
             //sourceValueConverter.Add(typeof(IBitmap), value => new BitmapTypeConverter().ConvertFrom(context, CultureInfo.CurrentCulture, value));
             return sourceValueConverter;
         }

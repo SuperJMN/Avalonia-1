@@ -44,7 +44,7 @@
 
         public object Load(string xaml)
         {
-            var objectBuilder = new AvaloniaObjectBuilder(new InstanceCreator(), Registrator.GetSourceValueConverter(), metadataProvider);
+            var objectBuilder = new AvaloniaObjectBuilder(new InstanceCreator(), Registrator.GetSourceValueConverter(), metadataProvider, new AvaloniaLifeCycleSignaler());
             var cons = GetConstructionNode(xaml);
             return objectBuilder.Create(cons);
         }
