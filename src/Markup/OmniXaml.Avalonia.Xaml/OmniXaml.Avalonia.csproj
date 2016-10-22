@@ -115,10 +115,6 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="Sprache, Version=2.0.0.51, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\..\packages\Sprache.2.0.0.51\lib\portable-net4+netcore45+win8+wp8+sl5+MonoAndroid+Xamarin.iOS10+MonoTouch\Sprache.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="System.Dynamic.Runtime">
       <HintPath>C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETPortable\v4.5\Profile\Profile7\System.Dynamic.Runtime.dll</HintPath>
     </Reference>

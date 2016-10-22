@@ -12,11 +12,7 @@
     </Grid.RowDefinitions>
     <StackPanel>
       <Menu>
-        <MenuItem Header="Archivo">
-          <MenuItem.Items>
-            <BindingExtension Path="Items"></BindingExtension>
-          </MenuItem.Items>
-        </MenuItem>
+        <MenuItem Header="Archivo" Items="{Binding Path=Items}" />
       </Menu>
       <Button>
         <Button.Content>
@@ -25,7 +21,7 @@
       </Button>
 
     </StackPanel>
-    <ListBox Grid.Row="1">
+    <ListBox Grid.Row="1" Items="{Binding Path=Items}">
       <!--<ListBoxItem>
         <Grid>
           <Grid.ColumnDefinitions>
@@ -47,17 +43,13 @@
           </TextBox>
         </Grid>
       </ListBoxItem>-->
-      <ListBox.Items>
-        <BindingExtension Path="Items" />
-      </ListBox.Items>
+     
       <ListBox.ItemTemplate>
         <DataTemplate>
           <Grid ColumnDefinitions="Auto,*">
 
             <CheckBox />
-            <Button Grid.Column="1">
-              <BindingExtension Path="." />
-            </Button>
+            <Button Grid.Column="1" Content="{Binding}" />
           </Grid>
         </DataTemplate>
       </ListBox.ItemTemplate>
