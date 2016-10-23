@@ -1,18 +1,18 @@
-﻿namespace OmniXaml.Avalonia.Context
+﻿namespace OmniXaml.Avalonia
 {
     using System.Reflection;
+    using Context;
     using global::Avalonia.Controls;
     using global::Avalonia.Controls.Html;
-    using global::Avalonia.Markup.Xaml.MarkupExtensions;
     using Templates;
     using TypeLocation;
 
-    public class XamlLoader
+    public class AvaloniaXamlLoader
     {
         private readonly TypeDirectory directory;
         private readonly MetadataProvider metadataProvider;
 
-        public XamlLoader()
+        public AvaloniaXamlLoader()
         {
             metadataProvider = new MetadataProvider();
             directory = RegisterTypeLocation();
@@ -37,8 +37,7 @@
                             .Assembly(typeof(DataTemplate).GetTypeInfo().Assembly)
                             .WithNamespaces(
                                 typeof(DataTemplate).Namespace,
-                                typeof(MarkupExtensions.BindingExtension).Namespace,
-                                typeof(MarkupExtensions.Standard.TypeExtension).Namespace),
+                                typeof(MarkupExtensions.BindingExtension).Namespace),
                         Route.Assembly(htmlControl.Assembly)
                             .WithNamespaces(htmlControl.Namespace)));
 

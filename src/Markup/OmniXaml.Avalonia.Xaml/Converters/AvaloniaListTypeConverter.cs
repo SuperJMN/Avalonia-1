@@ -1,16 +1,12 @@
 // Copyright (c) The Avalonia Project. All rights reserved.
 // Licensed under the MIT license. See licence.md file in the project root for full license information.
 
-using System;
-using System.Globalization;
-using System.Linq;
-
-using Avalonia.Collections;
-using Avalonia.Utilities;
-
-namespace Avalonia.Markup.Xaml.Converters
+namespace OmniXaml.Avalonia.Converters
 {
-    using System.Collections.Generic;
+    using System;
+    using System.Globalization;
+    using global::Avalonia.Collections;
+    using global::Avalonia.Utilities;
 
     public class AvaloniaListTypeConverter<T> : ITypeConverter
     {
@@ -50,10 +46,5 @@ namespace Avalonia.Markup.Xaml.Converters
         {
             throw new NotImplementedException();
         }
-    }
-
-    public interface IValueContext
-    {
-        IDictionary<string, object> ParsingDictionary { get; set; }
     }
 }

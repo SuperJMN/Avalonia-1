@@ -9,13 +9,14 @@
     using Avalonia.Markup.Xaml;
     using OmniXaml.Avalonia.Context;
     using Serilog;
+    using AvaloniaXamlLoader = OmniXaml.Avalonia.AvaloniaXamlLoader;
 
     class App : Application
     {
 
         public override void Initialize()
         {
-            AvaloniaXamlLoader.Load(this);
+            Avalonia.Markup.Xaml.AvaloniaXamlLoader.Load(this);
             base.Initialize();
         }
 
@@ -27,7 +28,7 @@
                 .UseDirect2D1()
                 .SetupWithoutStarting();
 
-            var window = (Window)new XamlLoader().Load(File.ReadAllText("Sample.xml"));
+            var window = (Window)new AvaloniaXamlLoader().Load(File.ReadAllText("Sample.xml"));
             window.DataContext = new MainViewModel();
 
             //var grid = (Grid)window.Content;

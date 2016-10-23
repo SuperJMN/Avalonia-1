@@ -1,9 +1,8 @@
-﻿
-using System;
-using System.Globalization;
-
-namespace Avalonia.Markup.Xaml.Converters
+﻿namespace OmniXaml.Avalonia.Converters
 {
+    using System;
+    using System.Globalization;
+
     public class DateTimeTypeConverter : ITypeConverter
     {
         public object ConvertFrom(IValueContext context, CultureInfo culture, object value)

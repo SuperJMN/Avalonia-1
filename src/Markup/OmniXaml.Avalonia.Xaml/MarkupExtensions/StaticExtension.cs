@@ -1,15 +1,15 @@
 // Copyright (c) The Avalonia Project. All rights reserved.
 // Licensed under the MIT license. See licence.md file in the project root for full license information.
 
-using System;
-using System.Linq;
-using System.Reflection;
-using OmniXaml;
-using Glass.Core;
-
-namespace Avalonia.Markup.Xaml.MarkupExtensions
+namespace OmniXaml.Avalonia.MarkupExtensions
 {
-    public class StaticExtension : MarkupExtension
+    using System;
+    using System.Linq;
+    using System.Reflection;
+    using Glass.Core;
+    using OmniXaml;
+
+    public class StaticExtension : IMarkupExtension
     {
         public StaticExtension()
         {
@@ -22,13 +22,13 @@ namespace Avalonia.Markup.Xaml.MarkupExtensions
 
         public string Identifier { get; set; }
 
-        public override object ProvideValue(MarkupExtensionContext markupExtensionContext)
+        public object GetValue(MarkupExtensionContext markupExtensionContext)
         {
-            var typeRepository = markupExtensionContext.ValueContext.TypeRepository;
+            var typeRepository = markupExtensionContext.TypeDirectory;
             var typeAndMember = GetTypeAndMember(Identifier);
             var prefixAndType = GetPrefixAndType(typeAndMember.Item1);
-            var xamlType = typeRepository.GetByPrefix(prefixAndType.Item1, prefixAndType.Item2);
-            return GetValue(xamlType.UnderlyingType, typeAndMember.Item2);
+            var xamlType = typeRepository.GetTypeByPrefix(prefixAndType.Item1, prefixAndType.Item2);
+            return GetValue(xamlType, typeAndMember.Item2);
         }
 
         private static Tuple<string, string> GetTypeAndMember(string s)
@@ -65,8 +65,8 @@ namespace Avalonia.Markup.Xaml.MarkupExtensions
 
                 if (result is PropertyInfo)
                 {
-                    var property = ((PropertyInfo)result);
-                    
+                    var property = (PropertyInfo)result;
+
                     if (property.GetMethod.IsStatic)
                     {
                         return ((PropertyInfo)result).GetValue(null);

@@ -47,9 +47,5 @@ namespace Avalonia.Markup.Xaml.Converters
             context.ParsingDictionary.TryGetValue("Uri", out result);
             return result as Uri;
         }
-    }
-
-    public interface ITypeConverter
-    {
-    }
+    }    
 }

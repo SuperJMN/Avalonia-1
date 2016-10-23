@@ -1,9 +1,8 @@
-namespace Avalonia.Markup.Xaml.Converters
+namespace OmniXaml.Avalonia.Converters
 {
     using System;
     using System.Globalization;
-    using Media;
-    
+    using global::Avalonia.Media;
 
     public class GeometryTypeConverter : ITypeConverter
     {

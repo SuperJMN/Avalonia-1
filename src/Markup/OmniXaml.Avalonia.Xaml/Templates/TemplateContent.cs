@@ -1,5 +1,6 @@
-﻿namespace OmniXaml.Avalonia.Adapters
+﻿namespace OmniXaml.Avalonia.Templates
 {
+    using global::Avalonia.Controls;
     using OmniXaml;
 
     public class TemplateContent
@@ -13,9 +14,9 @@
             this.builder = builder;
         }
 
-        public object Load()
+        public IControl Load()
         {
-            return builder.Create(node);
+            return (IControl) builder.Create(node);
         }
 
         protected bool Equals(TemplateContent other)

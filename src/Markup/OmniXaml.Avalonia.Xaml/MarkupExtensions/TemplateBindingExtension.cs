@@ -1,13 +1,14 @@
 // Copyright (c) The Avalonia Project. All rights reserved.
 // Licensed under the MIT license. See licence.md file in the project root for full license information.
 
-using OmniXaml;
-using Avalonia.Data;
-using Avalonia.Markup.Xaml.Data;
-
-namespace Avalonia.Markup.Xaml.MarkupExtensions
+namespace OmniXaml.Avalonia.MarkupExtensions
 {
-    public class TemplateBindingExtension : MarkupExtension
+    using Data;
+    using global::Avalonia.Data;
+    using global::Avalonia.Markup;
+    using OmniXaml;
+
+    public class TemplateBindingExtension : IMarkupExtension
     {
         public TemplateBindingExtension()
         {
@@ -18,7 +19,7 @@ namespace Avalonia.Markup.Xaml.MarkupExtensions
             Path = path;
         }
 
-        public override object ProvideValue(MarkupExtensionContext extensionContext)
+        public object GetValue(MarkupExtensionContext extensionContext)
         {
             return new Binding
             {

@@ -3,9 +3,9 @@
     using System;
     using System.Linq;
     using System.Reflection;
-    using Adapters;
     using global::Avalonia.Controls.Templates;
     using Metadata;
+    using Templates;
 
     public class MetadataProvider : IMetadataProvider
     {

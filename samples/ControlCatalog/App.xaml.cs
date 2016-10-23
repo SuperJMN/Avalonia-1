@@ -1,5 +1,4 @@
 using Avalonia;
-using Avalonia.Markup.Xaml;
 
 namespace ControlCatalog
 {
@@ -7,7 +6,7 @@ namespace ControlCatalog
     {
         public override void Initialize()
         {
-            AvaloniaXamlLoader.Load(this);
+            new XamlLoader().Load(this);
         }
     }
 }

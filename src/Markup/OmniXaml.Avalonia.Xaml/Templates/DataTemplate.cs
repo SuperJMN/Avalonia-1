@@ -5,7 +5,6 @@ namespace OmniXaml.Avalonia.Templates
 {
     using System;
     using System.Reflection;
-    using Adapters;
     using global::Avalonia.Controls;
     using global::Avalonia.Controls.Templates;
     using global::Avalonia.Metadata;

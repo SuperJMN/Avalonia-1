@@ -1,10 +1,9 @@
-using System;
-using System.Globalization;
-
-using Avalonia.Input;
-
-namespace Avalonia.Markup.Xaml.Converters
+namespace OmniXaml.Avalonia.Converters
 {
+    using System;
+    using System.Globalization;
+    using global::Avalonia.Input;
+
     class KeyGestureConverter : ITypeConverter
     {
         public bool CanConvertFrom(IValueContext context, Type sourceType)

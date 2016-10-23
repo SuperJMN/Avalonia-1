@@ -1,12 +1,12 @@
 // Copyright (c) The Avalonia Project. All rights reserved.
 // Licensed under the MIT license. See licence.md file in the project root for full license information.
 
-using OmniXaml;
-using Avalonia.Markup.Xaml.Data;
-
-namespace Avalonia.Markup.Xaml.MarkupExtensions
+namespace OmniXaml.Avalonia.MarkupExtensions
 {
-    public class RelativeSourceExtension : MarkupExtension
+    using Data;
+    using OmniXaml;
+
+    public class RelativeSourceExtension : IMarkupExtension
     {
         public RelativeSourceExtension()
         {
@@ -17,7 +17,7 @@ namespace Avalonia.Markup.Xaml.MarkupExtensions
             Mode = mode;
         }
 
-        public override object ProvideValue(MarkupExtensionContext extensionContext)
+        public object GetValue(MarkupExtensionContext extensionContext)
         {
             return new RelativeSource
             {

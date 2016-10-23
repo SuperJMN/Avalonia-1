@@ -41,17 +41,36 @@
     <Compile Include="..\..\Shared\SharedAssemblyInfo.cs">
       <Link>Properties\SharedAssemblyInfo.cs</Link>
     </Compile>
-    <Compile Include="Adapters\ConstructionFragmentLoader.cs" />
-    <Compile Include="Adapters\OmniDataTemplate.cs" />
-    <Compile Include="Adapters\TemplateContent.cs" />
+    <Compile Include="Templates\ConstructionFragmentLoader.cs" />
+    <Compile Include="Templates\TemplateContent.cs" />
     <Compile Include="Context\AvaloniaLifeCycleSignaler.cs" />
     <Compile Include="Context\AvaloniaObjectBuilder.cs" />
     <Compile Include="Context\MetadataProvider.cs" />
     <Compile Include="Context\Registrator.cs" />
-    <Compile Include="Context\XamlLoader.cs" />
+    <Compile Include="AvaloniaXamlLoader.cs" />
+    <Compile Include="Converters\AvaloniaListTypeConverter.cs" />
+    <Compile Include="Converters\BrushTypeConverter.cs" />
+    <Compile Include="Converters\ClassesTypeConverter.cs" />
+    <Compile Include="Converters\ColorTypeConverter.cs" />
     <Compile Include="Converters\ColumnDefinitionsTypeConverter.cs" />
+    <Compile Include="Converters\CursorTypeConverter.cs" />
+    <Compile Include="Converters\DateTimeTypeConverter.cs" />
+    <Compile Include="Converters\FontWeightConverter.cs" />
+    <Compile Include="Converters\GeometryTypeConverter.cs" />
     <Compile Include="Converters\GridLengthTypeConverter.cs" />
+    <Compile Include="Converters\ITypeConverter.cs" />
+    <Compile Include="Converters\IValueContext.cs" />
+    <Compile Include="Converters\KeyGestureConverter.cs" />
+    <Compile Include="Converters\MemberSelectorTypeConverter.cs" />
+    <Compile Include="Converters\PointsListTypeConverter.cs" />
+    <Compile Include="Converters\PointTypeConverter.cs" />
+    <Compile Include="Converters\RelativePointTypeConverter.cs" />
+    <Compile Include="Converters\RelativeRectTypeConverter.cs" />
     <Compile Include="Converters\RowDefinitionsTypeConverter.cs" />
+    <Compile Include="Converters\SizeTypeConverter.cs" />
+    <Compile Include="Converters\ThicknessTypeConverter.cs" />
+    <Compile Include="Converters\TimeSpanTypeConverter.cs" />
+    <Compile Include="Converters\UriTypeConverter.cs" />
     <Compile Include="Data\Binding.cs" />
     <Compile Include="Data\DelayedBinding.cs" />
     <Compile Include="Data\MultiBinding.cs" />
@@ -60,11 +79,21 @@
     <Compile Include="Data\StyleResourceBinding.cs" />
     <Compile Include="Data\TargetBindingEndpoint.cs" />
     <Compile Include="MarkupExtensions\BindingExtension.cs" />
-    <Compile Include="MarkupExtensions\Standard\TypeExtension.cs" />
+    <Compile Include="MarkupExtensions\RelativeSourceExtension.cs" />
+    <Compile Include="MarkupExtensions\StaticExtension.cs" />
+    <Compile Include="MarkupExtensions\StyleResourceExtension.cs" />
+    <Compile Include="MarkupExtensions\TemplateBindingExtension.cs" />
+    <Compile Include="MarkupExtensions\TypeExtension.cs" />
     <Compile Include="Parsers\SelectorGrammar.cs" />
     <Compile Include="Parsers\SelectorParser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Templates\ControlTemplate.cs" />
     <Compile Include="Templates\DataTemplate.cs" />
+    <Compile Include="Templates\FocusAdornerTemplate.cs" />
+    <Compile Include="Templates\ItemsPanelTemplate.cs" />
+    <Compile Include="Templates\MemberSelector.cs" />
+    <Compile Include="Templates\Template.cs" />
+    <Compile Include="Templates\TreeDataTemplate.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="project.json" />
@@ -109,10 +138,6 @@
     <ProjectReference Include="..\..\Avalonia.Styling\Avalonia.Styling.csproj">
       <Project>{F1BAA01A-F176-4C6A-B39D-5B40BB1B148F}</Project>
       <Name>Avalonia.Styling</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Avalonia.Markup.Xaml\Avalonia.Markup.Xaml.csproj">
-      <Project>{3E53A01A-B331-47F3-B828-4A5717E77A24}</Project>
-      <Name>Avalonia.Markup.Xaml</Name>
     </ProjectReference>
     <ProjectReference Include="..\Avalonia.Markup\Avalonia.Markup.csproj">
       <Project>{6417e941-21bc-467b-a771-0de389353ce6}</Project>

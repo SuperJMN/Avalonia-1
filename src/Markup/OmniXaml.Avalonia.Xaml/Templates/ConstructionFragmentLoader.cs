@@ -1,4 +1,4 @@
-namespace OmniXaml.Avalonia.Adapters
+namespace OmniXaml.Avalonia.Templates
 {
     using Metadata;
     using OmniXaml;

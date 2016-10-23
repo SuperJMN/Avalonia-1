@@ -1,14 +1,14 @@
 ﻿// Copyright (c) The Avalonia Project. All rights reserved.
 // Licensed under the MIT license. See licence.md file in the project root for full license information.
 
-using Avalonia.Controls.Templates;
-using Avalonia.Data;
-using Avalonia.Markup.Data;
-using System;
-using System.Reactive.Linq;
-
-namespace Avalonia.Markup.Xaml.Templates
+namespace OmniXaml.Avalonia.Templates
 {
+    using System;
+    using global::Avalonia;
+    using global::Avalonia.Controls.Templates;
+    using global::Avalonia.Data;
+    using global::Avalonia.Markup.Data;
+
     public class MemberSelector : IMemberSelector
     {
         private string _memberName;
