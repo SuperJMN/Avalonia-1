@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 
 <Window Width="600" Height="400">
   <!--<Window.Title>
@@ -7,7 +7,7 @@
 
   <Grid>
     <Grid.RowDefinitions>
-      <RowDefinition Height="Auto"/>
+      <RowDefinition Height="Auto" />
       <RowDefinition />
     </Grid.RowDefinitions>
     <StackPanel>
@@ -19,6 +19,19 @@
           <BindingExtension Path="Title" />
         </Button.Content>
       </Button>
+
+      <HtmlLabel>
+        <HtmlLabel.Text>
+          <![CDATA[
+          <CENTER>
+            <H1>A Simple Sample Web Page</H1>         
+              <IMG SRC="http://sheldonbrown.com/images/scb_eagle_contact.jpeg">                      
+              <H4>By Sheldon Brown</H4>
+            <H2>Demonstrating a few HTML features</H2>
+          </CENTER>            
+          ]]>
+        </HtmlLabel.Text>
+      </HtmlLabel>
 
     </StackPanel>
     <ListBox Grid.Row="1" Items="{Binding Path=Items}">
@@ -43,11 +56,10 @@
           </TextBox>
         </Grid>
       </ListBoxItem>-->
-     
-      <ListBox.ItemTemplate>
-        <DataTemplate>
-          <Grid ColumnDefinitions="Auto,*">
 
+      <ListBox.ItemTemplate>
+        <DataTemplate DataType="{Type TypeName=Grid}">
+          <Grid ColumnDefinitions="Auto,*">
             <CheckBox />
             <Button Grid.Column="1" Content="{Binding}" />
           </Grid>
@@ -57,4 +69,3 @@
   </Grid>
 
 </Window>
-

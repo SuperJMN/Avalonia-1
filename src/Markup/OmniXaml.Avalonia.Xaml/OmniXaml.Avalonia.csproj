@@ -60,6 +60,7 @@
     <Compile Include="Data\StyleResourceBinding.cs" />
     <Compile Include="Data\TargetBindingEndpoint.cs" />
     <Compile Include="MarkupExtensions\BindingExtension.cs" />
+    <Compile Include="MarkupExtensions\Standard\TypeExtension.cs" />
     <Compile Include="Parsers\SelectorGrammar.cs" />
     <Compile Include="Parsers\SelectorParser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -84,6 +85,10 @@
     <ProjectReference Include="..\..\Avalonia.Controls\Avalonia.Controls.csproj">
       <Project>{D2221C82-4A25-4583-9B43-D791E3F6820C}</Project>
       <Name>Avalonia.Controls</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Avalonia.HtmlRenderer\Avalonia.HtmlRenderer.csproj">
+      <Project>{5FB2B005-0A7F-4DAD-ADD4-3ED01444E63D}</Project>
+      <Name>Avalonia.HtmlRenderer</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\Avalonia.Input\Avalonia.Input.csproj">
       <Project>{62024B2D-53EB-4638-B26B-85EEAA54866E}</Project>
@@ -135,9 +140,7 @@
       <Private>True</Private>
     </Reference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="MarkupExtensions\Standard\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

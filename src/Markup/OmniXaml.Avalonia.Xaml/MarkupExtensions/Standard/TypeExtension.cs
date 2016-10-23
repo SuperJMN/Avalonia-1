@@ -1,13 +1,13 @@
 // Copyright (c) The Avalonia Project. All rights reserved.
 // Licensed under the MIT license. See licence.md file in the project root for full license information.
 
-using System;
-using OmniXaml;
-using Glass.Core;
-
-namespace Avalonia.Markup.Xaml.MarkupExtensions.Standard
+namespace OmniXaml.Avalonia.MarkupExtensions.Standard
 {
-    //[ContentProperty("TargetType")]
+    using System;
+    using global::Avalonia.Markup.Xaml.glass.Glass.Core;
+    using global::Avalonia.Metadata;
+    using OmniXaml;
+
     public class TypeExtension : IMarkupExtension
     {
         public Type Type { get; set; }
@@ -21,27 +21,31 @@ namespace Avalonia.Markup.Xaml.MarkupExtensions.Standard
             Type = type;
         }
 
+        [Content]
         public string TypeName { get; set; }
 
-        private Type ResolveFromString(string type, ITypeRepository typeRepository)
+        private Type ResolveFromString(string prefixedTypeName, ITypeDirectory typeDirectory)
         {
-            Guard.ThrowIfNull(type, nameof(type));
+            Guard.ThrowIfNull(prefixedTypeName, nameof(prefixedTypeName));
 
-            var split = type.Split(':');
-            var prefix = split.Length == 1 ? split[0] : null;
-            var typeName = split.Length == 1 ? split[1] : split[0];
-            var xamlType = typeRepository.GetByPrefix(prefix, typeName);
-            return xamlType.UnderlyingType;
+            var tuple = prefixedTypeName.Dicotomize(':');
+
+            if (tuple.Item2 == null)
+            {
+                return typeDirectory.GetTypeByPrefix(string.Empty, tuple.Item1);
+            }
+
+            return typeDirectory.GetTypeByPrefix(tuple.Item1, tuple.Item2);
         }
 
-        public override object ProvideValue(MarkupExtensionContext markupExtensionContext)
+        public object GetValue(MarkupExtensionContext markupExtensionContext)
         {
             if (Type != null)
             {
                 return Type;
             }
 
-            return ResolveFromString(TypeName, markupExtensionContext.ValueContext.TypeRepository);
+            return ResolveFromString(TypeName, markupExtensionContext.TypeDirectory);
         }
     }
 }

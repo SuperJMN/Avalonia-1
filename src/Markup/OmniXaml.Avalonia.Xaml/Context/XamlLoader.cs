@@ -2,7 +2,8 @@
 {
     using System.Reflection;
     using global::Avalonia.Controls;
-    using MarkupExtensions;
+    using global::Avalonia.Controls.Html;
+    using global::Avalonia.Markup.Xaml.MarkupExtensions;
     using Templates;
     using TypeLocation;
 
@@ -23,6 +24,8 @@
 
             var type = typeof(Window);
             var ass = type.GetTypeInfo().Assembly;
+            var htmlControl = typeof(HtmlLabel).GetTypeInfo();
+
             typeDirectory.AddNamespace(
                 XamlNamespace
                     .Map("root")
@@ -34,7 +37,10 @@
                             .Assembly(typeof(DataTemplate).GetTypeInfo().Assembly)
                             .WithNamespaces(
                                 typeof(DataTemplate).Namespace,
-                                typeof(BindingExtension).Namespace)));
+                                typeof(MarkupExtensions.BindingExtension).Namespace,
+                                typeof(MarkupExtensions.Standard.TypeExtension).Namespace),
+                        Route.Assembly(htmlControl.Assembly)
+                            .WithNamespaces(htmlControl.Namespace)));
 
 
             typeDirectory.RegisterPrefix(new PrefixRegistration(string.Empty, "root"));
@@ -44,14 +50,21 @@
 
         public object Load(string xaml)
         {
-            var objectBuilder = new AvaloniaObjectBuilder(new InstanceCreator(), Registrator.GetSourceValueConverter(), metadataProvider, new AvaloniaLifeCycleSignaler());
+            var contructionContext = new ConstructionContext(
+                new InstanceCreator(),
+                Registrator.GetSourceValueConverter(),
+                metadataProvider,
+                new AvaloniaLifeCycleSignaler());
+
+            var objectBuilder =
+                new AvaloniaObjectBuilder(contructionContext, (assignment, context) => new MarkupExtensionContext(assignment, contructionContext, directory));
             var cons = GetConstructionNode(xaml);
             return objectBuilder.Create(cons);
         }
 
         private ConstructionNode GetConstructionNode(string xaml)
         {
-            var sut = new XamlToTreeParser(directory, metadataProvider, new []{ new InlineParser(directory) });
+            var sut = new XamlToTreeParser(directory, metadataProvider, new[] { new InlineParser(directory) });
             var tree = sut.Parse(xaml);
             return tree;
         }

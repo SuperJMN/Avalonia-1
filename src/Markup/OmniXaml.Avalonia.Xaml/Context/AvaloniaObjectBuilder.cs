@@ -8,18 +8,17 @@
     using global::Avalonia.Controls;
     using global::Avalonia.Data;
     using Glass.Core;
-    using Metadata;
 
     public class AvaloniaObjectBuilder : ExtendedObjectBuilder
     {
-        public AvaloniaObjectBuilder(IInstanceCreator creator, ISourceValueConverter sourceValueConverter, IMetadataProvider metadataProvider, IInstanceLifecycleSignaler signaler)
-            : base(creator, sourceValueConverter, metadataProvider, signaler)
+        public AvaloniaObjectBuilder(ConstructionContext constructionContext, Func<Assignment, ConstructionContext, MarkupExtensionContext> createExtensionContext)
+            : base(constructionContext, createExtensionContext)
         {
         }
 
         protected override void Assign(Assignment assignmentTarget)
         {
-            var transform = base.Transform(assignmentTarget);
+            var transform = Transform(assignmentTarget);
 
             if (transform.Value is IBinding)
             {
