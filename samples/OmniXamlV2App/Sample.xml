@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 
-<Window Width="600" Height="400">
+<Window xmlns="root" Width="600" Height="400" >
   <!--<Window.Title>
     <BindingExtension Path="Title" />
   </Window.Title>-->
@@ -58,7 +58,7 @@
       </ListBoxItem>-->
 
       <ListBox.ItemTemplate>
-        <DataTemplate DataType="{Type TypeName=Grid}">
+        <DataTemplate>
           <Grid ColumnDefinitions="Auto,*">
             <CheckBox />
             <Button Grid.Column="1" Content="{Binding}" />
