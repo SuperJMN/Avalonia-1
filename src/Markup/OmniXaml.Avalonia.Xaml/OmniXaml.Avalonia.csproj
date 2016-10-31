@@ -99,6 +99,10 @@
     <None Include="project.json" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\..\..\OmniXaml2\Glass.Core\Glass.Core.csproj">
+      <Project>{4AEFCFCF-5514-44B1-ACEF-93D40528A0BC}</Project>
+      <Name>Glass.Core</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\..\..\OmniXaml2\OmniXaml\OmniXaml.csproj">
       <Project>{84ae3f65-b4dc-43e0-b2d0-df0b188e8602}</Project>
       <Name>OmniXaml</Name>

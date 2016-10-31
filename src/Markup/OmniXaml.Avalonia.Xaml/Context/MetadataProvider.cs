@@ -9,10 +9,6 @@
 
     public class MetadataProvider : IMetadataProvider
     {
-        public MetadataProvider()
-        {            
-        }
-
         public Metadata Get(Type type)
         {
             return new Metadata
@@ -22,11 +18,11 @@
             };
         }
 
-        private FragmentLoadingInfo GetFragmentLoaderInfo(Type type)
+        private FragmentLoaderInfo GetFragmentLoaderInfo(Type type)
         {
             if (typeof(IDataTemplate).GetTypeInfo().IsAssignableFrom(type.GetTypeInfo()))
             {
-                return new FragmentLoadingInfo()
+                return new FragmentLoaderInfo
                 {
                     Type = type,
                     PropertyName = "Content",
@@ -39,10 +35,12 @@
 
         private string GetContentProperty(Type type)
         {
-            var contentProperty = type.GetRuntimeProperties()
-               .First(info => info.GetCustomAttribute(typeof(global::Avalonia.Metadata.ContentAttribute)) != null);
+            var contentProperties = from prop in type.GetRuntimeProperties()
+                                  where prop.GetCustomAttribute<global::Avalonia.Metadata.ContentAttribute>() != null
+                                  select prop.Name;
+               
 
-            return contentProperty.Name;
+            return contentProperties.FirstOrDefault();
         }
     }
 }

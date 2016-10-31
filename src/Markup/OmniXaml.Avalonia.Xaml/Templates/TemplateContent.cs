@@ -7,16 +7,18 @@
     {
         private readonly ConstructionNode node;
         private readonly IObjectBuilder builder;
+        private readonly TrackingContext trackingContext;
 
-        public TemplateContent(ConstructionNode node, IObjectBuilder builder)
+        public TemplateContent(ConstructionNode node, IObjectBuilder builder, TrackingContext trackingContext)
         {
             this.node = node;
             this.builder = builder;
+            this.trackingContext = trackingContext;
         }
 
         public IControl Load()
         {
-            return (IControl) builder.Create(node);
+            return (IControl) builder.Create(node, trackingContext);
         }
 
         protected bool Equals(TemplateContent other)

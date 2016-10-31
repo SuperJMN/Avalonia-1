@@ -16,7 +16,7 @@
         {
         }
 
-        protected override void Assign(Assignment assignmentTarget)
+        protected override void Assign(Assignment assignmentTarget, TrackingContext trackingContext)
         {
             var transform = Transform(assignmentTarget);
 
