@@ -24,10 +24,10 @@ namespace OmniXaml.Avalonia.MarkupExtensions
 
         public object GetValue(MarkupExtensionContext markupExtensionContext)
         {
-            var typeRepository = markupExtensionContext.TypeDirectory;
+            var typeDirectory = markupExtensionContext.TypeDirectory;
             var typeAndMember = GetTypeAndMember(Identifier);
             var prefixAndType = GetPrefixAndType(typeAndMember.Item1);
-            var xamlType = typeRepository.GetTypeByPrefix(prefixAndType.Item1, prefixAndType.Item2);
+            var xamlType = typeDirectory.GetTypeByPrefix(prefixAndType.Item1, prefixAndType.Item2);
             return GetValue(xamlType, typeAndMember.Item2);
         }
 

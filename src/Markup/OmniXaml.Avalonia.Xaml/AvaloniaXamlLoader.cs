@@ -57,7 +57,7 @@
 
         public ConstructionResult Load(string xaml)
         {           
-            var objectBuilder = new AvaloniaObjectBuilder(contructionContext, (assignment, context) => new MarkupExtensionContext(assignment, contructionContext, directory));
+            var objectBuilder = new AvaloniaObjectBuilder(contructionContext, (assignment, context, tc) => new MarkupExtensionContext(assignment, contructionContext, directory, tc));
             var cons = GetConstructionNode(xaml);
             var namescopeAnnotator = new NamescopeAnnotator(contructionContext.MetadataProvider);
             var trackingContext = new TrackingContext(namescopeAnnotator, new AmbientRegistrator(), new AvaloniaLifeCycleSignaler() );
@@ -66,7 +66,7 @@
 
         public ConstructionResult Load(string xaml, object intance)
         {
-            var objectBuilder = new AvaloniaObjectBuilder(contructionContext, (assignment, context) => new MarkupExtensionContext(assignment, contructionContext, directory));
+            var objectBuilder = new AvaloniaObjectBuilder(contructionContext, (assignment, context, tc) => new MarkupExtensionContext(assignment, contructionContext, directory, tc));
             var cons = GetConstructionNode(xaml);
             var namescopeAnnotator = new NamescopeAnnotator(contructionContext.MetadataProvider);
             var trackingContext = new TrackingContext(namescopeAnnotator, new AmbientRegistrator(), new AvaloniaLifeCycleSignaler());
