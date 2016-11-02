@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 
-<Window xmlns="root" Width="600" Height="400" >
+<Window xmlns="https://github.com/avaloniaui" Width="600" Height="400" >
   <!--<Window.Title>
     <BindingExtension Path="Title" />
   </Window.Title>-->
@@ -32,6 +32,8 @@
           ]]>
         </HtmlLabel.Text>
       </HtmlLabel>
+
+      <Image Source="Mario.png" />
 
     </StackPanel>
     <ListBox Grid.Row="1" Items="{Binding Path=Items}">

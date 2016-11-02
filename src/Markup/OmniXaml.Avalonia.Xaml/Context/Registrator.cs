@@ -3,6 +3,7 @@
     using System.Globalization;
     using Converters;
     using global::Avalonia.Controls;
+    using global::Avalonia.Media.Imaging;
     using OmniXaml;
 
     public static class Registrator
@@ -16,7 +17,7 @@
             sourceValueConverter.Add(typeof(GridLength), (value) => new GridLengthTypeConverter().ConvertFrom(value, CultureInfo.CurrentCulture, value));
             sourceValueConverter.Add(typeof(ColumnDefinitions), (value) => new ColumnDefinitionsTypeConverter().ConvertFrom(value, CultureInfo.CurrentCulture, value));
             sourceValueConverter.Add(typeof(RowDefinitions), (value) => new RowDefinitionsTypeConverter().ConvertFrom(value, CultureInfo.CurrentCulture, value));
-            //sourceValueConverter.Add(typeof(IBitmap), value => new BitmapTypeConverter().ConvertFrom(context, CultureInfo.CurrentCulture, value));
+            sourceValueConverter.Add(typeof(IBitmap), value => new BitmapTypeConverter().ConvertFrom(value, CultureInfo.CurrentCulture, value));
             return sourceValueConverter;
         }
     }

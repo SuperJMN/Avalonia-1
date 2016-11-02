@@ -6,6 +6,8 @@ using Avalonia.Styling;
 
 namespace Avalonia.Markup.Xaml.Styling
 {
+    using OmniXaml.Avalonia;
+
     /// <summary>
     /// Includes a style from a URL.
     /// </summary>
@@ -22,7 +24,7 @@ namespace Avalonia.Markup.Xaml.Styling
             // StyleInclude will usually be loaded from XAML and its URI can be relative to the
             // XAML file that its included in, so store the current XAML file's URI if any as
             // a base URI.
-            _baseUri = AvaloniaXamlLoader.UriContext;
+            //_baseUri = AvaloniaXamlLoader.UriContext;
         }
 
         /// <summary>

@@ -1,30 +1,29 @@
 // Copyright (c) The Avalonia Project. All rights reserved.
 // Licensed under the MIT license. See licence.md file in the project root for full license information.
 
-using System;
-using System.Globalization;
-using System.Linq;
-using OmniXaml;
-using OmniXaml.TypeConversion;
-using Avalonia.Styling;
-
-namespace Avalonia.Markup.Xaml.Converters
+namespace OmniXaml.Avalonia.Converters
 {
+    using System;
+    using System.Globalization;
+    using System.Linq;
+    using global::Avalonia;
+    using global::Avalonia.Styling;
+    using OmniXaml;
     using Sprache;
 
     public class AvaloniaPropertyTypeConverter : ITypeConverter
     {
-        public bool CanConvertFrom(IValueContext context, Type sourceType)
+        public bool CanConvertFrom(ValueContext context, Type sourceType)
         {
             return sourceType == typeof(string);
         }
 
-        public bool CanConvertTo(IValueContext context, Type destinationType)
+        public bool CanConvertTo(ValueContext context, Type destinationType)
         {
             return false;
         }
 
-        public object ConvertFrom(IValueContext context, CultureInfo culture, object value)
+        public object ConvertFrom(ValueContext context, CultureInfo culture, object value)
         {
             var s = (string)value;
 
@@ -36,8 +35,7 @@ namespace Avalonia.Markup.Xaml.Converters
 
             if (typeName == null)
             {
-                var styleType = context.TypeRepository.GetByType(typeof(Style));
-                var style = (Style)context.TopDownValueContext.GetLastInstance(styleType);
+                var style = (Style)context.TrackingContext.AmbientRegistrator.Instances.Last(o => o.GetType() == typeof(Style));
                 type = style.Selector?.TargetType;
 
                 if (type == null)
@@ -48,7 +46,7 @@ namespace Avalonia.Markup.Xaml.Converters
             }
             else
             {
-                type = context.TypeRepository.GetByQualifiedName(typeName)?.UnderlyingType;
+                type = context.TypeDirectory.GetByPrefixedName(typeName);
 
                 if (type == null)
                 {
@@ -70,7 +68,7 @@ namespace Avalonia.Markup.Xaml.Converters
             return property;
         }
 
-        public object ConvertTo(IValueContext context, CultureInfo culture, object value, Type destinationType)
+        public object ConvertTo(ValueContext context, CultureInfo culture, object value, Type destinationType)
         {
             throw new NotImplementedException();
         }

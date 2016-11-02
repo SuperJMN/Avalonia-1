@@ -41,6 +41,8 @@
     <Compile Include="..\..\Shared\SharedAssemblyInfo.cs">
       <Link>Properties\SharedAssemblyInfo.cs</Link>
     </Compile>
+    <Compile Include="Converters\AvaloniaPropertyTypeConverter.cs" />
+    <Compile Include="Converters\BitmapTypeConverter.cs" />
     <Compile Include="Templates\ConstructionFragmentLoader.cs" />
     <Compile Include="Templates\TemplateContent.cs" />
     <Compile Include="Context\AvaloniaLifeCycleSignaler.cs" />
@@ -168,7 +170,9 @@
       <Private>True</Private>
     </Reference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Styling\" />
+  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
