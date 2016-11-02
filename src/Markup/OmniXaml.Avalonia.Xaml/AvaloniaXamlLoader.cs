@@ -13,16 +13,16 @@
     {
         private readonly TypeDirectory directory;
         private readonly MetadataProvider metadataProvider;
-        private readonly ConstructionContext contructionContext;
+        private readonly ObjectBuilderContext contructionContext;
 
         public AvaloniaXamlLoader()
         {
             metadataProvider = new MetadataProvider();
             directory = GetTypeDirectory();
 
-            contructionContext = new ConstructionContext(
+            contructionContext = new ObjectBuilderContext(
                new InstanceCreator(),
-               Registrator.GetSourceValueConverter(),
+               Registrator.GetSourceValueConverter(directory),
                metadataProvider);
         }
 
@@ -57,7 +57,7 @@
 
         public ConstructionResult Load(string xaml)
         {           
-            var objectBuilder = new AvaloniaObjectBuilder(contructionContext, (assignment, context, tc) => new MarkupExtensionContext(assignment, contructionContext, directory, tc));
+            var objectBuilder = new AvaloniaObjectBuilder(contructionContext, (assignment, context, tc) => new ValueContext(assignment, context, directory, tc));
             var cons = GetConstructionNode(xaml);
             var namescopeAnnotator = new NamescopeAnnotator(contructionContext.MetadataProvider);
             var trackingContext = new TrackingContext(namescopeAnnotator, new AmbientRegistrator(), new AvaloniaLifeCycleSignaler() );
@@ -66,7 +66,7 @@
 
         public ConstructionResult Load(string xaml, object intance)
         {
-            var objectBuilder = new AvaloniaObjectBuilder(contructionContext, (assignment, context, tc) => new MarkupExtensionContext(assignment, contructionContext, directory, tc));
+            var objectBuilder = new AvaloniaObjectBuilder(contructionContext, (assignment, context, tc) => new ValueContext(assignment, context, directory, tc));
             var cons = GetConstructionNode(xaml);
             var namescopeAnnotator = new NamescopeAnnotator(contructionContext.MetadataProvider);
             var trackingContext = new TrackingContext(namescopeAnnotator, new AmbientRegistrator(), new AvaloniaLifeCycleSignaler());

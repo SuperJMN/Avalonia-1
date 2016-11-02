@@ -10,17 +10,17 @@ namespace OmniXaml.Avalonia.Converters
 
     public class PointsListTypeConverter : ITypeConverter
     {
-        public bool CanConvertFrom(IValueContext context, Type sourceType)
+        public bool CanConvertFrom(ValueContext context, Type sourceType)
         {
             return sourceType == typeof(string);
         }
 
-        public bool CanConvertTo(IValueContext context, Type destinationType)
+        public bool CanConvertTo(ValueContext context, Type destinationType)
         {
             return false;
         }
 
-        public object ConvertFrom(IValueContext context, CultureInfo culture, object value)
+        public object ConvertFrom(ValueContext context, CultureInfo culture, object value)
         {
             string strValue = (string)value;
             string[] pointStrs = strValue.Split(new[] { ' ', '\t', '\r', '\n' }, StringSplitOptions.RemoveEmptyEntries);
@@ -32,7 +32,7 @@ namespace OmniXaml.Avalonia.Converters
             return result;
         }
 
-        public object ConvertTo(IValueContext context, CultureInfo culture, object value, Type destinationType)
+        public object ConvertTo(ValueContext context, CultureInfo culture, object value, Type destinationType)
         {
             throw new NotImplementedException();
         }

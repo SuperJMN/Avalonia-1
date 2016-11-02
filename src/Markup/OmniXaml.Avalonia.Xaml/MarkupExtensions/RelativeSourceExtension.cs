@@ -17,7 +17,7 @@ namespace OmniXaml.Avalonia.MarkupExtensions
             Mode = mode;
         }
 
-        public object GetValue(MarkupExtensionContext extensionContext)
+        public object GetValue(ValueContext extensionContext)
         {
             return new RelativeSource
             {

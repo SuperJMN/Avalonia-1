@@ -19,7 +19,7 @@ namespace OmniXaml.Avalonia.MarkupExtensions
             Path = path;
         }
 
-        public object GetValue(MarkupExtensionContext extensionContext)
+        public object GetValue(ValueContext extensionContext)
         {
             return new Binding
             {

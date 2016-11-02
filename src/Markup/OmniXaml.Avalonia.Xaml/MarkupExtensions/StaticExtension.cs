@@ -22,7 +22,7 @@ namespace OmniXaml.Avalonia.MarkupExtensions
 
         public string Identifier { get; set; }
 
-        public object GetValue(MarkupExtensionContext markupExtensionContext)
+        public object GetValue(ValueContext markupExtensionContext)
         {
             var typeDirectory = markupExtensionContext.TypeDirectory;
             var typeAndMember = GetTypeAndMember(Identifier);
