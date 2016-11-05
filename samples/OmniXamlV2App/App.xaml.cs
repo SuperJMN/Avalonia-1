@@ -6,10 +6,9 @@
     using Avalonia.Controls;
     using Avalonia.Diagnostics;
     using Avalonia.Logging.Serilog;
-    using Avalonia.Markup.Xaml;
+    using OmniXaml.Avalonia;
     using OmniXaml.Avalonia.Context;
     using Serilog;
-    using AvaloniaXamlLoader = OmniXaml.Avalonia.AvaloniaXamlLoader;
 
     class App : Application
     {

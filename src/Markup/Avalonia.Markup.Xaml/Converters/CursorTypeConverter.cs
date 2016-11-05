@@ -9,7 +9,7 @@ using Avalonia.Platform;
 
 namespace Avalonia.Markup.Xaml.Converters
 {
-    using OmniXAML.Source.OmniXaml.TypeConversion;
+    using OmniXamlV1.TypeConversion;
 
     public class CursorTypeConverter : ITypeConverter
     {

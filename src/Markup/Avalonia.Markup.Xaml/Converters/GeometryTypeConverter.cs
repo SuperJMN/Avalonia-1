@@ -3,7 +3,7 @@ namespace Avalonia.Markup.Xaml.Converters
     using System;
     using System.Globalization;
     using Media;
-    using OmniXAML.Source.OmniXaml.TypeConversion;
+    using OmniXamlV1.TypeConversion;
 
     public class GeometryTypeConverter : ITypeConverter
     {

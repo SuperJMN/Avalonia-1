@@ -5,10 +5,10 @@ using System;
 
 namespace Avalonia.Markup.Xaml.MarkupExtensions
 {
-    using glass.Glass.Core;
-    using OmniXAML.Source.OmniXaml;
-    using OmniXAML.Source.OmniXaml.Attributes;
-    using OmniXAML.Source.OmniXaml.Typing;
+    using Glass.Core;
+    using OmniXamlV1;
+    using OmniXamlV1.Attributes;
+    using OmniXamlV1.Typing;
 
     [ContentProperty("TargetType")]
     public class TypeExtension : MarkupExtension

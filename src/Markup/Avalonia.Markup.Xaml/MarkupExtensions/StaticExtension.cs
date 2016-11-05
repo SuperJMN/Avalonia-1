@@ -7,8 +7,8 @@ using System.Reflection;
 
 namespace Avalonia.Markup.Xaml.MarkupExtensions
 {
-    using glass.Glass.Core;
-    using OmniXAML.Source.OmniXaml;
+    using Glass.Core;
+    using OmniXamlV1;
 
     public class StaticExtension : MarkupExtension
     {

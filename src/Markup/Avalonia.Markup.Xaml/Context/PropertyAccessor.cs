@@ -12,8 +12,8 @@ using Avalonia.Styling;
 
 namespace Avalonia.Markup.Xaml.Context
 {
-    using OmniXAML.Source.OmniXaml.TypeConversion;
-    using OmniXAML.Source.OmniXaml.Typing;
+    using OmniXamlV1.TypeConversion;
+    using OmniXamlV1.Typing;
 
     internal static class PropertyAccessor
     {

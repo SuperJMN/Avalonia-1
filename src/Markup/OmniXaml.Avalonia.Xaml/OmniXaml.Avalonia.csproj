@@ -100,14 +100,6 @@
     <None Include="project.json" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\..\OmniXaml2\Glass.Core\Glass.Core.csproj">
-      <Project>{4AEFCFCF-5514-44B1-ACEF-93D40528A0BC}</Project>
-      <Name>Glass.Core</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\..\..\OmniXaml2\OmniXaml\OmniXaml.csproj">
-      <Project>{84ae3f65-b4dc-43e0-b2d0-df0b188e8602}</Project>
-      <Name>OmniXaml</Name>
-    </ProjectReference>
     <ProjectReference Include="..\..\Avalonia.Animation\Avalonia.Animation.csproj">
       <Project>{D211E587-D8BC-45B9-95A4-F297C8FA5200}</Project>
       <Name>Avalonia.Animation</Name>
@@ -147,6 +139,14 @@
     <ProjectReference Include="..\Avalonia.Markup\Avalonia.Markup.csproj">
       <Project>{6417e941-21bc-467b-a771-0de389353ce6}</Project>
       <Name>Avalonia.Markup</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\OmniXAMLv2\Glass.Core\Glass.Core.csproj">
+      <Project>{4aefcfcf-5514-44b1-acef-93d40528a0bc}</Project>
+      <Name>Glass.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\OmniXAMLv2\OmniXaml\OmniXaml.csproj">
+      <Project>{84ae3f65-b4dc-43e0-b2d0-df0b188e8602}</Project>
+      <Name>OmniXaml</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

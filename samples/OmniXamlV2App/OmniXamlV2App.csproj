@@ -31,12 +31,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Serilog, Version=1.5.0.0, Culture=neutral, PublicKeyToken=24c2f752a8e58a10, processorArchitecture=MSIL">
-      <HintPath>..\packages\Serilog.1.5.14\lib\net45\Serilog.dll</HintPath>
+    <Reference Include="Serilog, Version=2.0.0.0, Culture=neutral, PublicKeyToken=24c2f752a8e58a10, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Serilog.2.3.0\lib\net45\Serilog.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Serilog.FullNetFx, Version=1.5.0.0, Culture=neutral, PublicKeyToken=24c2f752a8e58a10, processorArchitecture=MSIL">
-      <HintPath>..\packages\Serilog.1.5.14\lib\net45\Serilog.FullNetFx.dll</HintPath>
+    <Reference Include="Serilog.Sinks.Trace, Version=2.0.0.0, Culture=neutral, PublicKeyToken=24c2f752a8e58a10, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Serilog.Sinks.Trace.2.1.0\lib\net45\Serilog.Sinks.Trace.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="SharpDX, Version=3.0.2.0, Culture=neutral, PublicKeyToken=b4dcf0f35e5521f1, processorArchitecture=MSIL">
@@ -55,8 +55,8 @@
       <HintPath>..\packages\Splat.1.6.2\lib\Net45\Splat.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Sprache, Version=2.0.0.50, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Sprache.2.0.0.50\lib\portable-net4+netcore45+win8+wp8+sl5+MonoAndroid+Xamarin.iOS10+MonoTouch\Sprache.dll</HintPath>
+    <Reference Include="Sprache, Version=2.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Sprache.2.1.0\lib\net40\Sprache.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
@@ -108,10 +108,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\OmniXaml2\OmniXaml\OmniXaml.csproj">
-      <Project>{84ae3f65-b4dc-43e0-b2d0-df0b188e8602}</Project>
-      <Name>OmniXaml</Name>
-    </ProjectReference>
     <ProjectReference Include="..\..\src\Avalonia.Animation\Avalonia.Animation.csproj">
       <Project>{D211E587-D8BC-45B9-95A4-F297C8FA5200}</Project>
       <Name>Avalonia.Animation</Name>
@@ -167,6 +163,18 @@
     <ProjectReference Include="..\..\src\Markup\OmniXaml.Avalonia.Xaml\OmniXaml.Avalonia.csproj">
       <Project>{fb8a5225-7584-49a4-8978-fa1861aa91b4}</Project>
       <Name>OmniXaml.Avalonia</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\src\Markup\OmniXAMLv1\OmniXamlv1.csproj">
+      <Project>{0D9CC1DE-84C3-40D7-9CC5-B7751E0B25D1}</Project>
+      <Name>OmniXamlv1</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\src\Markup\OmniXAMLv2\Glass.Core\Glass.Core.csproj">
+      <Project>{4aefcfcf-5514-44b1-acef-93d40528a0bc}</Project>
+      <Name>Glass.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\src\Markup\OmniXAMLv2\OmniXaml\OmniXaml.csproj">
+      <Project>{84AE3F65-B4DC-43E0-B2D0-DF0B188E8602}</Project>
+      <Name>OmniXaml</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\src\Windows\Avalonia.Direct2D1\Avalonia.Direct2D1.csproj">
       <Project>{3e908f67-5543-4879-a1dc-08eace79b3cd}</Project>

@@ -5,9 +5,10 @@
 	path = src/Avalonia.HtmlRenderer/external
 	url = https://github.com/AvaloniaUI/HTML-Renderer.git
 	branch = perspex-pcl
-[submodule "src/Markup/Avalonia.Markup.Xaml/OmniXAML"]
-	path = src/Markup/Avalonia.Markup.Xaml/OmniXAML
-	url = https://github.com/AvaloniaUI/OmniXAML.git
 [submodule "src/Markup/Avalonia.Markup.Xaml/glass"]
 	path = src/Markup/Avalonia.Markup.Xaml/glass
 	url = https://github.com/SuperJMN/glass
+[submodule "src/Markup/OmniXAMLv2"]
+	path = src/Markup/OmniXAMLv2
+	url = https://github.com/SuperJMN/OmniXAML.git
+	branch = omnixamlv2

@@ -9,7 +9,7 @@ using Avalonia.Styling;
 
 namespace Avalonia.Markup.Xaml.MarkupExtensions
 {
-    using OmniXAML.Source.OmniXaml;
+    using OmniXamlV1;
 
     public class StyleResourceExtension : MarkupExtension
     {

@@ -6,7 +6,7 @@ using Avalonia.Markup.Xaml.Data;
 
 namespace Avalonia.Markup.Xaml.MarkupExtensions
 {
-    using OmniXAML.Source.OmniXaml;
+    using OmniXamlV1;
 
     public class TemplateBindingExtension : MarkupExtension
     {

@@ -35,7 +35,7 @@ namespace OmniXaml.Avalonia.Converters
 
             if (typeName == null)
             {
-                var style = (Style)context.TrackingContext.AmbientRegistrator.Instances.Last(o => o.GetType() == typeof(Style));
+                var style = (Style)context.BuildContext.AmbientRegistrator.Instances.Last(o => o.GetType() == typeof(Style));
                 type = style.Selector?.TargetType;
 
                 if (type == null)

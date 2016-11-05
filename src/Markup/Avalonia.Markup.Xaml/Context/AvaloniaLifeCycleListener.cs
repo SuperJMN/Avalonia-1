@@ -5,7 +5,7 @@ using System;
 
 namespace Avalonia.Markup.Xaml.Context
 {
-    using OmniXAML.Source.OmniXaml;
+    using OmniXamlV1;
 
     public class AvaloniaLifeCycleListener : IInstanceLifeCycleListener
     {

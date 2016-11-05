@@ -37,7 +37,7 @@
             var objectBuilder = new AvaloniaObjectBuilder(contructionContext, (assignment, context, tc) => new ValueContext(assignment, context, directory, tc));
             var cons = GetConstructionNode(xaml);
             var namescopeAnnotator = new NamescopeAnnotator(contructionContext.MetadataProvider);
-            var trackingContext = new TrackingContext(namescopeAnnotator, new AmbientRegistrator(), new AvaloniaLifeCycleSignaler());
+            var trackingContext = new BuildContext(namescopeAnnotator, new AmbientRegistrator(), new AvaloniaLifeCycleSignaler());
             trackingContext.Bag.Add("Uri", @"file:\\\");
             return new ConstructionResult(objectBuilder.Create(cons, trackingContext), namescopeAnnotator);
         }
@@ -47,7 +47,7 @@
             var objectBuilder = new AvaloniaObjectBuilder(contructionContext, (assignment, context, tc) => new ValueContext(assignment, context, directory, tc));
             var cons = GetConstructionNode(xaml);
             var namescopeAnnotator = new NamescopeAnnotator(contructionContext.MetadataProvider);
-            var trackingContext = new TrackingContext(namescopeAnnotator, new AmbientRegistrator(), new AvaloniaLifeCycleSignaler());
+            var trackingContext = new BuildContext(namescopeAnnotator, new AmbientRegistrator(), new AvaloniaLifeCycleSignaler());
             return new ConstructionResult(objectBuilder.Create(cons, intance, trackingContext), namescopeAnnotator);
         }
 

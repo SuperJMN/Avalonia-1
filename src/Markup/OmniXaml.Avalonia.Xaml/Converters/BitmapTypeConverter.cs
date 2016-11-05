@@ -46,7 +46,7 @@ namespace OmniXaml.Avalonia.Converters
         private Uri GetBaseUri(ValueContext context)
         {
             object result;
-            context.TrackingContext.Bag.TryGetValue("Uri", out result);
+            context.BuildContext.Bag.TryGetValue("Uri", out result);
             return result as Uri;
         }
     }    

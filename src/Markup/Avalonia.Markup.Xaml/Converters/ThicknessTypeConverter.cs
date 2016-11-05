@@ -6,7 +6,7 @@ using System.Globalization;
 
 namespace Avalonia.Markup.Xaml.Converters
 {
-    using OmniXAML.Source.OmniXaml.TypeConversion;
+    using OmniXamlV1.TypeConversion;
 
     public class ThicknessTypeConverter : ITypeConverter
     {

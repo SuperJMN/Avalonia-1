@@ -8,10 +8,10 @@ using System.Collections.ObjectModel;
 
 namespace Avalonia.Markup.Xaml.Context
 {
-    using OmniXAML.Source.OmniXaml;
-    using OmniXAML.Source.OmniXaml.ObjectAssembler;
-    using OmniXAML.Source.OmniXaml.ObjectAssembler.Commands;
-    using OmniXAML.Source.OmniXaml.TypeConversion;
+    using OmniXamlV1;
+    using OmniXamlV1.ObjectAssembler;
+    using OmniXamlV1.ObjectAssembler.Commands;
+    using OmniXamlV1.TypeConversion;
 
     public class AvaloniaObjectAssembler : IObjectAssembler
     {

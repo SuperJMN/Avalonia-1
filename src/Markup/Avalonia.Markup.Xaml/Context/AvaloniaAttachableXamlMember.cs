@@ -6,8 +6,8 @@ using System.Reflection;
 
 namespace Avalonia.Markup.Xaml.Context
 {
-    using OmniXAML.Source.OmniXaml;
-    using OmniXAML.Source.OmniXaml.Typing;
+    using OmniXamlV1;
+    using OmniXamlV1.Typing;
 
     public class AvaloniaAttachableXamlMember : AttachableMember
     {

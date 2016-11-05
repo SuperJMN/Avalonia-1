@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 namespace Avalonia.Markup.Xaml.Templates
 {
-    using OmniXAML.Source.OmniXaml;
+    using OmniXamlV1;
 
     public class TemplateLoader : IDeferredLoader
     {

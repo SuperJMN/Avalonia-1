@@ -7,9 +7,9 @@
     {
         private readonly ConstructionNode node;
         private readonly IObjectBuilder builder;
-        private readonly TrackingContext trackingContext;
+        private readonly BuildContext trackingContext;
 
-        public TemplateContent(ConstructionNode node, IObjectBuilder builder, TrackingContext trackingContext)
+        public TemplateContent(ConstructionNode node, IObjectBuilder builder, BuildContext trackingContext)
         {
             this.node = node;
             this.builder = builder;

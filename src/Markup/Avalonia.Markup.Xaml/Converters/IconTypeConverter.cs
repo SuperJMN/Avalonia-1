@@ -11,7 +11,7 @@ using Avalonia.Platform;
 
 namespace Avalonia.Markup.Xaml.Converters
 {
-    using OmniXAML.Source.OmniXaml.TypeConversion;
+    using OmniXamlV1.TypeConversion;
 
     class IconTypeConverter : ITypeConverter
     {

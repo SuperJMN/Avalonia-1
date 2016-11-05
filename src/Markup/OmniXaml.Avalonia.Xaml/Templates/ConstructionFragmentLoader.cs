@@ -5,7 +5,7 @@ namespace OmniXaml.Avalonia.Templates
 
     public class ConstructionFragmentLoader : IConstructionFragmentLoader
     {
-        public object Load(ConstructionNode node, IObjectBuilder builder, TrackingContext trackingContext)
+        public object Load(ConstructionNode node, IObjectBuilder builder, BuildContext trackingContext)
         {
             return new TemplateContent(node, builder, trackingContext);
         }

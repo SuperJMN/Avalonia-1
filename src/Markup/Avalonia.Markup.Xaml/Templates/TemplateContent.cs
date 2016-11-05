@@ -7,8 +7,8 @@ using Avalonia.Markup.Xaml.Context;
 
 namespace Avalonia.Markup.Xaml.Templates
 {
-    using OmniXAML.Source.OmniXaml;
-    using OmniXAML.Source.OmniXaml.ObjectAssembler;
+    using OmniXamlV1;
+    using OmniXamlV1.ObjectAssembler;
 
     public class TemplateContent
     {

@@ -3,11 +3,11 @@
 
 namespace Avalonia.Markup.Xaml.Context
 {
-    using OmniXAML.Source.OmniXaml;
-    using OmniXAML.Source.OmniXaml.ObjectAssembler;
-    using OmniXAML.Source.OmniXaml.Parsers.Parser;
-    using OmniXAML.Source.OmniXaml.Parsers.ProtoParser;
-
+    using OmniXamlV1;
+    using OmniXamlV1.ObjectAssembler;
+    using OmniXamlV1.Parsers.Parser;
+    using OmniXamlV1.Parsers.ProtoParser;
+ 
     public class AvaloniaParserFactory : IParserFactory
     {
         private readonly IRuntimeTypeSource runtimeTypeSource;

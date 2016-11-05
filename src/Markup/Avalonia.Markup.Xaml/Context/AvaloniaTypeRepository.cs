@@ -5,9 +5,9 @@ using System;
 
 namespace Avalonia.Markup.Xaml.Context
 {
-    using glass.Glass.Core;
-    using OmniXAML.Source.OmniXaml;
-    using OmniXAML.Source.OmniXaml.Typing;
+    using Glass.Core;
+    using OmniXamlV1;
+    using OmniXamlV1.Typing;
 
     public class AvaloniaTypeRepository : TypeRepository
     {

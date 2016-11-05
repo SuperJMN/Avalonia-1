@@ -14,9 +14,9 @@ using Avalonia.Styling;
 
 namespace Avalonia.Markup.Xaml.Context
 {
-    using glass.Glass.Core;
-    using OmniXAML.Source.OmniXaml.Builder;
-    using OmniXAML.Source.OmniXaml.Typing;
+    using Glass.Core;
+    using OmniXamlV1.Builder;
+    using OmniXamlV1.Typing;
 
     public class AvaloniaNamespaceRegistry : INamespaceRegistry
     {

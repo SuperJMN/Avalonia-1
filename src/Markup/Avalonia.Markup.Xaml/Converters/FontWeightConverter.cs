@@ -3,7 +3,7 @@
     using Avalonia.Media;
     using System;
     using System.Globalization;
-    using OmniXAML.Source.OmniXaml.TypeConversion;
+    using OmniXamlV1.TypeConversion;
 
     public class FontWeightConverter : ITypeConverter
     {

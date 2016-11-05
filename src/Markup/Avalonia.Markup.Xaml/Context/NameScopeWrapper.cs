@@ -3,7 +3,7 @@
 
 namespace Avalonia.Markup.Xaml.Context
 {
-    using OmniXAML.Source.OmniXaml;
+    using OmniXamlV1;
 
     internal class NameScopeWrapper : INameScope
     {

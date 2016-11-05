@@ -14,8 +14,8 @@ using Avalonia.Markup.Xaml.Data;
 
 namespace Avalonia.Markup.Xaml
 {
-    using OmniXAML.Source.OmniXaml;
-    using OmniXAML.Source.OmniXaml.ObjectAssembler;
+    using OmniXamlV1;
+    using OmniXamlV1.ObjectAssembler;
 
     /// <summary>
     /// Loads XAML for a avalonia application.

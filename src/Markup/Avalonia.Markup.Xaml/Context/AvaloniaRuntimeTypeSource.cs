@@ -3,9 +3,9 @@ namespace Avalonia.Markup.Xaml.Context
     using System;
     using System.Collections.Generic;
     using System.Reflection;
-    using OmniXAML.Source.OmniXaml;
-    using OmniXAML.Source.OmniXaml.Builder;
-    using OmniXAML.Source.OmniXaml.Typing;
+    using OmniXamlV1;
+    using OmniXamlV1.Builder;
+    using OmniXamlV1.Typing;
 
     public class AvaloniaRuntimeTypeSource : IRuntimeTypeSource
     {

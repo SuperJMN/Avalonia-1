@@ -4,7 +4,7 @@ using Avalonia.Input;
 
 namespace Avalonia.Markup.Xaml.Converters
 {
-    using OmniXAML.Source.OmniXaml.TypeConversion;
+    using OmniXamlV1.TypeConversion;
 
     class KeyGestureConverter : ITypeConverter
     {

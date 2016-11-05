@@ -11,12 +11,12 @@
 
     public class AvaloniaObjectBuilder : ExtendedObjectBuilder
     {
-        public AvaloniaObjectBuilder(ObjectBuilderContext constructionContext, Func<Assignment, ObjectBuilderContext, TrackingContext, ValueContext> contextFactory)
+        public AvaloniaObjectBuilder(ObjectBuilderContext constructionContext, Func<Assignment, ObjectBuilderContext, BuildContext, ValueContext> contextFactory)
             : base(constructionContext, contextFactory)
         {
         }
 
-        protected override void PerformAssigment(Assignment assignmentTarget, TrackingContext trackingContext)
+        protected override void PerformAssigment(Assignment assignmentTarget, BuildContext trackingContext)
         {
             var transform = ToCompatibleValue(assignmentTarget, trackingContext);
 

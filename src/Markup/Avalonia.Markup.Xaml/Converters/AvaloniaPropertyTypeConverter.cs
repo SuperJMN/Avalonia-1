@@ -8,8 +8,8 @@ using Avalonia.Styling;
 
 namespace Avalonia.Markup.Xaml.Converters
 {
-    using OmniXAML.Source.OmniXaml;
-    using OmniXAML.Source.OmniXaml.TypeConversion;
+    using OmniXamlV1;
+    using OmniXamlV1.TypeConversion;
 
     public class AvaloniaPropertyTypeConverter : ITypeConverter
     {
