@@ -2,11 +2,12 @@ using System;
 using System.IO;
 using Avalonia.Media;
 using Avalonia.Platform;
+using Avalonia.Rendering;
 using SkiaSharp;
 
 namespace Avalonia.Skia
 {
-    public class PlatformRenderInterface : IPlatformRenderInterface
+    public class PlatformRenderInterface : IPlatformRenderInterface, IRendererFactory
     {
         public IBitmapImpl CreateBitmap(int width, int height)
         {
@@ -48,6 +49,11 @@ namespace Avalonia.Skia
             }
         }
 
+        public IRenderer CreateRenderer(IRenderRoot root, IRenderLoop renderLoop)
+        {
+            return new Renderer(root, renderLoop);
+        }
+
         public IRenderTargetBitmapImpl CreateRenderTargetBitmap(int width, int height)
         {
             if (width < 1)
@@ -58,7 +64,7 @@ namespace Avalonia.Skia
             return new BitmapImpl(width, height);
         }
 
-        public IRenderTarget CreateRenderer(IPlatformHandle handle)
+        public IRenderTarget CreateRenderTarget(IPlatformHandle handle)
         {
             return new WindowRenderTarget(handle);
         }

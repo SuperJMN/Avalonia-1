@@ -10,6 +10,7 @@
 ///////////////////////////////////////////////////////////////////////////////
 
 #tool "nuget:?package=xunit.runner.console&version=2.1.0"
+#tool "nuget:?package=OpenCover"
 
 ///////////////////////////////////////////////////////////////////////////////
 // USINGS
@@ -30,6 +31,7 @@ var target = Argument("target", "Default");
 var platform = Argument("platform", "Any CPU");
 var configuration = Argument("configuration", "Release");
 var skipTests = HasArgument("skip-tests");
+
 ///////////////////////////////////////////////////////////////////////////////
 // CONFIGURATION
 ///////////////////////////////////////////////////////////////////////////////
@@ -89,6 +91,9 @@ if (isRunningOnAppVeyor)
 
 var artifactsDir = (DirectoryPath)Directory("./artifacts");
 var nugetRoot = artifactsDir.Combine("nuget");
+var zipRoot = artifactsDir.Combine("zip");
+var binRoot = artifactsDir.Combine("bin");
+var testsRoot = artifactsDir.Combine("tests");
 
 var dirSuffix = configuration;
 var dirSuffixSkia = (isPlatformAnyCPU ? "x86" : platform) + "/" + configuration;
@@ -121,6 +126,11 @@ var buildDirs =
     GetDirectories("./tests/**/obj/" + dirSuffix) + 
     GetDirectories("./Samples/**/bin/" + dirSuffix) + 
     GetDirectories("./Samples/**/obj/" + dirSuffix);
+
+var fileZipSuffix = version + ".zip";
+var zipCoreArtifacts = zipRoot.CombineWithFilePath("Avalonia-" + fileZipSuffix);
+var zipSourceControlCatalogDesktopDirs = (DirectoryPath)Directory("./samples/ControlCatalog.Desktop/bin/" + dirSuffix);
+var zipTargetControlCatalogDesktopDirs = zipRoot.CombineWithFilePath("ControlCatalog.Desktop-" + fileZipSuffix);
 
 ///////////////////////////////////////////////////////////////////////////////
 // NUGET NUSPECS
@@ -232,8 +242,8 @@ var coreLibraries = new string[][]
     new [] { "./src/", "Avalonia.Layout", ".xml" },
     new [] { "./src/", "Avalonia.Logging.Serilog", ".dll" },
     new [] { "./src/", "Avalonia.Logging.Serilog", ".xml" },
-    new [] { "./src/", "Avalonia.SceneGraph", ".dll" },
-    new [] { "./src/", "Avalonia.SceneGraph", ".xml" },
+    new [] { "./src/", "Avalonia.Visuals", ".dll" },
+    new [] { "./src/", "Avalonia.Visuals", ".xml" },
     new [] { "./src/", "Avalonia.Styling", ".dll" },
     new [] { "./src/", "Avalonia.Styling", ".xml" },
     new [] { "./src/", "Avalonia.ReactiveUI", ".dll" },
@@ -527,6 +537,12 @@ var nugetPackages = nuspecNuGetSettings.Select(nuspec => {
     return nuspec.OutputDirectory.CombineWithFilePath(string.Concat(nuspec.Id, ".", nuspec.Version, ".nupkg"));
 }).ToArray();
 
+var binFiles = nuspecNuGetSettings.SelectMany(nuspec => {
+    return nuspec.Files.Select(file => {
+        return ((DirectoryPath)nuspec.BasePath).CombineWithFilePath(file.Source);
+    });
+}).GroupBy(f => f.FullPath).Select(g => g.First());
+
 ///////////////////////////////////////////////////////////////////////////////
 // INFORMATION
 ///////////////////////////////////////////////////////////////////////////////
@@ -569,6 +585,9 @@ Task("Clean")
     CleanDirectories(buildDirs);
     CleanDirectory(artifactsDir);
     CleanDirectory(nugetRoot);
+    CleanDirectory(zipRoot);
+    CleanDirectory(binRoot);
+    CleanDirectory(testsRoot);
 });
 
 Task("Restore-NuGet-Packages")
@@ -654,19 +673,55 @@ Task("Run-Unit-Tests")
         "./tools/xunit.runner.console/tools/xunit.console.x86.exe" :
         "./tools/xunit.runner.console/tools/xunit.console.exe";
 
-    var settings = new XUnit2Settings 
+    var xUnitSettings = new XUnit2Settings 
     { 
         ToolPath = toolPath,
-        Parallelism = ParallelismOption.None 
+        Parallelism = ParallelismOption.None,
+        ShadowCopy = false
     };
 
-    settings.NoAppDomain = !isRunningOnWindows;
+    xUnitSettings.NoAppDomain = !isRunningOnWindows;
 
-    foreach (var file in unitTests)
+    var openCoverOutput = artifactsDir.GetFilePath(new FilePath("./coverage.xml"));
+    var openCoverSettings = new OpenCoverSettings()
+        .WithFilter("+[Avalonia.*]* -[*Test*]* -[ControlCatalog*]*")
+        .WithFilter("-[Avalonia.*]OmniXaml.* -[Avalonia.*]Glass.*")
+        .WithFilter("-[Avalonia.HtmlRenderer]TheArtOfDev.HtmlRenderer.* +[Avalonia.HtmlRenderer]TheArtOfDev.HtmlRenderer.Avalonia.* -[Avalonia.ReactiveUI]*");
+    
+    foreach(var test in unitTests)
     {
-        Information("Running test " + file.GetFilenameWithoutExtension());
-        XUnit2(file.FullPath, settings);
+        CopyDirectory(test.GetDirectory(), testsRoot);
     }
+
+    if(isRunningOnWindows)
+    {
+        OpenCover(context => {
+            context.XUnit2(unitTests.Select(test => testsRoot.GetFilePath(test).FullPath), xUnitSettings);
+        }, openCoverOutput, openCoverSettings);
+    }
+    else
+    {
+        XUnit2(unitTests.Select(test => test.FullPath), xUnitSettings);
+    }
+});
+
+Task("Copy-Files")
+    .IsDependentOn("Run-Unit-Tests")
+    .Does(() =>
+{
+    CopyFiles(binFiles, binRoot);
+});
+
+Task("Zip-Files")
+    .IsDependentOn("Copy-Files")
+    .Does(() =>
+{
+    Zip(binRoot, zipCoreArtifacts);
+
+    Zip(zipSourceControlCatalogDesktopDirs, 
+        zipTargetControlCatalogDesktopDirs, 
+        GetFiles(zipSourceControlCatalogDesktopDirs.FullPath + "/*.dll") + 
+        GetFiles(zipSourceControlCatalogDesktopDirs.FullPath + "/*.exe"));
 });
 
 Task("Create-NuGet-Packages")
@@ -758,6 +813,7 @@ Task("Default")
   .IsDependentOn("Package");
 
 Task("AppVeyor")
+  .IsDependentOn("Zip-Files")
   .IsDependentOn("Publish-MyGet")
   .IsDependentOn("Publish-NuGet");
 
