@@ -160,3 +160,4 @@ tools/
 .nuget
 artifacts/
 nuget
+/src/Markup/Avalonia.Markup.Xaml/OmniXAML/
