@@ -14,7 +14,7 @@
     {
         public Metadata Get(Type type)
         {
-            var isAssignable = TypeExtensions.IsAssignable(type, new[] { typeof(INameScope) });
+            var isAssignable = type.IsAssignable(new[] { typeof(INameScope) });
 
             return new Metadata
             {

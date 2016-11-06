@@ -41,6 +41,7 @@
     <Compile Include="..\..\Shared\SharedAssemblyInfo.cs">
       <Link>Properties\SharedAssemblyInfo.cs</Link>
     </Compile>
+    <Compile Include="Context\PropertyAccessor.cs" />
     <Compile Include="Converters\AvaloniaPropertyTypeConverter.cs" />
     <Compile Include="Converters\BitmapTypeConverter.cs" />
     <Compile Include="Templates\ConstructionFragmentLoader.cs" />
