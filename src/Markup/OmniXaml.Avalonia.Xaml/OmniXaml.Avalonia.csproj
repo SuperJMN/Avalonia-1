@@ -49,7 +49,7 @@
     <Compile Include="Context\AvaloniaObjectBuilder.cs" />
     <Compile Include="Context\MetadataProvider.cs" />
     <Compile Include="Context\Registrator.cs" />
-    <Compile Include="AvaloniaXamlLoader.cs" />
+    <Compile Include="AvaloniaXamlLoaderV2.cs" />
     <Compile Include="Converters\AvaloniaListTypeConverter.cs" />
     <Compile Include="Converters\BrushTypeConverter.cs" />
     <Compile Include="Converters\ClassesTypeConverter.cs" />

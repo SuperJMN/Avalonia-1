@@ -27,7 +27,7 @@
                 .UseDirect2D1()
                 .SetupWithoutStarting();
 
-            var window = (Window)new AvaloniaXamlLoader().Load(File.ReadAllText("Sample.xml")).Instance;
+            var window = (Window)new AvaloniaXamlLoaderV2().Load(File.ReadAllText("Sample.xml")).Instance;
             window.DataContext = new MainViewModel();
 
             //var grid = (Grid)window.Content;

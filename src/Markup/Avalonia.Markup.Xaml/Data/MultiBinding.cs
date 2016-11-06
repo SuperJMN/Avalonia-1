@@ -5,14 +5,15 @@ using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
-using System.Reactive.Linq;
-using System.Reactive.Subjects;
 using Avalonia.Controls;
 using Avalonia.Data;
 using Avalonia.Metadata;
 
 namespace Avalonia.Markup.Xaml.Data
 {
+    using System.Reactive.Linq;
+    using System.Reactive.Subjects;
+
     /// <summary>
     /// A XAML binding that calculates an aggregate value from multiple child <see cref="Bindings"/>.
     /// </summary>

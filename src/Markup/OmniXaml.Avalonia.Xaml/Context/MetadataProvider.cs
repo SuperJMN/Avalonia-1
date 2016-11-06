@@ -3,7 +3,10 @@
     using System;
     using System.Linq;
     using System.Reflection;
+    using global::Avalonia.Controls;
     using global::Avalonia.Controls.Templates;
+    using global::Avalonia.Platform;
+    using Glass.Core;
     using Metadata;
     using Templates;
 
@@ -11,16 +14,30 @@
     {
         public Metadata Get(Type type)
         {
+            var isAssignable = TypeExtensions.IsAssignable(type, new[] { typeof(INameScope) });
+
             return new Metadata
             {
                 ContentProperty = GetContentProperty(type),
                 FragmentLoaderInfo = GetFragmentLoaderInfo(type),
+                RuntimePropertyName = GetNameProperty(type),
+                IsNamescope = isAssignable,
             };
+        }       
+
+        private string GetNameProperty(Type type)
+        {
+            if (type.IsAssignable(new[] {typeof(IControl)}))
+            {
+                return nameof(IControl.Name);
+            }
+
+            return null;
         }
 
         private FragmentLoaderInfo GetFragmentLoaderInfo(Type type)
         {
-            if (typeof(IDataTemplate).GetTypeInfo().IsAssignableFrom(type.GetTypeInfo()))
+            if (type.IsAssignable(new[] {typeof(IDataTemplate)}))
             {
                 return new FragmentLoaderInfo
                 {

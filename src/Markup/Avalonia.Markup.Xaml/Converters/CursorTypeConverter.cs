@@ -4,8 +4,6 @@
 using System;
 using System.Globalization;
 using Avalonia.Input;
-using Avalonia.Media.Imaging;
-using Avalonia.Platform;
 
 namespace Avalonia.Markup.Xaml.Converters
 {

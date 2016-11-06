@@ -1,12 +1,11 @@
 // Copyright (c) The Avalonia Project. All rights reserved.
 // Licensed under the MIT license. See licence.md file in the project root for full license information.
 
-using System;
-using System.Linq;
-using System.Reflection;
-
 namespace Avalonia.Markup.Xaml.MarkupExtensions
 {
+    using System;
+    using System.Linq;
+    using System.Reflection;
     using Glass.Core;
     using OmniXamlV1;
 

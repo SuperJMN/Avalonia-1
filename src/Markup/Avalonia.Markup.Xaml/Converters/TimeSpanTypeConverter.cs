@@ -3,7 +3,6 @@
 
 using System;
 using System.Globalization;
-using Avalonia.Media;
 
 namespace Avalonia.Markup.Xaml.Converters
 {

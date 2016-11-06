@@ -2,14 +2,15 @@
 // Licensed under the MIT license. See licence.md file in the project root for full license information.
 
 using System;
-using System.Reactive;
-using System.Reactive.Linq;
 using Avalonia.Controls;
 using Avalonia.Data;
 using Avalonia.Markup.Data;
 
 namespace Avalonia.Markup.Xaml.Data
 {
+    using System.Reactive;
+    using System.Reactive.Linq;
+
     /// <summary>
     /// A XAML binding.
     /// </summary>

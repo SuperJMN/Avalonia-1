@@ -5,7 +5,6 @@ using Avalonia.Controls.Templates;
 using Avalonia.Data;
 using Avalonia.Markup.Data;
 using System;
-using System.Reactive.Linq;
 
 namespace Avalonia.Markup.Xaml.Templates
 {

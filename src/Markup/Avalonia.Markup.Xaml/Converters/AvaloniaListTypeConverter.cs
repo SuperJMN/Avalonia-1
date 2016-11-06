@@ -3,7 +3,6 @@
 
 using System;
 using System.Globalization;
-using System.Linq;
 using Avalonia.Collections;
 using Avalonia.Utilities;
 

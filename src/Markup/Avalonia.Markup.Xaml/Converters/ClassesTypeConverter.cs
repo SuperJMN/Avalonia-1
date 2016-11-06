@@ -4,7 +4,6 @@
 using System;
 using System.Globalization;
 using Avalonia.Controls;
-using Avalonia.Styling;
 
 namespace Avalonia.Markup.Xaml.Converters
 {

@@ -13,15 +13,13 @@
     using Templates;
     using TypeLocation;
 
-    public class AvaloniaXamlLoader : IXamlLoader
+    public class AvaloniaXamlLoaderV2 : IXamlLoader
     {
-        private static Stack<Uri> s_uriStack = new Stack<Uri>();
-
         private readonly ObjectBuilderContext contructionContext;
         private readonly TypeDirectory directory;
         private readonly MetadataProvider metadataProvider;
 
-        public AvaloniaXamlLoader()
+        public AvaloniaXamlLoaderV2()
         {
             metadataProvider = new MetadataProvider();
             directory = GetTypeDirectory();
@@ -48,7 +46,8 @@
             var cons = GetConstructionNode(xaml);
             var namescopeAnnotator = new NamescopeAnnotator(contructionContext.MetadataProvider);
             var trackingContext = new BuildContext(namescopeAnnotator, new AmbientRegistrator(), new AvaloniaLifeCycleSignaler());
-            return new ConstructionResult(objectBuilder.Create(cons, intance, trackingContext), namescopeAnnotator);
+            var instance = objectBuilder.Create(cons, intance, trackingContext);
+            return new ConstructionResult(instance, namescopeAnnotator);
         }
 
         private TypeDirectory GetTypeDirectory()

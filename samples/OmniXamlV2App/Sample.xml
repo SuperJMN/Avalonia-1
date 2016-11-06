@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 
-<Window xmlns="https://github.com/avaloniaui" Width="600" Height="400" >
+<Window xmlns="https://github.com/avaloniaui" xmlns:x="special" Width="600" Height="400" >
   <!--<Window.Title>
     <BindingExtension Path="Title" />
   </Window.Title>-->
@@ -14,9 +14,14 @@
       <Menu>
         <MenuItem Header="Archivo" Items="{Binding Path=Items}" />
       </Menu>
-      <Button>
+      <Button x:Name="MyButton">
         <Button.Content>
           <BindingExtension Path="Title" />
+        </Button.Content>
+      </Button>
+      <Button>
+        <Button.Content>
+          <BindingExtension Path="#MyButton.Content" />
         </Button.Content>
       </Button>
 

@@ -3,12 +3,13 @@
 
 using System;
 using System.Collections.Generic;
-using System.Runtime.CompilerServices;
 using Avalonia.Controls;
 using Avalonia.Data;
 
 namespace Avalonia.Markup.Xaml.Data
 {
+    using System.Runtime.CompilerServices;
+
     /// <summary>
     /// Provides delayed bindings for controls.
     /// </summary>
