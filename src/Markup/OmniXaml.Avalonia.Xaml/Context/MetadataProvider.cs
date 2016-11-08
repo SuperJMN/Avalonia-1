@@ -14,20 +14,18 @@
     {
         public Metadata Get(Type type)
         {
-            var isAssignable = type.IsAssignable(new[] { typeof(INameScope) });
-
             return new Metadata
             {
                 ContentProperty = GetContentProperty(type),
                 FragmentLoaderInfo = GetFragmentLoaderInfo(type),
                 RuntimePropertyName = GetNameProperty(type),
-                IsNamescope = isAssignable,
+                IsNamescope = type.IsAssignableFrom(typeof(INameScope)),
             };
         }       
 
         private string GetNameProperty(Type type)
         {
-            if (type.IsAssignable(new[] {typeof(IControl)}))
+            if (type.IsAssignableFrom(new[] {typeof(IControl)}))
             {
                 return nameof(IControl.Name);
             }
@@ -37,7 +35,7 @@
 
         private FragmentLoaderInfo GetFragmentLoaderInfo(Type type)
         {
-            if (type.IsAssignable(new[] {typeof(IDataTemplate)}))
+            if (type.IsAssignableFrom(typeof(IDataTemplate)))
             {
                 return new FragmentLoaderInfo
                 {
