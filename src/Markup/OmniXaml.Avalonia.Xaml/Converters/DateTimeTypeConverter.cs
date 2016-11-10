@@ -5,7 +5,7 @@
 
     public class DateTimeTypeConverter : ITypeConverter
     {
-        public object ConvertFrom(ValueContext context, CultureInfo culture, object value)
+        public object ConvertFrom(ConverterValueContext context, CultureInfo culture, object value)
         {
             if (culture == null)
             {
@@ -22,7 +22,7 @@
             return d;
         }
 
-        public object ConvertTo(ValueContext context, CultureInfo culture, object value, Type destinationType)
+        public object ConvertTo(ConverterValueContext context, CultureInfo culture, object value, Type destinationType)
         {
             if (destinationType == null)
             {
@@ -44,12 +44,12 @@
             return d.Value.ToString(dateTimeFormatInfo.ShortDatePattern, culture);
         }
 
-        public bool CanConvertTo(ValueContext context, Type destinationType)
+        public bool CanConvertTo(ConverterValueContext context, Type destinationType)
         {
             return destinationType == typeof(string);
         }
 
-        public bool CanConvertFrom(ValueContext context, Type sourceType)
+        public bool CanConvertFrom(ConverterValueContext context, Type sourceType)
         {
             return sourceType == typeof(string);
         }

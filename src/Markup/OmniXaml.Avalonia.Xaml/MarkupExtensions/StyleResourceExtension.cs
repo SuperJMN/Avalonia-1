@@ -13,7 +13,7 @@ namespace OmniXaml.Avalonia.MarkupExtensions
             Name = name;
         }
 
-        public object GetValue(ValueContext extensionContext)
+        public object GetValue(ExtensionValueContext extensionContext)
         {
             return new StyleResourceBinding(this.Name);
         }

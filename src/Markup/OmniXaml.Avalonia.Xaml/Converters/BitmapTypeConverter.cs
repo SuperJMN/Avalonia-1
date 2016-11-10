@@ -12,38 +12,38 @@ namespace OmniXaml.Avalonia.Converters
 
     public class BitmapTypeConverter : ITypeConverter
     {
-        public bool CanConvertFrom(ValueContext context, Type sourceType)
+        public bool CanConvertFrom(ConverterValueContext context, Type sourceType)
         {
             return sourceType == typeof(string);
         }
 
-        public bool CanConvertTo(ValueContext context, Type destinationType)
+        public bool CanConvertTo(ConverterValueContext context, Type destinationType)
         {
             return false;
         }
 
-        public object ConvertFrom(ValueContext context, CultureInfo culture, object value)
+        public object ConvertFrom(ConverterValueContext context, CultureInfo culture, object value)
         {
-            var uri = new Uri((string)context.Assignment.Value, UriKind.RelativeOrAbsolute);
+            var uri = new Uri((string)context.Value, UriKind.RelativeOrAbsolute);
             var baseUri = GetBaseUri(context);
             var scheme = uri.IsAbsoluteUri ? uri.Scheme : "file";
 
             switch (scheme)
             {
                 case "file":
-                    return new Bitmap((string)context.Assignment.Value);
+                    return new Bitmap((string)context.Value);
                 default:
                     var assets = AvaloniaLocator.Current.GetService<IAssetLoader>();
                     return new Bitmap(assets.Open(uri, baseUri));
             }
         }
 
-        public object ConvertTo(ValueContext context, CultureInfo culture, object value, Type destinationType)
+        public object ConvertTo(ConverterValueContext context, CultureInfo culture, object value, Type destinationType)
         {
             throw new NotImplementedException();
         }
 
-        private Uri GetBaseUri(ValueContext context)
+        private Uri GetBaseUri(ConverterValueContext context)
         {
             object result;
             context.BuildContext.Bag.TryGetValue("Uri", out result);

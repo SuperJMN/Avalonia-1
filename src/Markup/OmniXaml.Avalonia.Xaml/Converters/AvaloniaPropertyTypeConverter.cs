@@ -13,17 +13,17 @@ namespace OmniXaml.Avalonia.Converters
 
     public class AvaloniaPropertyTypeConverter : ITypeConverter
     {
-        public bool CanConvertFrom(ValueContext context, Type sourceType)
+        public bool CanConvertFrom(ConverterValueContext context, Type sourceType)
         {
             return sourceType == typeof(string);
         }
 
-        public bool CanConvertTo(ValueContext context, Type destinationType)
+        public bool CanConvertTo(ConverterValueContext context, Type destinationType)
         {
             return false;
         }
 
-        public object ConvertFrom(ValueContext context, CultureInfo culture, object value)
+        public object ConvertFrom(ConverterValueContext context, CultureInfo culture, object value)
         {
             var s = (string)value;
 
@@ -68,7 +68,7 @@ namespace OmniXaml.Avalonia.Converters
             return property;
         }
 
-        public object ConvertTo(ValueContext context, CultureInfo culture, object value, Type destinationType)
+        public object ConvertTo(ConverterValueContext context, CultureInfo culture, object value, Type destinationType)
         {
             throw new NotImplementedException();
         }

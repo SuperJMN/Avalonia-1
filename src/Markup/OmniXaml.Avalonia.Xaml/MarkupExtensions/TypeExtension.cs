@@ -38,7 +38,7 @@ namespace OmniXaml.Avalonia.MarkupExtensions
             return typeDirectory.GetTypeByPrefix(tuple.Item1, tuple.Item2);
         }
 
-        public object GetValue(ValueContext markupExtensionContext)
+        public object GetValue(ExtensionValueContext markupExtensionContext)
         {
             if (Type != null)
             {

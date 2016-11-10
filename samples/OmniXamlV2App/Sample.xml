@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 
-<Window xmlns="https://github.com/avaloniaui" xmlns:x="special" Width="600" Height="400" Title="{Binding Path=Title}">
+<local:MyCustomWindow xmlns:local="using:AvaloniaApp;assembly=AvaloniaApp" xmlns="https://github.com/avaloniaui" xmlns:x="special" Width="600" Height="400" Title="{Binding Path=Title}" PointerPressed="OnPointerPressed">
   <Grid>
     <Grid.RowDefinitions>
       <RowDefinition Height="Auto" />
@@ -67,4 +67,4 @@
     </ListBox>
   </Grid>
 
-</Window>
+</local:MyCustomWindow>

@@ -8,6 +8,7 @@
     using global::Avalonia.Controls.Html;
     using MarkupExtensions;
     using Templates;
+    using Tests;
     using TypeLocation;
 
     public class AvaloniaXamlLoaderV2 : IXamlLoader
@@ -22,14 +23,13 @@
             directory = GetTypeDirectory();
 
             contructionContext = new ObjectBuilderContext(
-                new InstanceCreator(),
                 Registrator.GetSourceValueConverter(directory),
                 metadataProvider);
         }
 
         public ConstructionResult Load(string xaml)
         {
-            var objectBuilder = new AvaloniaObjectBuilder(contructionContext, (assignment, context, tc) => new ValueContext(assignment, context, directory, tc));
+            var objectBuilder = new AvaloniaObjectBuilder(new InstanceCreator(contructionContext.SourceValueConverter, contructionContext, directory), contructionContext, new ContextFactory(directory, contructionContext));
             var cons = GetConstructionNode(xaml);
             var namescopeAnnotator = new NamescopeAnnotator(contructionContext.MetadataProvider);
             var trackingContext = new BuildContext(namescopeAnnotator, new AmbientRegistrator(), new AvaloniaLifeCycleSignaler());
@@ -39,7 +39,7 @@
 
         public ConstructionResult Load(string xaml, object intance)
         {
-            var objectBuilder = new AvaloniaObjectBuilder(contructionContext, (assignment, context, tc) => new ValueContext(assignment, context, directory, tc));
+            var objectBuilder = new AvaloniaObjectBuilder(new InstanceCreator(contructionContext.SourceValueConverter, contructionContext, directory), contructionContext, new ContextFactory(directory, contructionContext));
             var cons = GetConstructionNode(xaml);
             var namescopeAnnotator = new NamescopeAnnotator(contructionContext.MetadataProvider);
             var trackingContext = new BuildContext(namescopeAnnotator, new AmbientRegistrator(), new AvaloniaLifeCycleSignaler());

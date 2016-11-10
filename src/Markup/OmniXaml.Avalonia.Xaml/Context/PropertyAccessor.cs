@@ -17,9 +17,9 @@ namespace OmniXaml.Avalonia.Context
     {
         public static void SetValue(
             object instance,
-            Property property,
+            Member property,
             object value,
-            ValueContext context)
+            ConverterValueContext context)
         {
             var avaloniaProperty = FindAvaloniaProperty(instance, property);
 
@@ -31,26 +31,24 @@ namespace OmniXaml.Avalonia.Context
             {
                 ((AvaloniaObject)instance).SetValue(avaloniaProperty, value);
             }
-            else if (instance is Setter && property.PropertyName == "Value")
+            else if (instance is Setter && property.MemberName == "Value")
             {
                 // TODO: Make this more generic somehow.
                 var setter = (Setter)instance;
                 var targetType = setter.Property.PropertyType;
 
-                var assigment = new Assignment(setter, Property.RegularProperty<Setter>(s => setter.Value), value);
-                var valueContext = new ValueContext(assigment, context.ObjectBuilderContext, context.TypeDirectory, context.BuildContext);
-                var converted = context.ObjectBuilderContext.SourceValueConverter.GetCompatibleValue(valueContext, targetType);
+                var valueContext = new ConverterValueContext(targetType, value, context.ObjectBuilderContext, context.TypeDirectory, context.BuildContext);
+                var converted = context.ObjectBuilderContext.SourceValueConverter.GetCompatibleValue(valueContext);
 
-                var finalAssigment = assigment.ReplaceValue(converted);
-                finalAssigment.ExecuteAssignment();
+                property.SetValue(instance, converted);
             }
             else
             {
-                context.Assignment.ExecuteAssignment();
+                property.SetValue(instance, value);
             }
         }
 
-        private static AvaloniaProperty FindAvaloniaProperty(object instance, Property member)
+        private static AvaloniaProperty FindAvaloniaProperty(object instance, Member member)
         {
             var registry = AvaloniaPropertyRegistry.Instance;
             var attached = member as AttachedProperty;
@@ -63,7 +61,7 @@ namespace OmniXaml.Avalonia.Context
 
             if (attached == null)
             {
-                return registry.FindRegistered(target, member.PropertyName);
+                return registry.FindRegistered(target, member.MemberName);
             }
             else
             {
@@ -73,30 +71,30 @@ namespace OmniXaml.Avalonia.Context
 
                 return registry
                     .GetRegistered(target)
-                    .FirstOrDefault(x => x.OwnerType == ownerType && x.Name == attached.PropertyName);
+                    .FirstOrDefault(x => x.OwnerType == ownerType && x.Name == attached.MemberName);
             }
         }
 
         private static void SetBinding(
             object instance,
-            Property member,
+            Member member,
             AvaloniaProperty property,
-            ValueContext context,
+            ConverterValueContext context,
             IBinding binding)
         {
             if (!(AssignBinding(instance, member, binding) ||
                   ApplyBinding(instance, property, context, binding)))
             {
                 throw new InvalidOperationException(
-                    $"Cannot assign to '{member.PropertyName}' on '{instance.GetType()}");
+                    $"Cannot assign to '{member.MemberName}' on '{instance.GetType()}");
             }
         }
 
-        private static bool AssignBinding(object instance, Property member, IBinding binding)
+        private static bool AssignBinding(object instance, Member member, IBinding binding)
         {
             var property = instance.GetType()
                 .GetRuntimeProperties()
-                .FirstOrDefault(x => x.Name == member.PropertyName);
+                .FirstOrDefault(x => x.Name == member.MemberName);
 
             if (property?.GetCustomAttribute<AssignBindingAttribute>() != null)
             {
@@ -110,7 +108,7 @@ namespace OmniXaml.Avalonia.Context
         private static bool ApplyBinding(
             object instance,
             AvaloniaProperty property,
-            ValueContext context,
+            ConverterValueContext context,
             IBinding binding)
         {
             if (property == null)
