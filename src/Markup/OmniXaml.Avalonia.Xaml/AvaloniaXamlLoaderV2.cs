@@ -6,7 +6,9 @@
     using global::Avalonia;
     using global::Avalonia.Controls;
     using global::Avalonia.Controls.Html;
+    using global::Avalonia.Styling;
     using MarkupExtensions;
+    using Styling;
     using Templates;
     using Tests;
     using TypeLocation;
@@ -29,7 +31,10 @@
 
         public ConstructionResult Load(string xaml)
         {
-            var objectBuilder = new AvaloniaObjectBuilder(new InstanceCreator(contructionContext.SourceValueConverter, contructionContext, directory), contructionContext, new ContextFactory(directory, contructionContext));
+            var objectBuilder = new AvaloniaObjectBuilder(
+                new InstanceCreator(contructionContext.SourceValueConverter, contructionContext, directory),
+                contructionContext,
+                new ContextFactory(directory, contructionContext));
             var cons = GetConstructionNode(xaml);
             var namescopeAnnotator = new NamescopeAnnotator(contructionContext.MetadataProvider);
             var trackingContext = new BuildContext(namescopeAnnotator, new AmbientRegistrator(), new AvaloniaLifeCycleSignaler());
@@ -39,7 +44,10 @@
 
         public ConstructionResult Load(string xaml, object intance)
         {
-            var objectBuilder = new AvaloniaObjectBuilder(new InstanceCreator(contructionContext.SourceValueConverter, contructionContext, directory), contructionContext, new ContextFactory(directory, contructionContext));
+            var objectBuilder = new AvaloniaObjectBuilder(
+                new InstanceCreator(contructionContext.SourceValueConverter, contructionContext, directory),
+                contructionContext,
+                new ContextFactory(directory, contructionContext));
             var cons = GetConstructionNode(xaml);
             var namescopeAnnotator = new NamescopeAnnotator(contructionContext.MetadataProvider);
             var trackingContext = new BuildContext(namescopeAnnotator, new AmbientRegistrator(), new AvaloniaLifeCycleSignaler());
@@ -61,16 +69,22 @@
                     .With(
                         Route
                             .Assembly(ass)
-                            .WithNamespaces("Avalonia.Controls", typeof(Application).Namespace),
+                            .WithNamespaces("Avalonia.Controls", typeof(Application).Namespace, "Avalonia.Controls.Presenters"),
                         Route
                             .Assembly(typeof(DataTemplate).GetTypeInfo().Assembly)
                             .WithNamespaces(
                                 typeof(DataTemplate).Namespace,
                                 typeof(BindingExtension).Namespace),
                         Route.Assembly(htmlControl.Assembly)
-                            .WithNamespaces(htmlControl.Namespace)));
-                        //Route.Assembly(typeof(StyleInclude).GetTypeInfo().Assembly)
-                        //    .WithNamespaces(typeof(StyleInclude).Namespace)));
+                            .WithNamespaces(htmlControl.Namespace),
+                        Route.Assembly(typeof(StyleInclude).GetTypeInfo().Assembly)
+                            .WithNamespaces(typeof(StyleInclude).Namespace),
+                        Route.Assembly(typeof(Styles).GetTypeInfo().Assembly).WithNamespaces(typeof(Styles).Namespace)
+                    ));
+
+
+            //Route.Assembly(typeof(StyleInclude).GetTypeInfo().Assembly)
+            //    .WithNamespaces(typeof(StyleInclude).Namespace)));
 
 
             typeDirectory.RegisterPrefix(new PrefixRegistration(string.Empty, "https://github.com/avaloniaui"));
@@ -83,6 +97,6 @@
             var sut = new XamlToTreeParser(directory, metadataProvider, new[] {new InlineParser(directory)});
             var tree = sut.Parse(xaml);
             return tree;
-        }       
+        }
     }
 }

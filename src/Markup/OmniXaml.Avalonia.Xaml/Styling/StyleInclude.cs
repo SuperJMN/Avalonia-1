@@ -1,20 +1,22 @@
 // Copyright (c) The Avalonia Project. All rights reserved.
 // Licensed under the MIT license. See licence.md file in the project root for full license information.
 
-using System;
-using Avalonia.Styling;
-
-namespace Avalonia.Markup.Xaml.Styling
+namespace OmniXaml.Avalonia.Styling
 {
-    using OmniXaml.Avalonia;
+    using System;
+    using System.IO;
+    using Avalonia;
+    using global::Avalonia;
+    using global::Avalonia.Platform;
+    using global::Avalonia.Styling;
 
     /// <summary>
     /// Includes a style from a URL.
     /// </summary>
     public class StyleInclude : IStyle
     {
-        private Uri _baseUri;
-        private IStyle _loaded;
+        private Uri baseUri;
+        private IStyle loaded;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="StyleInclude"/> class.
@@ -24,7 +26,6 @@ namespace Avalonia.Markup.Xaml.Styling
             // StyleInclude will usually be loaded from XAML and its URI can be relative to the
             // XAML file that its included in, so store the current XAML file's URI if any as
             // a base URI.
-            //_baseUri = AvaloniaXamlLoader.UriContext;
         }
 
         /// <summary>
@@ -39,13 +40,19 @@ namespace Avalonia.Markup.Xaml.Styling
         {
             get
             {
-                if (_loaded == null)
+                if (loaded == null)
                 {
-                    var loader = new AvaloniaXamlLoader();
-                    _loaded = (IStyle)loader.Load(Source, _baseUri);
+                    var loader = new AvaloniaXamlLoaderV2();
+                    
+                    var assetLoader = AvaloniaLocator.Current.GetService<IAssetLoader>();
+                    using (var stream = new StreamReader(assetLoader.Open(Source)))
+                    {
+                        var xaml = stream.ReadToEnd();
+                        loaded = (IStyle)loader.Load(xaml).Instance;
+                    }                        
                 }
 
-                return _loaded;
+                return loaded;
             }
         }
 

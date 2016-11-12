@@ -4,29 +4,31 @@
 using System;
 using System.Globalization;
 
-using Avalonia.Markup.Xaml.Parsers;
-
 namespace Avalonia.Markup.Xaml.Converters
 {
+    using OmniXaml;
+    using OmniXaml.Avalonia.Converters;
+    using OmniXaml.Avalonia.Parsers;
+
     public class SelectorTypeConverter : ITypeConverter
     {
-        public bool CanConvertFrom(IValueContext context, Type sourceType)
+        public bool CanConvertFrom(ConverterValueContext context, Type sourceType)
         {
             return sourceType == typeof(string);
         }
 
-        public bool CanConvertTo(IValueContext context, Type destinationType)
+        public bool CanConvertTo(ConverterValueContext context, Type destinationType)
         {
             return false;
         }
 
-        public object ConvertFrom(IValueContext context, CultureInfo culture, object value)
+        public object ConvertFrom(ConverterValueContext context, CultureInfo culture, object value)
         {
-            var parser = new SelectorParser((t, ns) => context.TypeRepository.GetByPrefix(ns ?? "", t).UnderlyingType);
+            var parser = new SelectorParser((t, ns) => context.TypeDirectory.GetTypeByPrefix(ns ?? "", t));
             return parser.Parse((string)value);
         }
 
-        public object ConvertTo(IValueContext context, CultureInfo culture, object value, Type destinationType)
+        public object ConvertTo(ConverterValueContext context, CultureInfo culture, object value, Type destinationType)
         {
             throw new NotImplementedException();
         }

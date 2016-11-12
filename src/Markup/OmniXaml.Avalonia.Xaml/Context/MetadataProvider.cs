@@ -5,6 +5,7 @@
     using System.Reflection;
     using global::Avalonia.Controls;
     using global::Avalonia.Controls.Templates;
+    using global::Avalonia.Metadata;
     using global::Avalonia.Platform;
     using Glass.Core;
     using Metadata;
@@ -20,8 +21,25 @@
                 FragmentLoaderInfo = GetFragmentLoaderInfo(type),
                 RuntimePropertyName = GetNameProperty(type),
                 IsNamescope = type.IsAssignableFrom(typeof(INameScope)),
+                PropertyDependencies = GetDependencyRegistrations(type),
             };
-        }       
+        }
+
+
+        private DependencyRegistrations GetDependencyRegistrations(Type type)
+        {
+            var regs = type.GetAttributesFromProperties<DependsOnAttribute, DependencyRegistration>(GetDependencyRegistration);
+            return new DependencyRegistrations(regs);
+        }
+
+        private DependencyRegistration GetDependencyRegistration(PropertyInfo info, DependsOnAttribute attribute)
+        {
+            return new DependencyRegistration
+            {
+                PropertyName = info.Name,
+                DependsOn = attribute.Name,                
+            };
+        }
 
         private string GetNameProperty(Type type)
         {

@@ -20,6 +20,13 @@ namespace OmniXaml.Avalonia.Converters
 
         public object ConvertFrom(ConverterValueContext context, CultureInfo culture, object value)
         {
+            object baseUri;
+            if (context.BuildContext.Bag.TryGetValue("Uri", out baseUri))
+            {
+                var b = (string) baseUri;
+                return new Uri(new Uri(b, UriKind.Absolute), new Uri((string)value));
+            }
+
             return new Uri((string)value);
         }
 
