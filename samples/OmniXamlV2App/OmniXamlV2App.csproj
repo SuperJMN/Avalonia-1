@@ -168,7 +168,7 @@
       <Name>OmniXaml.Avalonia</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\src\Markup\OmniXAMLv1\OmniXamlv1.csproj">
-      <Project>{0D9CC1DE-84C3-40D7-9CC5-B7751E0B25D1}</Project>
+      <Project>{0d9cc1de-84c3-40d7-9cc5-b7751e0b25d1}</Project>
       <Name>OmniXamlv1</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\src\Markup\OmniXAMLv2\Glass.Core\Glass.Core.csproj">

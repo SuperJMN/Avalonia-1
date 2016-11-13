@@ -4,8 +4,11 @@
     using Ambient;
     using Context;
     using global::Avalonia;
+    using global::Avalonia.Animation;
     using global::Avalonia.Controls;
     using global::Avalonia.Controls.Html;
+    using global::Avalonia.Input;
+    using global::Avalonia.Media;
     using global::Avalonia.Styling;
     using MarkupExtensions;
     using Styling;
@@ -69,7 +72,16 @@
                     .With(
                         Route
                             .Assembly(ass)
-                            .WithNamespaces("Avalonia.Controls", typeof(Application).Namespace, "Avalonia.Controls.Presenters"),
+                            .WithNamespaces("Avalonia.Controls", typeof(Application).Namespace, "Avalonia.Controls.Presenters", "Avalonia.Controls.Shapes", "Avalonia.Controls.Primitives", "Avalonia.Controls.Embedding"),
+                        Route
+                            .Assembly(typeof(Color).GetTypeInfo().Assembly)
+                            .WithNamespaces(typeof(Color).Namespace),
+                        Route
+                            .Assembly(typeof(KeyboardNavigation).GetTypeInfo().Assembly)
+                            .WithNamespaces(typeof(KeyboardNavigation).Namespace),
+                        Route
+                            .Assembly(typeof(CrossFade).GetTypeInfo().Assembly)
+                            .WithNamespaces(typeof(CrossFade).Namespace),
                         Route
                             .Assembly(typeof(DataTemplate).GetTypeInfo().Assembly)
                             .WithNamespaces(

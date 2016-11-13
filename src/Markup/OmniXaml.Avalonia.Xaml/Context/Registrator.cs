@@ -27,6 +27,7 @@
             sourceValueConverter.Add(typeof(Selector), context => new SelectorTypeConverter().ConvertFrom(context, CultureInfo.CurrentCulture, context.Value));
             sourceValueConverter.Add(typeof(MemberSelector), context => new MemberSelectorTypeConverter().ConvertFrom(context, CultureInfo.CurrentCulture, context.Value));
             sourceValueConverter.Add(typeof(AvaloniaProperty), context => new AvaloniaPropertyTypeConverter().ConvertFrom(context, CultureInfo.CurrentCulture, context.Value));
+            sourceValueConverter.Add(typeof(TimeSpan), context => new TimeSpanTypeConverter().ConvertFrom(context, CultureInfo.CurrentCulture, context.Value));
             return sourceValueConverter;
         }
     }

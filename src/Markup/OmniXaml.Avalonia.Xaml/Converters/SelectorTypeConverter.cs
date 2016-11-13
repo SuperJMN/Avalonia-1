@@ -24,7 +24,19 @@ namespace Avalonia.Markup.Xaml.Converters
 
         public object ConvertFrom(ConverterValueContext context, CultureInfo culture, object value)
         {
-            var parser = new SelectorParser((t, ns) => context.TypeDirectory.GetTypeByPrefix(ns ?? "", t));
+            var parser = new SelectorParser((t, prefix) =>
+            {
+                var actualPrefix = prefix ?? "";
+                var typeByPrefix = context.TypeDirectory.GetTypeByPrefix(actualPrefix, t);
+
+                if (typeByPrefix == null)
+                {
+                    throw new Exception($@"Cannot find the type {t} with the prefix ""{actualPrefix}""");
+                }
+
+                return typeByPrefix;
+            });
+
             return parser.Parse((string)value);
         }
 

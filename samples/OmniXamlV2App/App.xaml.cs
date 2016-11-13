@@ -1,11 +1,14 @@
 ﻿namespace AvaloniaApp
 {
+    using System;
     using System.IO;
     using System.Linq;
     using Avalonia;
     using Avalonia.Controls;
     using Avalonia.Diagnostics;
     using Avalonia.Logging.Serilog;
+    using Avalonia.Markup.Xaml;
+    using Avalonia.Platform;
     using OmniXaml.Avalonia;
     using OmniXaml.Avalonia.Context;
     using Serilog;
@@ -15,7 +18,16 @@
 
         public override void Initialize()
         {
-            Avalonia.Markup.Xaml.AvaloniaXamlLoader.Load(this);
+            new AvaloniaXamlLoader().Load(new Uri("resm:AvaloniaApp.App.xaml?assembly=AvaloniaApp"), rootInstance: this);
+
+            //var loader = AvaloniaLocator.Current.GetService<IAssetLoader>();
+
+            //using (var stream = new StreamReader(loader.Open(new Uri("resm:AvaloniaApp.App.xaml?assembly=AvaloniaApp"))))
+            //{
+            //    var xaml = stream.ReadToEnd();
+            //    new AvaloniaXamlLoaderV2().Load(xaml, this);
+            //}
+            
             base.Initialize();
         }
 
