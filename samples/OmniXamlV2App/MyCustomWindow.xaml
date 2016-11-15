@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<Window xmlns="https://github.com/avaloniaui" Title="Test Window">
+  <StackPanel>
+    <Button>Hi</Button>
+    <Button>How</Button>
+    <TextBox Text="Are you?" />
+  </StackPanel>
+</Window>
