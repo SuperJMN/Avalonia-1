@@ -1,5 +1,5 @@
 <Styles xmlns="https://github.com/avaloniaui"
-        xmlns:sys="clr-namespace:System;assembly=mscorlib">
+        xmlns:sys="using:System;assembly=mscorlib">
   
   <Style Selector="MenuItem">
     <Setter Property="BorderThickness" Value="1"/>

@@ -18,6 +18,11 @@ namespace Avalonia.Media.Mutable
                 o => o.Color,
                 (o, v) => o.Color = v);
 
+        public SolidColorBrush(string color)
+        {
+            Color = Color.Parse(color);
+        }
+
         /// <summary>
         /// Gets the color of the brush.
         /// </summary>

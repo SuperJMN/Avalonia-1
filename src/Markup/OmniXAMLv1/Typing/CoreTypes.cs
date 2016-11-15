@@ -8,7 +8,7 @@
     [SuppressMessage("ReSharper", "InconsistentNaming")]
     public static class CoreTypes
     {
-        public static readonly string SpecialNamespace = "http://schemas.microsoft.com/winfx/2006/xaml";
+        public static readonly string SpecialNamespace = "special";
 
         private static readonly Directive sItems = new Directive("_Items", XamlType.CreateForBuiltInType(typeof(List<object>)));
         private static readonly Directive sInitialization = new Directive("_Initialization");

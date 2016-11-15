@@ -10,7 +10,7 @@ namespace OmniXamlV1.Typing
 
     public class NamespaceRegistry : INamespaceRegistry
     {
-        private const string ClrNamespace = "clr-namespace:";
+        private const string ClrNamespace = "using:";
         private readonly IDictionary<string, string> registeredPrefixes = new Dictionary<string, string>();
         private readonly ISet<XamlNamespace> xamlNamespaces = new HashSet<XamlNamespace>();
         private readonly IDictionary<string, ClrNamespace> clrNamespaces = new Dictionary<string, ClrNamespace>();

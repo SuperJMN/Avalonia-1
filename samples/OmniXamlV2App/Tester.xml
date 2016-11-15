@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<Window xmlns="https://github.com/avaloniaui" Title="Hi boy" >
+  <Button>Hola</Button>
+</Window>

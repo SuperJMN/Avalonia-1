@@ -20,7 +20,7 @@ namespace Avalonia.Markup.Xaml.Context
 
     public class AvaloniaNamespaceRegistry : INamespaceRegistry
     {
-        private const string ClrNamespace = "clr-namespace:";
+        private const string ClrNamespace = "using:";
         private const string AvaloniaNs = "https://github.com/avaloniaui";
 
         private static readonly IEnumerable<Assembly> ForcedAssemblies = new[]

@@ -2,7 +2,6 @@
 {
     using System;
     using System.IO;
-    using System.Linq;
     using Avalonia;
     using Avalonia.Controls;
     using Avalonia.Diagnostics;
@@ -10,7 +9,6 @@
     using Avalonia.Markup.Xaml;
     using Avalonia.Platform;
     using OmniXaml.Avalonia;
-    using OmniXaml.Avalonia.Context;
     using Serilog;
 
     class App : Application
@@ -18,7 +16,7 @@
 
         public override void Initialize()
         {
-            new AvaloniaXamlLoader().Load(new Uri("resm:AvaloniaApp.App.xaml?assembly=AvaloniaApp"), rootInstance: this);
+            AvaloniaXamlLoader.Load(this);
 
             //var loader = AvaloniaLocator.Current.GetService<IAssetLoader>();
 
@@ -27,7 +25,7 @@
             //    var xaml = stream.ReadToEnd();
             //    new AvaloniaXamlLoaderV2().Load(xaml, this);
             //}
-            
+
             base.Initialize();
         }
 
@@ -39,7 +37,7 @@
                 .UseDirect2D1()
                 .SetupWithoutStarting();
 
-            var window = (Window)new AvaloniaXamlLoaderV2().Load(File.ReadAllText("Sample.xml")).Instance;
+            var window = (Window)new AvaloniaXamlLoaderV2().Load(File.ReadAllText("Tester.xml")).Instance;
             window.DataContext = new MainViewModel();
 
             //var grid = (Grid)window.Content;

@@ -92,12 +92,14 @@
                         Route.Assembly(typeof(StyleInclude).GetTypeInfo().Assembly)
                             .WithNamespaces(typeof(StyleInclude).Namespace),
                         Route.Assembly(typeof(Styles).GetTypeInfo().Assembly).WithNamespaces(typeof(Styles).Namespace)
-                    ));
+                    )
+                );
 
-
-            //Route.Assembly(typeof(StyleInclude).GetTypeInfo().Assembly)
-            //    .WithNamespaces(typeof(StyleInclude).Namespace)));
-
+            typeDirectory.AddNamespace(
+                XamlNamespace.Map("https://github.com/avaloniaui/mutable")
+                    .With(
+                        Route.Assembly(typeof(global::Avalonia.Media.Mutable.SolidColorBrush).GetTypeInfo().Assembly)
+                            .WithNamespaces(typeof(global::Avalonia.Media.Mutable.SolidColorBrush).Namespace)));
 
             typeDirectory.RegisterPrefix(new PrefixRegistration(string.Empty, "https://github.com/avaloniaui"));
 

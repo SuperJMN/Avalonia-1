@@ -2,10 +2,7 @@
 
 <local:MyCustomWindow xmlns:local="using:AvaloniaApp;assembly=AvaloniaApp" xmlns="https://github.com/avaloniaui"
                       xmlns:x="special" Width="600" Height="400" Title="{Binding Path=Title}"
-                      PointerPressed="OnPointerPressed">
-  <!--<local:MyCustomWindow.Styles>
-    <StyleInclude Source="resm:Avalonia.Themes.Default.EmbeddableControlRoot.xaml?assembly=Avalonia.Themes.Default" />
-  </local:MyCustomWindow.Styles>-->
+                      PointerPressed="OnPointerPressed"> 
   <Grid>
     <Grid.RowDefinitions>
       <RowDefinition Height="Auto" />

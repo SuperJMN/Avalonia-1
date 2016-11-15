@@ -13,7 +13,7 @@
             this.contextFactory = contextFactory;
         }
 
-        protected override void PerformAssigment(Assignment assignmentTarget, BuildContext trackingContext)
+        protected override void PerformAssigment(Assignment assignmentTarget, BuildContext trackingContext, string key)
         {
             var compatibleValue = ToCompatibleValue(assignmentTarget, trackingContext);
 
@@ -25,7 +25,7 @@
             {
                 var context = this.contextFactory.CreateConverterContext(assignmentTarget.Member.MemberType, compatibleValue, trackingContext);
                 PropertyAccessor.SetValue(compatibleValue.Instance, compatibleValue.Member, compatibleValue.Value, context);
-            }
+            }            
         }
     }
 }
