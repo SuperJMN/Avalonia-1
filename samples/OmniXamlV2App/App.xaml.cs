@@ -37,17 +37,17 @@
             window.DataContext = new MainViewModel();
 
             window.Show();
-            AttachDevTools(window);
+            //AttachDevTools(window);
 
             Current.Run(window);
         }
 
-        public static void AttachDevTools(Window window)
-        {
-#if DEBUG
-            DevTools.Attach(window);
-#endif
-        }
+//        public static void AttachDevTools(Window window)
+//        {
+//#if DEBUG
+//            DevTools.Attach(window);
+//#endif
+//        }
 
         private static void InitializeLogging()
         {
