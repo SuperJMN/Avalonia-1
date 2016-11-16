@@ -1,13 +1,16 @@
 ﻿namespace OmniXaml.Avalonia
 {
+    using System;
     using System.Reflection;
     using Ambient;
     using Context;
+    using Data;
     using global::Avalonia;
     using global::Avalonia.Animation;
     using global::Avalonia.Controls;
     using global::Avalonia.Controls.Html;
     using global::Avalonia.Input;
+    using global::Avalonia.Markup;
     using global::Avalonia.Media;
     using global::Avalonia.Styling;
     using MarkupExtensions;
@@ -62,38 +65,51 @@
         {
             var typeDirectory = new TypeDirectory();
 
-            var type = typeof(Window);
-            var ass = type.GetTypeInfo().Assembly;
-            var htmlControl = typeof(HtmlLabel).GetTypeInfo();
-
             typeDirectory.AddNamespace(
                 XamlNamespace
                     .Map("https://github.com/avaloniaui")
                     .With(
                         Route
-                            .Assembly(ass)
-                            .WithNamespaces("Avalonia.Controls", typeof(Application).Namespace, "Avalonia.Controls.Presenters", "Avalonia.Controls.Shapes", "Avalonia.Controls.Primitives", "Avalonia.Controls.Embedding"),
+                            .Assembly(typeof(Window).GetTypeInfo().Assembly)
+                            .WithNamespaces(
+                                "Avalonia.Controls",
+                                typeof(Application).Namespace,
+                                "Avalonia.Controls.Presenters",
+                                "Avalonia.Controls.Shapes",
+                                "Avalonia.Controls.Primitives",
+                                "Avalonia.Controls.Embedding"),
+
                         Route
                             .Assembly(typeof(Color).GetTypeInfo().Assembly)
                             .WithNamespaces(typeof(Color).Namespace),
+
                         Route
                             .Assembly(typeof(KeyboardNavigation).GetTypeInfo().Assembly)
                             .WithNamespaces(typeof(KeyboardNavigation).Namespace),
+
                         Route
                             .Assembly(typeof(CrossFade).GetTypeInfo().Assembly)
                             .WithNamespaces(typeof(CrossFade).Namespace),
+
                         Route
                             .Assembly(typeof(DataTemplate).GetTypeInfo().Assembly)
+                            .WithNamespaces(typeof(DataTemplate).Namespace),
+
+                        Route.Assembly(typeof(MultiBinding).GetTypeInfo().Assembly)
                             .WithNamespaces(
-                                typeof(DataTemplate).Namespace,
-                                typeof(BindingExtension).Namespace),
-                        Route.Assembly(htmlControl.Assembly)
-                            .WithNamespaces(htmlControl.Namespace),
-                        Route.Assembly(typeof(StyleInclude).GetTypeInfo().Assembly)
-                            .WithNamespaces(typeof(StyleInclude).Namespace),
-                        Route.Assembly(typeof(Styles).GetTypeInfo().Assembly).WithNamespaces(typeof(Styles).Namespace)
+                                typeof(MultiBinding).GetTypeInfo().Namespace, "OmniXaml.Avalonia.Data", "OmniXaml.Avalonia.MarkupExtensions", typeof(StyleInclude).Namespace)
+                                ,
+
+                        Route.Assembly(typeof(HtmlLabel).GetTypeInfo().Assembly)
+                            .WithNamespaces(typeof(HtmlLabel).GetTypeInfo().Namespace),
+
+                        Route.Assembly(typeof(BoolConverters).GetTypeInfo().Assembly)
+                            .WithNamespaces(typeof(BoolConverters).GetTypeInfo().Namespace),
+
+                        Route.Assembly(typeof(Styles).GetTypeInfo().Assembly)
+                            .WithNamespaces(typeof(Styles).Namespace)
                     )
-                );
+            );
 
             typeDirectory.AddNamespace(
                 XamlNamespace.Map("https://github.com/avaloniaui/mutable")

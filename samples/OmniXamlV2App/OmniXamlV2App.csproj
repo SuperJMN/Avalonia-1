@@ -106,11 +106,6 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Sample.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\..\src\Avalonia.Animation\Avalonia.Animation.csproj">
       <Project>{D211E587-D8BC-45B9-95A4-F297C8FA5200}</Project>
       <Name>Avalonia.Animation</Name>
@@ -122,10 +117,6 @@
     <ProjectReference Include="..\..\src\Avalonia.Controls\Avalonia.Controls.csproj">
       <Project>{d2221c82-4a25-4583-9b43-d791e3f6820c}</Project>
       <Name>Avalonia.Controls</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\src\Avalonia.Diagnostics\Avalonia.Diagnostics.csproj">
-      <Project>{7062AE20-5DCC-4442-9645-8195BDECE63E}</Project>
-      <Name>Avalonia.Diagnostics</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\src\Avalonia.DotNetFrameworkRuntime\Avalonia.DotNetFrameworkRuntime.csproj">
       <Project>{4A1ABB09-9047-4BD5-A4AD-A055E52C5EE0}</Project>
@@ -159,17 +150,9 @@
       <Project>{3e10a5fa-e8da-48b1-ad44-6a5b6cb7750f}</Project>
       <Name>Avalonia.Themes.Default</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\src\Markup\Avalonia.Markup.Xaml\Avalonia.Markup.Xaml.csproj">
-      <Project>{3E53A01A-B331-47F3-B828-4A5717E77A24}</Project>
-      <Name>Avalonia.Markup.Xaml</Name>
-    </ProjectReference>
     <ProjectReference Include="..\..\src\Markup\OmniXaml.Avalonia.Xaml\OmniXaml.Avalonia.csproj">
       <Project>{fb8a5225-7584-49a4-8978-fa1861aa91b4}</Project>
       <Name>OmniXaml.Avalonia</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\src\Markup\OmniXAMLv1\OmniXamlv1.csproj">
-      <Project>{0d9cc1de-84c3-40d7-9cc5-b7751e0b25d1}</Project>
-      <Name>OmniXamlv1</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\src\Markup\OmniXAMLv2\Glass.Core\Glass.Core.csproj">
       <Project>{4aefcfcf-5514-44b1-acef-93d40528a0bc}</Project>
@@ -194,8 +177,9 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Tester.xml">
+    <None Include="MyCustomWindow.xaml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Generator>MSBuild:Compile</Generator>
     </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -19,11 +19,18 @@
 
             if (compatibleValue.Member.MemberType.IsCollection() && !(compatibleValue.Value is IBinding))
             {
-                Utils.UniversalAdd(compatibleValue.Member.GetValue(compatibleValue.Instance), compatibleValue.Value);
+                if (compatibleValue.Value.GetType().IsCollection())
+                {
+                    assignmentTarget.ExecuteAssignment();
+                }
+                else
+                {
+                    Utils.UniversalAdd(compatibleValue.Member.GetValue(compatibleValue.Instance), compatibleValue.Value);
+                }                
             }
             else
             {
-                var context = this.contextFactory.CreateConverterContext(assignmentTarget.Member.MemberType, compatibleValue, trackingContext);
+                var context = contextFactory.CreateConverterContext(assignmentTarget.Member.MemberType, compatibleValue, trackingContext);
                 PropertyAccessor.SetValue(compatibleValue.Instance, compatibleValue.Member, compatibleValue.Value, context);
             }            
         }

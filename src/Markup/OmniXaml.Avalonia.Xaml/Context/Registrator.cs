@@ -5,6 +5,7 @@
     using Converters;
     using global::Avalonia;
     using global::Avalonia.Controls;
+    using global::Avalonia.Controls.Templates;
     using global::Avalonia.Markup.Xaml.Converters;
     using global::Avalonia.Media;
     using global::Avalonia.Media.Imaging;
@@ -25,10 +26,13 @@
             sourceValueConverter.Add(typeof(IBitmap), context => new BitmapTypeConverter().ConvertFrom(context, CultureInfo.CurrentCulture, context.Value));
             sourceValueConverter.Add(typeof(Uri), context => new UriTypeConverter().ConvertFrom(context, CultureInfo.CurrentCulture, context.Value));
             sourceValueConverter.Add(typeof(Selector), context => new SelectorTypeConverter().ConvertFrom(context, CultureInfo.CurrentCulture, context.Value));
-            sourceValueConverter.Add(typeof(MemberSelector), context => new MemberSelectorTypeConverter().ConvertFrom(context, CultureInfo.CurrentCulture, context.Value));
+            sourceValueConverter.Add(typeof(IMemberSelector), context => new MemberSelectorTypeConverter().ConvertFrom(context, CultureInfo.CurrentCulture, context.Value));
             sourceValueConverter.Add(typeof(AvaloniaProperty), context => new AvaloniaPropertyTypeConverter().ConvertFrom(context, CultureInfo.CurrentCulture, context.Value));
             sourceValueConverter.Add(typeof(TimeSpan), context => new TimeSpanTypeConverter().ConvertFrom(context, CultureInfo.CurrentCulture, context.Value));
             sourceValueConverter.Add(typeof(IBrush), context => new BrushTypeConverter().ConvertFrom(context, CultureInfo.CurrentCulture, context.Value));
+            sourceValueConverter.Add(typeof(Geometry), context => new GeometryTypeConverter().ConvertFrom(context, CultureInfo.CurrentCulture, context.Value));
+
+
             return sourceValueConverter;
         }
     }

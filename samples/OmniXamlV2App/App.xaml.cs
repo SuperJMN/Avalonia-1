@@ -6,30 +6,26 @@
     using Avalonia.Controls;
     using Avalonia.Diagnostics;
     using Avalonia.Logging.Serilog;
-    using Avalonia.Markup.Xaml;
     using Avalonia.Platform;
     using OmniXaml.Avalonia;
     using Serilog;
 
     class App : Application
     {
+        private static readonly AvaloniaXamlLoaderV2 Loader = new AvaloniaXamlLoaderV2();
 
         public override void Initialize()
         {
-            AvaloniaXamlLoader.Load(this);
+            var assetLoader = AvaloniaLocator.Current.GetService<IAssetLoader>();
 
-            //var loader = AvaloniaLocator.Current.GetService<IAssetLoader>();
-
-            //using (var stream = new StreamReader(loader.Open(new Uri("resm:AvaloniaApp.App.xaml?assembly=AvaloniaApp"))))
-            //{
-            //    var xaml = stream.ReadToEnd();
-            //    new AvaloniaXamlLoaderV2().Load(xaml, this);
-            //}
-
-            base.Initialize();
+            using (var stream = new StreamReader(assetLoader.Open(new Uri("resm:AvaloniaApp.App.xaml?assembly=AvaloniaApp"))))
+            {
+                var xaml = stream.ReadToEnd();
+                Loader.Load(xaml, this);
+            }
         }
 
-        static void Main(string[] args)
+        static void Main()
         {
             InitializeLogging();
             AppBuilder.Configure<App>()
@@ -37,25 +33,21 @@
                 .UseDirect2D1()
                 .SetupWithoutStarting();
 
-            var window = (Window)new AvaloniaXamlLoaderV2().Load(File.ReadAllText("Tester.xml")).Instance;
+            var window = (Window)Loader.Load(File.ReadAllText("MyCustomWindow.xaml")).Instance;
             window.DataContext = new MainViewModel();
 
-            //var grid = (Grid)window.Content;
-            //var listBox = grid.Children.OfType<ListBox>().First();
-            //listBox.Items = new[] { "hola", "tío", "cómo estás?" };
-            //listBox.DataContext = new MainViewModel();
-
             window.Show();
+            //AttachDevTools(window);
 
             Current.Run(window);
         }
 
-        public static void AttachDevTools(Window window)
-        {
-#if DEBUG
-            DevTools.Attach(window);
-#endif
-        }
+//        public static void AttachDevTools(Window window)
+//        {
+//#if DEBUG
+//            DevTools.Attach(window);
+//#endif
+//        }
 
         private static void InitializeLogging()
         {

@@ -20,7 +20,7 @@
                 ContentProperty = GetContentProperty(type),
                 FragmentLoaderInfo = GetFragmentLoaderInfo(type),
                 RuntimePropertyName = GetNameProperty(type),
-                IsNamescope = type.IsAssignableFrom(typeof(INameScope), typeof(ITemplate<>)),
+                IsNamescope = type.IsAssignableFrom(typeof(INameScope), typeof(ITemplate<>)) || type.GetTypeInfo().ImplementedInterfaces.Any(type1 => type.Name.Contains("Template")),
                 PropertyDependencies = GetDependencyRegistrations(type),
             };
         }

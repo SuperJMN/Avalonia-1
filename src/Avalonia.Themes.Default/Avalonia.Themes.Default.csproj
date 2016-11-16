@@ -41,10 +41,6 @@
   </PropertyGroup>
   <ItemGroup>
     <!-- A reference to the entire .NET Framework is automatically included -->
-    <ProjectReference Include="..\Markup\Avalonia.Markup.Xaml\Avalonia.Markup.Xaml.csproj">
-      <Project>{3e53a01a-b331-47f3-b828-4a5717e77a24}</Project>
-      <Name>Avalonia.Markup.Xaml</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Avalonia.Animation\Avalonia.Animation.csproj">
       <Project>{D211E587-D8BC-45B9-95A4-F297C8FA5200}</Project>
       <Name>Avalonia.Animation</Name>
@@ -77,17 +73,10 @@
       <Project>{F1BAA01A-F176-4C6A-B39D-5B40BB1B148F}</Project>
       <Name>Avalonia.Styling</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Markup\OmniXAMLv1\OmniXamlv1.csproj">
-      <Project>{0D9CC1DE-84C3-40D7-9CC5-B7751E0B25D1}</Project>
-      <Name>OmniXamlv1</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="..\Shared\SharedAssemblyInfo.cs">
       <Link>Properties\SharedAssemblyInfo.cs</Link>
-    </Compile>
-    <Compile Include="DefaultTheme.xaml.cs">
-      <DependentUpon>DefaultTheme.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
