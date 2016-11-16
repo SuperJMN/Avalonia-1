@@ -118,10 +118,6 @@
       <Project>{F1BAA01A-F176-4C6A-B39D-5B40BB1B148F}</Project>
       <Name>Avalonia.Styling</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\Markup\OmniXAMLv1\OmniXamlv1.csproj">
-      <Project>{0d9cc1de-84c3-40d7-9cc5-b7751e0b25d1}</Project>
-      <Name>OmniXamlv1</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
