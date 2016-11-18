@@ -10,6 +10,7 @@ namespace OmniXaml.Avalonia.Converters
     using global::Avalonia.Styling;
     using OmniXaml;
     using Sprache;
+    using ParseException = Sprache.ParseException;
 
     public class AvaloniaPropertyTypeConverter : ITypeConverter
     {

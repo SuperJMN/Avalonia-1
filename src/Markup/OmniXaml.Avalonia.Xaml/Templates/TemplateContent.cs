@@ -18,7 +18,7 @@
 
         public IControl Load()
         {
-            return (IControl) builder.Create(node, trackingContext);
+            return (IControl) builder.Inflate(node, trackingContext);
         }
 
         protected bool Equals(TemplateContent other)

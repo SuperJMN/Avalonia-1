@@ -1,6 +1,5 @@
 ﻿namespace OmniXaml.Avalonia
 {
-    using System;
     using System.Reflection;
     using Ambient;
     using Context;
@@ -13,7 +12,6 @@
     using global::Avalonia.Markup;
     using global::Avalonia.Media;
     using global::Avalonia.Styling;
-    using MarkupExtensions;
     using Styling;
     using Templates;
     using Tests;
@@ -45,7 +43,7 @@
             var namescopeAnnotator = new NamescopeAnnotator(contructionContext.MetadataProvider);
             var trackingContext = new BuildContext(namescopeAnnotator, new AmbientRegistrator(), new AvaloniaLifeCycleSignaler());
             trackingContext.Bag.Add("Uri", @"file:\\\");
-            return new ConstructionResult(objectBuilder.Create(cons, trackingContext), namescopeAnnotator);
+            return new ConstructionResult(objectBuilder.Inflate(cons, trackingContext), namescopeAnnotator);
         }
 
         public ConstructionResult Load(string xaml, object intance)
@@ -57,7 +55,7 @@
             var cons = GetConstructionNode(xaml);
             var namescopeAnnotator = new NamescopeAnnotator(contructionContext.MetadataProvider);
             var trackingContext = new BuildContext(namescopeAnnotator, new AmbientRegistrator(), new AvaloniaLifeCycleSignaler());
-            var instance = objectBuilder.Create(cons, intance, trackingContext);
+            var instance = objectBuilder.Inflate(cons, intance, trackingContext);
             return new ConstructionResult(instance, namescopeAnnotator);
         }
 

@@ -13,25 +13,25 @@
             this.contextFactory = contextFactory;
         }
 
-        protected override void PerformAssigment(Assignment assignmentTarget, BuildContext trackingContext, string key)
+        protected override void PerformAssigment(Assignment assignmentTarget, BuildContext trackingContext)
         {
-            var compatibleValue = ToCompatibleValue(assignmentTarget, trackingContext);
+            var compatibleValue = MakeCompatible(assignmentTarget.Target.Instance, new ConversionRequest(assignmentTarget.Member, assignmentTarget.Value),  trackingContext);
 
-            if (compatibleValue.Member.MemberType.IsCollection() && !(compatibleValue.Value is IBinding))
+            if (assignmentTarget.Member.MemberType.IsCollection() && !(compatibleValue is IBinding))
             {
-                if (compatibleValue.Value.GetType().IsCollection())
+                if (compatibleValue.GetType().IsCollection())
                 {
                     assignmentTarget.ExecuteAssignment();
                 }
                 else
                 {
-                    Utils.UniversalAdd(compatibleValue.Member.GetValue(compatibleValue.Instance), compatibleValue.Value);
+                    Collection.UniversalAdd(assignmentTarget.Member.GetValue(assignmentTarget.Target.Instance), compatibleValue);
                 }                
             }
             else
             {
                 var context = contextFactory.CreateConverterContext(assignmentTarget.Member.MemberType, compatibleValue, trackingContext);
-                PropertyAccessor.SetValue(compatibleValue.Instance, compatibleValue.Member, compatibleValue.Value, context);
+                PropertyAccessor.SetValue(assignmentTarget.Target.Instance, assignmentTarget.Member, assignmentTarget.Value, context);
             }            
         }
     }
