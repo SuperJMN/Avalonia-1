@@ -302,33 +302,19 @@
           "ref/netstandard1.0/System.ObjectModel.dll": {}
         }
       },
-      "System.Reactive/3.0.0": {
+      "System.Reactive/3.1.0": {
         "type": "package",
         "dependencies": {
-          "System.Reactive.Core": "3.0.0",
-          "System.Reactive.Interfaces": "3.0.0",
-          "System.Reactive.Linq": "3.0.0",
-          "System.Reactive.PlatformServices": "3.0.0"
+          "System.Reactive.PlatformServices": "3.1.0"
         }
       },
-      "System.Reactive.Core/3.0.0": {
+      "System.Reactive.Core/3.1.0": {
         "type": "package",
         "dependencies": {
-          "System.Collections": "4.0.11",
-          "System.Collections.Concurrent": "4.0.12",
           "System.ComponentModel": "4.0.1",
-          "System.Diagnostics.Debug": "4.0.11",
-          "System.Diagnostics.Tools": "4.0.1",
+          "System.Diagnostics.Contracts": "4.0.1",
           "System.Dynamic.Runtime": "4.0.11",
-          "System.Globalization": "4.0.11",
-          "System.Linq": "4.1.0",
-          "System.Reactive.Interfaces": "3.0.0",
-          "System.Reflection": "4.1.0",
-          "System.Resources.ResourceManager": "4.0.1",
-          "System.Runtime": "4.1.0",
-          "System.Runtime.Extensions": "4.1.0",
-          "System.Threading": "4.0.11",
-          "System.Threading.Tasks": "4.0.11"
+          "System.Reactive.Interfaces": "3.1.0"
         },
         "compile": {
           "lib/netstandard1.1/System.Reactive.Core.dll": {}
@@ -337,12 +323,10 @@
           "lib/netstandard1.1/System.Reactive.Core.dll": {}
         }
       },
-      "System.Reactive.Interfaces/3.0.0": {
+      "System.Reactive.Interfaces/3.1.0": {
         "type": "package",
         "dependencies": {
-          "System.Linq.Expressions": "4.1.0",
-          "System.Resources.ResourceManager": "4.0.1",
-          "System.Runtime": "4.1.0"
+          "NETStandard.Library": "1.6.0"
         },
         "compile": {
           "lib/netstandard1.0/System.Reactive.Interfaces.dll": {}
@@ -351,24 +335,11 @@
           "lib/netstandard1.0/System.Reactive.Interfaces.dll": {}
         }
       },
-      "System.Reactive.Linq/3.0.0": {
+      "System.Reactive.Linq/3.1.0": {
         "type": "package",
         "dependencies": {
-          "System.Collections": "4.0.11",
-          "System.Collections.Concurrent": "4.0.12",
-          "System.ComponentModel": "4.0.1",
-          "System.Diagnostics.Debug": "4.0.11",
-          "System.Diagnostics.Tools": "4.0.1",
-          "System.Globalization": "4.0.11",
-          "System.Linq": "4.1.0",
-          "System.Reactive.Interfaces": "3.0.0",
-          "System.Reflection": "4.1.0",
-          "System.Resources.ResourceManager": "4.0.1",
-          "System.Runtime": "4.1.0",
-          "System.Runtime.Extensions": "4.1.0",
-          "System.Runtime.InteropServices.WindowsRuntime": "4.0.1",
-          "System.Threading": "4.0.11",
-          "System.Threading.Tasks": "4.0.11"
+          "System.Reactive.Core": "3.1.0",
+          "System.Runtime.InteropServices.WindowsRuntime": "4.0.1"
         },
         "compile": {
           "lib/netstandard1.1/System.Reactive.Linq.dll": {}
@@ -377,21 +348,10 @@
           "lib/netstandard1.1/System.Reactive.Linq.dll": {}
         }
       },
-      "System.Reactive.PlatformServices/3.0.0": {
+      "System.Reactive.PlatformServices/3.1.0": {
         "type": "package",
         "dependencies": {
-          "System.Collections": "4.0.11",
-          "System.Diagnostics.Debug": "4.0.11",
-          "System.Diagnostics.Tools": "4.0.1",
-          "System.Globalization": "4.0.11",
-          "System.Reactive.Core": "3.0.0",
-          "System.Reactive.Interfaces": "3.0.0",
-          "System.Reflection": "4.1.0",
-          "System.Resources.ResourceManager": "4.0.1",
-          "System.Runtime": "4.1.0",
-          "System.Runtime.Extensions": "4.1.0",
-          "System.Threading": "4.0.11",
-          "System.Threading.Tasks": "4.0.11"
+          "System.Reactive.Linq": "3.1.0"
         },
         "compile": {
           "lib/netstandard1.0/System.Reactive.PlatformServices.dll": {}
@@ -1938,21 +1898,21 @@
         "ref/xamarinwatchos10/_._"
       ]
     },
-    "System.Reactive/3.0.0": {
-      "sha512": "W7fymxyUWjdbLiq257mCaiha1WfmShgXK8jwFuD9vMT4/HWLqDSvcpePGbkLogF3Rlc/sH6xTalNVj4nOVkk0g==",
+    "System.Reactive/3.1.0": {
+      "sha512": "PYN4/Ny0yQH763bSKqvRZM435J6BlUedYce9ZVRu6GZcr4WGLC8DuXKqllrTM4vjvqTjHPUi0eHdfWW4PbYHUw==",
       "type": "package",
-      "path": "System.Reactive/3.0.0",
+      "path": "System.Reactive/3.1.0",
       "files": [
-        "System.Reactive.3.0.0.nupkg.sha512",
+        "System.Reactive.3.1.0.nupkg.sha512",
         "System.Reactive.nuspec"
       ]
     },
-    "System.Reactive.Core/3.0.0": {
-      "sha512": "1mnBTTNzTDaKYu2fYA0fcbWmWspwXheV9eFR0ynWd0nFjBwgSW0ZUAxe7dfvU5imv+K9QlfhV+pEKGOlJVZ8+w==",
+    "System.Reactive.Core/3.1.0": {
+      "sha512": "uWfsvfWEvYdVYloZzlxIuX5pzQNYtXGiBMUK7p1PnuNLHHGL2yoWC9Rae+xQmnz6tneyNZeAEGNpS2KxKkab3g==",
       "type": "package",
-      "path": "System.Reactive.Core/3.0.0",
+      "path": "System.Reactive.Core/3.1.0",
       "files": [
-        "System.Reactive.Core.3.0.0.nupkg.sha512",
+        "System.Reactive.Core.3.1.0.nupkg.sha512",
         "System.Reactive.Core.nuspec",
         "lib/net45/System.Reactive.Core.dll",
         "lib/net45/System.Reactive.Core.xml",
@@ -1974,12 +1934,12 @@
         "lib/wpa81/System.Reactive.Core.xml"
       ]
     },
-    "System.Reactive.Interfaces/3.0.0": {
-      "sha512": "MuLvWYegIrhvUVe3MRMIBxFGx4kiz0FEzN3TTvhX+m3WmJCi5+OE4J7yPWtZjGGTUh5wysGyaF9thcnCzx/J3w==",
+    "System.Reactive.Interfaces/3.1.0": {
+      "sha512": "36OuCsqlf7LJ8K72aGoOrWFzbRC1JdT+2jV0smhXwBz6rWx5P2bUgwYFlXamGmgGU3pBftTqSgAEIkTu11H4+Q==",
       "type": "package",
-      "path": "System.Reactive.Interfaces/3.0.0",
+      "path": "System.Reactive.Interfaces/3.1.0",
       "files": [
-        "System.Reactive.Interfaces.3.0.0.nupkg.sha512",
+        "System.Reactive.Interfaces.3.1.0.nupkg.sha512",
         "System.Reactive.Interfaces.nuspec",
         "lib/net45/System.Reactive.Interfaces.dll",
         "lib/net45/System.Reactive.Interfaces.xml",
@@ -1987,12 +1947,12 @@
         "lib/netstandard1.0/System.Reactive.Interfaces.xml"
       ]
     },
-    "System.Reactive.Linq/3.0.0": {
-      "sha512": "CmQ+WpeOFzwYlDKafLQLT5McvR1TWCi3UudeBnajguvi/8ZGHDoQ2MPTo401EKkSvW48uTsJyvcKXN/C7g91Qg==",
+    "System.Reactive.Linq/3.1.0": {
+      "sha512": "2cEqBOS+GmzXdOIeX6pDru8QKdD18lDt4PkWfhZSQXx/0MnJJBvVDt3SWB9YVDlCryxPtS+/9T1Wth3gCOMyKw==",
       "type": "package",
-      "path": "System.Reactive.Linq/3.0.0",
+      "path": "System.Reactive.Linq/3.1.0",
       "files": [
-        "System.Reactive.Linq.3.0.0.nupkg.sha512",
+        "System.Reactive.Linq.3.1.0.nupkg.sha512",
         "System.Reactive.Linq.nuspec",
         "lib/net45/System.Reactive.Linq.dll",
         "lib/net45/System.Reactive.Linq.xml",
@@ -2006,12 +1966,12 @@
         "lib/netstandard1.3/System.Reactive.Linq.xml"
       ]
     },
-    "System.Reactive.PlatformServices/3.0.0": {
-      "sha512": "1yYsCsIqrpu228er3iC1naLcCnIpdDRuyFhD78P6C54YyiR84ElDUjWYEMVneUKxrP6PlwrZp2VEf0DHAHX8gw==",
+    "System.Reactive.PlatformServices/3.1.0": {
+      "sha512": "EV1mITgtvmq6uiLQJJGYzXtmrMB6HXjGstQ5pqv6qnXFPY9obw37XXD6A8DwdK5X1tLbQT60QWMBtasjLItDSw==",
       "type": "package",
-      "path": "System.Reactive.PlatformServices/3.0.0",
+      "path": "System.Reactive.PlatformServices/3.1.0",
       "files": [
-        "System.Reactive.PlatformServices.3.0.0.nupkg.sha512",
+        "System.Reactive.PlatformServices.3.1.0.nupkg.sha512",
         "System.Reactive.PlatformServices.nuspec",
         "lib/net45/System.Reactive.PlatformServices.dll",
         "lib/net45/System.Reactive.PlatformServices.xml",
@@ -3288,7 +3248,7 @@
       "NETStandard.Library >= 1.6.1",
       "Splat >= 2.0.0",
       "System.Diagnostics.Contracts >= 4.3.0",
-      "System.Reactive >= 3.0.0",
+      "System.Reactive >= 3.1.0",
       "System.Runtime.Serialization.Primitives >= 4.3.0"
     ],
     ".NETStandard,Version=v1.2": []

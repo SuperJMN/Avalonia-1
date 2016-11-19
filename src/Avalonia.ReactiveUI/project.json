@@ -5,7 +5,7 @@
     "NETStandard.Library": "1.6.1",
     "Splat": "2.0.0",
     "System.Diagnostics.Contracts": "4.3.0",
-    "System.Reactive": "3.0.0",
+    "System.Reactive": "3.1.0",
     "System.Runtime.Serialization.Primitives": "4.3.0"
   },
   "frameworks": {

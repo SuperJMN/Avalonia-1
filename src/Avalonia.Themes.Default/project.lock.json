@@ -146,6 +146,17 @@
           "ref/netstandard1.0/System.ComponentModel.dll": {}
         }
       },
+      "System.Diagnostics.Contracts/4.0.1": {
+        "dependencies": {
+          "System.Runtime": "4.1.0"
+        },
+        "compile": {
+          "ref/netstandard1.0/System.Diagnostics.Contracts.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.0/System.Diagnostics.Contracts.dll": {}
+        }
+      },
       "System.Diagnostics.Debug/4.3.0": {
         "dependencies": {
           "Microsoft.NETCore.Platforms": "1.1.0",
@@ -267,31 +278,17 @@
           "ref/netstandard1.0/System.ObjectModel.dll": {}
         }
       },
-      "System.Reactive/3.0.0": {
+      "System.Reactive/3.1.0": {
         "dependencies": {
-          "System.Reactive.Core": "3.0.0",
-          "System.Reactive.Interfaces": "3.0.0",
-          "System.Reactive.Linq": "3.0.0",
-          "System.Reactive.PlatformServices": "3.0.0"
+          "System.Reactive.PlatformServices": "3.1.0"
         }
       },
-      "System.Reactive.Core/3.0.0": {
+      "System.Reactive.Core/3.1.0": {
         "dependencies": {
-          "System.Collections": "4.0.11",
-          "System.Collections.Concurrent": "4.0.12",
           "System.ComponentModel": "4.0.1",
-          "System.Diagnostics.Debug": "4.0.11",
-          "System.Diagnostics.Tools": "4.0.1",
+          "System.Diagnostics.Contracts": "4.0.1",
           "System.Dynamic.Runtime": "4.0.11",
-          "System.Globalization": "4.0.11",
-          "System.Linq": "4.1.0",
-          "System.Reactive.Interfaces": "3.0.0",
-          "System.Reflection": "4.1.0",
-          "System.Resources.ResourceManager": "4.0.1",
-          "System.Runtime": "4.1.0",
-          "System.Runtime.Extensions": "4.1.0",
-          "System.Threading": "4.0.11",
-          "System.Threading.Tasks": "4.0.11"
+          "System.Reactive.Interfaces": "3.1.0"
         },
         "compile": {
           "lib/netstandard1.1/System.Reactive.Core.dll": {}
@@ -300,11 +297,9 @@
           "lib/netstandard1.1/System.Reactive.Core.dll": {}
         }
       },
-      "System.Reactive.Interfaces/3.0.0": {
+      "System.Reactive.Interfaces/3.1.0": {
         "dependencies": {
-          "System.Linq.Expressions": "4.1.0",
-          "System.Resources.ResourceManager": "4.0.1",
-          "System.Runtime": "4.1.0"
+          "NETStandard.Library": "1.6.0"
         },
         "compile": {
           "lib/netstandard1.0/System.Reactive.Interfaces.dll": {}
@@ -313,23 +308,10 @@
           "lib/netstandard1.0/System.Reactive.Interfaces.dll": {}
         }
       },
-      "System.Reactive.Linq/3.0.0": {
+      "System.Reactive.Linq/3.1.0": {
         "dependencies": {
-          "System.Collections": "4.0.11",
-          "System.Collections.Concurrent": "4.0.12",
-          "System.ComponentModel": "4.0.1",
-          "System.Diagnostics.Debug": "4.0.11",
-          "System.Diagnostics.Tools": "4.0.1",
-          "System.Globalization": "4.0.11",
-          "System.Linq": "4.1.0",
-          "System.Reactive.Interfaces": "3.0.0",
-          "System.Reflection": "4.1.0",
-          "System.Resources.ResourceManager": "4.0.1",
-          "System.Runtime": "4.1.0",
-          "System.Runtime.Extensions": "4.1.0",
-          "System.Runtime.InteropServices.WindowsRuntime": "4.0.1",
-          "System.Threading": "4.0.11",
-          "System.Threading.Tasks": "4.0.11"
+          "System.Reactive.Core": "3.1.0",
+          "System.Runtime.InteropServices.WindowsRuntime": "4.0.1"
         },
         "compile": {
           "lib/netstandard1.1/System.Reactive.Linq.dll": {}
@@ -338,20 +320,9 @@
           "lib/netstandard1.1/System.Reactive.Linq.dll": {}
         }
       },
-      "System.Reactive.PlatformServices/3.0.0": {
+      "System.Reactive.PlatformServices/3.1.0": {
         "dependencies": {
-          "System.Collections": "4.0.11",
-          "System.Diagnostics.Debug": "4.0.11",
-          "System.Diagnostics.Tools": "4.0.1",
-          "System.Globalization": "4.0.11",
-          "System.Reactive.Core": "3.0.0",
-          "System.Reactive.Interfaces": "3.0.0",
-          "System.Reflection": "4.1.0",
-          "System.Resources.ResourceManager": "4.0.1",
-          "System.Runtime": "4.1.0",
-          "System.Runtime.Extensions": "4.1.0",
-          "System.Threading": "4.0.11",
-          "System.Threading.Tasks": "4.0.11"
+          "System.Reactive.Linq": "3.1.0"
         },
         "compile": {
           "lib/netstandard1.0/System.Reactive.PlatformServices.dll": {}
@@ -932,6 +903,64 @@
         "ref/xamarinmac20/_._",
         "ref/xamarintvos10/_._",
         "ref/xamarinwatchos10/_._"
+      ]
+    },
+    "System.Diagnostics.Contracts/4.0.1": {
+      "sha512": "HvQQjy712vnlpPxaloZYkuE78Gn353L0SJLJVeLcNASeg9c4qla2a1Xq8I7B3jZoDzKPtHTkyVO7AZ5tpeQGuA==",
+      "type": "package",
+      "path": "System.Diagnostics.Contracts/4.0.1",
+      "files": [
+        "System.Diagnostics.Contracts.4.0.1.nupkg.sha512",
+        "System.Diagnostics.Contracts.nuspec",
+        "ThirdPartyNotices.txt",
+        "dotnet_library_license.txt",
+        "lib/MonoAndroid10/_._",
+        "lib/MonoTouch10/_._",
+        "lib/net45/_._",
+        "lib/netcore50/System.Diagnostics.Contracts.dll",
+        "lib/netstandard1.0/System.Diagnostics.Contracts.dll",
+        "lib/portable-net45+win8+wp8+wpa81/_._",
+        "lib/win8/_._",
+        "lib/wp80/_._",
+        "lib/wpa81/_._",
+        "lib/xamarinios10/_._",
+        "lib/xamarinmac20/_._",
+        "lib/xamarintvos10/_._",
+        "lib/xamarinwatchos10/_._",
+        "ref/MonoAndroid10/_._",
+        "ref/MonoTouch10/_._",
+        "ref/net45/_._",
+        "ref/netcore50/System.Diagnostics.Contracts.dll",
+        "ref/netcore50/System.Diagnostics.Contracts.xml",
+        "ref/netcore50/de/System.Diagnostics.Contracts.xml",
+        "ref/netcore50/es/System.Diagnostics.Contracts.xml",
+        "ref/netcore50/fr/System.Diagnostics.Contracts.xml",
+        "ref/netcore50/it/System.Diagnostics.Contracts.xml",
+        "ref/netcore50/ja/System.Diagnostics.Contracts.xml",
+        "ref/netcore50/ko/System.Diagnostics.Contracts.xml",
+        "ref/netcore50/ru/System.Diagnostics.Contracts.xml",
+        "ref/netcore50/zh-hans/System.Diagnostics.Contracts.xml",
+        "ref/netcore50/zh-hant/System.Diagnostics.Contracts.xml",
+        "ref/netstandard1.0/System.Diagnostics.Contracts.dll",
+        "ref/netstandard1.0/System.Diagnostics.Contracts.xml",
+        "ref/netstandard1.0/de/System.Diagnostics.Contracts.xml",
+        "ref/netstandard1.0/es/System.Diagnostics.Contracts.xml",
+        "ref/netstandard1.0/fr/System.Diagnostics.Contracts.xml",
+        "ref/netstandard1.0/it/System.Diagnostics.Contracts.xml",
+        "ref/netstandard1.0/ja/System.Diagnostics.Contracts.xml",
+        "ref/netstandard1.0/ko/System.Diagnostics.Contracts.xml",
+        "ref/netstandard1.0/ru/System.Diagnostics.Contracts.xml",
+        "ref/netstandard1.0/zh-hans/System.Diagnostics.Contracts.xml",
+        "ref/netstandard1.0/zh-hant/System.Diagnostics.Contracts.xml",
+        "ref/portable-net45+win8+wp8+wpa81/_._",
+        "ref/win8/_._",
+        "ref/wp80/_._",
+        "ref/wpa81/_._",
+        "ref/xamarinios10/_._",
+        "ref/xamarinmac20/_._",
+        "ref/xamarintvos10/_._",
+        "ref/xamarinwatchos10/_._",
+        "runtimes/aot/lib/netcore50/System.Diagnostics.Contracts.dll"
       ]
     },
     "System.Diagnostics.Debug/4.3.0": {
@@ -1803,21 +1832,21 @@
         "ref/xamarinwatchos10/_._"
       ]
     },
-    "System.Reactive/3.0.0": {
-      "sha512": "W7fymxyUWjdbLiq257mCaiha1WfmShgXK8jwFuD9vMT4/HWLqDSvcpePGbkLogF3Rlc/sH6xTalNVj4nOVkk0g==",
+    "System.Reactive/3.1.0": {
+      "sha512": "PYN4/Ny0yQH763bSKqvRZM435J6BlUedYce9ZVRu6GZcr4WGLC8DuXKqllrTM4vjvqTjHPUi0eHdfWW4PbYHUw==",
       "type": "package",
-      "path": "System.Reactive/3.0.0",
+      "path": "System.Reactive/3.1.0",
       "files": [
-        "System.Reactive.3.0.0.nupkg.sha512",
+        "System.Reactive.3.1.0.nupkg.sha512",
         "System.Reactive.nuspec"
       ]
     },
-    "System.Reactive.Core/3.0.0": {
-      "sha512": "1mnBTTNzTDaKYu2fYA0fcbWmWspwXheV9eFR0ynWd0nFjBwgSW0ZUAxe7dfvU5imv+K9QlfhV+pEKGOlJVZ8+w==",
+    "System.Reactive.Core/3.1.0": {
+      "sha512": "uWfsvfWEvYdVYloZzlxIuX5pzQNYtXGiBMUK7p1PnuNLHHGL2yoWC9Rae+xQmnz6tneyNZeAEGNpS2KxKkab3g==",
       "type": "package",
-      "path": "System.Reactive.Core/3.0.0",
+      "path": "System.Reactive.Core/3.1.0",
       "files": [
-        "System.Reactive.Core.3.0.0.nupkg.sha512",
+        "System.Reactive.Core.3.1.0.nupkg.sha512",
         "System.Reactive.Core.nuspec",
         "lib/net45/System.Reactive.Core.dll",
         "lib/net45/System.Reactive.Core.xml",
@@ -1839,12 +1868,12 @@
         "lib/wpa81/System.Reactive.Core.xml"
       ]
     },
-    "System.Reactive.Interfaces/3.0.0": {
-      "sha512": "MuLvWYegIrhvUVe3MRMIBxFGx4kiz0FEzN3TTvhX+m3WmJCi5+OE4J7yPWtZjGGTUh5wysGyaF9thcnCzx/J3w==",
+    "System.Reactive.Interfaces/3.1.0": {
+      "sha512": "36OuCsqlf7LJ8K72aGoOrWFzbRC1JdT+2jV0smhXwBz6rWx5P2bUgwYFlXamGmgGU3pBftTqSgAEIkTu11H4+Q==",
       "type": "package",
-      "path": "System.Reactive.Interfaces/3.0.0",
+      "path": "System.Reactive.Interfaces/3.1.0",
       "files": [
-        "System.Reactive.Interfaces.3.0.0.nupkg.sha512",
+        "System.Reactive.Interfaces.3.1.0.nupkg.sha512",
         "System.Reactive.Interfaces.nuspec",
         "lib/net45/System.Reactive.Interfaces.dll",
         "lib/net45/System.Reactive.Interfaces.xml",
@@ -1852,12 +1881,12 @@
         "lib/netstandard1.0/System.Reactive.Interfaces.xml"
       ]
     },
-    "System.Reactive.Linq/3.0.0": {
-      "sha512": "CmQ+WpeOFzwYlDKafLQLT5McvR1TWCi3UudeBnajguvi/8ZGHDoQ2MPTo401EKkSvW48uTsJyvcKXN/C7g91Qg==",
+    "System.Reactive.Linq/3.1.0": {
+      "sha512": "2cEqBOS+GmzXdOIeX6pDru8QKdD18lDt4PkWfhZSQXx/0MnJJBvVDt3SWB9YVDlCryxPtS+/9T1Wth3gCOMyKw==",
       "type": "package",
-      "path": "System.Reactive.Linq/3.0.0",
+      "path": "System.Reactive.Linq/3.1.0",
       "files": [
-        "System.Reactive.Linq.3.0.0.nupkg.sha512",
+        "System.Reactive.Linq.3.1.0.nupkg.sha512",
         "System.Reactive.Linq.nuspec",
         "lib/net45/System.Reactive.Linq.dll",
         "lib/net45/System.Reactive.Linq.xml",
@@ -1871,12 +1900,12 @@
         "lib/netstandard1.3/System.Reactive.Linq.xml"
       ]
     },
-    "System.Reactive.PlatformServices/3.0.0": {
-      "sha512": "1yYsCsIqrpu228er3iC1naLcCnIpdDRuyFhD78P6C54YyiR84ElDUjWYEMVneUKxrP6PlwrZp2VEf0DHAHX8gw==",
+    "System.Reactive.PlatformServices/3.1.0": {
+      "sha512": "EV1mITgtvmq6uiLQJJGYzXtmrMB6HXjGstQ5pqv6qnXFPY9obw37XXD6A8DwdK5X1tLbQT60QWMBtasjLItDSw==",
       "type": "package",
-      "path": "System.Reactive.PlatformServices/3.0.0",
+      "path": "System.Reactive.PlatformServices/3.1.0",
       "files": [
-        "System.Reactive.PlatformServices.3.0.0.nupkg.sha512",
+        "System.Reactive.PlatformServices.3.1.0.nupkg.sha512",
         "System.Reactive.PlatformServices.nuspec",
         "lib/net45/System.Reactive.PlatformServices.dll",
         "lib/net45/System.Reactive.PlatformServices.xml",
