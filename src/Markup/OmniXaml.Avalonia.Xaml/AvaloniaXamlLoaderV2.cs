@@ -8,7 +8,6 @@
     using global::Avalonia;
     using global::Avalonia.Animation;
     using global::Avalonia.Controls;
-    using global::Avalonia.Controls.Html;
     using global::Avalonia.Input;
     using global::Avalonia.Markup;
     using global::Avalonia.Media;
@@ -99,8 +98,8 @@
                                 typeof(MultiBinding).GetTypeInfo().Namespace, "OmniXaml.Avalonia.Data", "OmniXaml.Avalonia.MarkupExtensions", typeof(StyleInclude).Namespace)
                                 ,
 
-                        Route.Assembly(typeof(HtmlLabel).GetTypeInfo().Assembly)
-                            .WithNamespaces(typeof(HtmlLabel).GetTypeInfo().Namespace),
+                        //Route.Assembly(typeof(HtmlLabel).GetTypeInfo().Assembly)
+                        //    .WithNamespaces(typeof(HtmlLabel).GetTypeInfo().Namespace),
 
                         Route.Assembly(typeof(BoolConverters).GetTypeInfo().Assembly)
                             .WithNamespaces(typeof(BoolConverters).GetTypeInfo().Namespace),

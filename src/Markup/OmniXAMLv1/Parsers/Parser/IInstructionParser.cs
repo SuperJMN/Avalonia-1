@@ -1,8 +1,0 @@
-namespace OmniXamlV1.Parsers.Parser
-{
-    using System.Collections.Generic;
-
-    public interface IInstructionParser : IParser<IEnumerable<ProtoInstruction>, IEnumerable<Instruction>>
-    {        
-    }
-}

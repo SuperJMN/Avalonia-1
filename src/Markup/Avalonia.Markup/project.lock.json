@@ -119,20 +119,6 @@
           "lib/netstandard1.0/_._": {}
         }
       },
-      "Sprache/2.1.0": {
-        "dependencies": {
-          "System.Globalization": "4.0.11",
-          "System.Linq": "4.1.0",
-          "System.Runtime": "4.1.0",
-          "System.Text.RegularExpressions": "4.1.0"
-        },
-        "compile": {
-          "lib/netstandard1.0/Sprache.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard1.0/Sprache.dll": {}
-        }
-      },
       "System.Collections/4.3.0": {
         "dependencies": {
           "Microsoft.NETCore.Platforms": "1.1.0",
@@ -736,19 +722,6 @@
         "lib/netstandard1.0/_._",
         "runtime.native.System.4.3.0.nupkg.sha512",
         "runtime.native.System.nuspec"
-      ]
-    },
-    "Sprache/2.1.0": {
-      "sha512": "BPhBC++caTrGfEuld7mYlI9FwqyWb7jo97zjwgcroKsobg4ETlhI87gNC8qVl8BlOGN8mbYHPuYiAM0AybId0A==",
-      "type": "package",
-      "path": "Sprache/2.1.0",
-      "files": [
-        "Sprache.2.1.0.nupkg.sha512",
-        "Sprache.nuspec",
-        "lib/net35/Sprache.dll",
-        "lib/net40/Sprache.dll",
-        "lib/netstandard1.0/Sprache.dll",
-        "lib/sl50/Sprache.dll"
       ]
     },
     "System.Collections/4.3.0": {
@@ -3218,7 +3191,12 @@
     }
   },
   "projectFileDependencyGroups": {
-    "": [],
+    "": [
+      "Microsoft.NETCore.Portable.Compatibility >= 1.0.1",
+      "NETStandard.Library >= 1.6.1",
+      "System.ComponentModel.Annotations >= 4.3.0",
+      "System.Reactive >= 3.1.0"
+    ],
     ".NETStandard,Version=v1.2": []
   }
 }
