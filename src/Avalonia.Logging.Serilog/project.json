@@ -1,0 +1,9 @@
+﻿{
+  "supports": {},
+  "dependencies": {
+    "System.Collections": "4.3.0"
+  },
+  "frameworks": {
+    "netstandard1.2": {}
+  }
+}
