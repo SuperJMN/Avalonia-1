@@ -34,7 +34,7 @@
                 .UseDirect2D1()
                 .SetupWithoutStarting();
 
-            var window = (Window)Loader.Load(File.ReadAllText("MyCustomWindow.xaml")).Instance;
+            var window = (Window)Loader.Load(File.ReadAllText("Tester.xml")).Instance;
             window.DataContext = new MainWindowViewModel();
 
             window.Show();

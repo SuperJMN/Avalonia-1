@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="special"
+        xmlns:vm="using:AvaloniaApp.ViewModels;assembly=AvaloniaApp"
+        Title="Avalonia Test Application" Width="800" Height="600">
+
+  <ListBox Items="{Binding Items}" SelectionMode="Multiple">
+    <ListBox.ItemTemplate>
+      <DataTemplate DataType="vm:TestItem">
+        <StackPanel>
+          <TextBlock Text="{Binding Header}" FontSize="24" />
+          <TextBlock Text="{Binding SubHeader}" />
+        </StackPanel>
+      </DataTemplate>
+    </ListBox.ItemTemplate>
+  </ListBox>
+
+</Window>
