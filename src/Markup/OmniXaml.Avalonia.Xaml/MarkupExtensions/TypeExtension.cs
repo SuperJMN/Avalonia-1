@@ -24,18 +24,12 @@ namespace OmniXaml.Avalonia.MarkupExtensions
         [Content]
         public string TypeName { get; set; }
 
-        private Type ResolveFromString(string prefixedTypeName, ITypeDirectory typeDirectory)
+        private Type ResolveFromString(string prefixedTypeName, ExtensionValueContext markupExtensionContext)
         {
             Guard.ThrowIfNull(prefixedTypeName, nameof(prefixedTypeName));
 
-            var tuple = prefixedTypeName.Dicotomize(':');
-
-            if (tuple.Item2 == null)
-            {
-                return typeDirectory.GetTypeByPrefix(string.Empty, tuple.Item1);
-            }
-
-            return typeDirectory.GetTypeByPrefix(tuple.Item1, tuple.Item2);
+            var prefixedType = (string)markupExtensionContext.Assignment.Value;
+            return markupExtensionContext.BuildContext.PrefixedTypeResolver.GetTypeByPrefix(markupExtensionContext.BuildContext.CurrentNode, prefixedType);
         }
 
         public object GetValue(ExtensionValueContext markupExtensionContext)
@@ -45,7 +39,7 @@ namespace OmniXaml.Avalonia.MarkupExtensions
                 return Type;
             }
 
-            return ResolveFromString(TypeName, markupExtensionContext.TypeDirectory);
+            return ResolveFromString(TypeName, markupExtensionContext);
         }
     }
 }

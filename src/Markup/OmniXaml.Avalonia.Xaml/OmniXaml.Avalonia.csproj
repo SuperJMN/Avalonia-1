@@ -45,6 +45,7 @@
     <Compile Include="Converters\AvaloniaPropertyTypeConverter.cs" />
     <Compile Include="Converters\BitmapTypeConverter.cs" />
     <Compile Include="Converters\SelectorTypeConverter.cs" />
+    <Compile Include="Converters\TypeTypeConverter.cs" />
     <Compile Include="Styling\StyleInclude.cs" />
     <Compile Include="Templates\ConstructionFragmentLoader.cs" />
     <Compile Include="Templates\TemplateContent.cs" />

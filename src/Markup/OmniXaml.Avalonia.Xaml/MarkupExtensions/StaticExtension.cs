@@ -24,10 +24,9 @@ namespace OmniXaml.Avalonia.MarkupExtensions
 
         public object GetValue(ExtensionValueContext markupExtensionContext)
         {
-            var typeDirectory = markupExtensionContext.TypeDirectory;
             var typeAndMember = GetTypeAndMember(Identifier);
-            var prefixAndType = GetPrefixAndType(typeAndMember.Item1);
-            var xamlType = typeDirectory.GetTypeByPrefix(prefixAndType.Item1, prefixAndType.Item2);
+            var prefixedTypeName = typeAndMember.Item1;
+            var xamlType = markupExtensionContext.BuildContext.PrefixedTypeResolver.GetTypeByPrefix(markupExtensionContext.BuildContext.CurrentNode, prefixedTypeName);
             return GetValue(xamlType, typeAndMember.Item2);
         }
 
@@ -41,18 +40,6 @@ namespace OmniXaml.Avalonia.MarkupExtensions
             }
 
             return Tuple.Create(parts[0], parts[1]);
-        }
-
-        private static Tuple<string, string> GetPrefixAndType(string s)
-        {
-            if (s.Contains(":"))
-            {
-                return s.Dicotomize(':');
-            }
-            else
-            {
-                return new Tuple<string, string>(string.Empty, s);
-            }
         }
 
         private object GetValue(Type type, string name)

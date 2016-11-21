@@ -9,6 +9,7 @@
     using Avalonia.Platform;
     using OmniXaml.Avalonia;
     using Serilog;
+    using ViewModels;
 
     class App : Application
     {
@@ -34,7 +35,7 @@
                 .SetupWithoutStarting();
 
             var window = (Window)Loader.Load(File.ReadAllText("MyCustomWindow.xaml")).Instance;
-            window.DataContext = new MainViewModel();
+            window.DataContext = new MainWindowViewModel();
 
             window.Show();
             //AttachDevTools(window);
@@ -42,12 +43,12 @@
             Current.Run(window);
         }
 
-//        public static void AttachDevTools(Window window)
-//        {
-//#if DEBUG
-//            DevTools.Attach(window);
-//#endif
-//        }
+        //        public static void AttachDevTools(Window window)
+        //        {
+        //#if DEBUG
+        //            DevTools.Attach(window);
+        //#endif
+        //        }
 
         private static void InitializeLogging()
         {

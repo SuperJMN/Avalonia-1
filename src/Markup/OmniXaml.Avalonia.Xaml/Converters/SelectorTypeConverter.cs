@@ -27,7 +27,7 @@ namespace Avalonia.Markup.Xaml.Converters
             var parser = new SelectorParser((t, prefix) =>
             {
                 var actualPrefix = prefix ?? "";
-                var typeByPrefix = context.TypeDirectory.GetTypeByPrefix(actualPrefix, t);
+                var typeByPrefix = context.BuildContext.PrefixedTypeResolver.GetTypeByPrefix(context.BuildContext.CurrentNode, t);
 
                 if (typeByPrefix == null)
                 {

@@ -302,19 +302,19 @@
           "ref/netstandard1.0/System.ObjectModel.dll": {}
         }
       },
-      "System.Reactive/3.1.0": {
+      "System.Reactive/3.1.1": {
         "type": "package",
         "dependencies": {
-          "System.Reactive.PlatformServices": "3.1.0"
+          "System.Reactive.PlatformServices": "3.1.1"
         }
       },
-      "System.Reactive.Core/3.1.0": {
+      "System.Reactive.Core/3.1.1": {
         "type": "package",
         "dependencies": {
           "System.ComponentModel": "4.0.1",
           "System.Diagnostics.Contracts": "4.0.1",
           "System.Dynamic.Runtime": "4.0.11",
-          "System.Reactive.Interfaces": "3.1.0"
+          "System.Reactive.Interfaces": "3.1.1"
         },
         "compile": {
           "lib/netstandard1.1/System.Reactive.Core.dll": {}
@@ -323,7 +323,7 @@
           "lib/netstandard1.1/System.Reactive.Core.dll": {}
         }
       },
-      "System.Reactive.Interfaces/3.1.0": {
+      "System.Reactive.Interfaces/3.1.1": {
         "type": "package",
         "dependencies": {
           "NETStandard.Library": "1.6.0"
@@ -335,10 +335,10 @@
           "lib/netstandard1.0/System.Reactive.Interfaces.dll": {}
         }
       },
-      "System.Reactive.Linq/3.1.0": {
+      "System.Reactive.Linq/3.1.1": {
         "type": "package",
         "dependencies": {
-          "System.Reactive.Core": "3.1.0",
+          "System.Reactive.Core": "3.1.1",
           "System.Runtime.InteropServices.WindowsRuntime": "4.0.1"
         },
         "compile": {
@@ -348,10 +348,10 @@
           "lib/netstandard1.1/System.Reactive.Linq.dll": {}
         }
       },
-      "System.Reactive.PlatformServices/3.1.0": {
+      "System.Reactive.PlatformServices/3.1.1": {
         "type": "package",
         "dependencies": {
-          "System.Reactive.Linq": "3.1.0"
+          "System.Reactive.Linq": "3.1.1"
         },
         "compile": {
           "lib/netstandard1.0/System.Reactive.PlatformServices.dll": {}
@@ -1898,21 +1898,21 @@
         "ref/xamarinwatchos10/_._"
       ]
     },
-    "System.Reactive/3.1.0": {
-      "sha512": "PYN4/Ny0yQH763bSKqvRZM435J6BlUedYce9ZVRu6GZcr4WGLC8DuXKqllrTM4vjvqTjHPUi0eHdfWW4PbYHUw==",
+    "System.Reactive/3.1.1": {
+      "sha512": "elkQdVQoBVX39BHrYHMc3Rnbb7a9qBJIwNCvhq1psPMOEPo62/VHB0lJu671x3fOrGL4V/85n6p2Az1tw7Kvmg==",
       "type": "package",
-      "path": "System.Reactive/3.1.0",
+      "path": "System.Reactive/3.1.1",
       "files": [
-        "System.Reactive.3.1.0.nupkg.sha512",
+        "System.Reactive.3.1.1.nupkg.sha512",
         "System.Reactive.nuspec"
       ]
     },
-    "System.Reactive.Core/3.1.0": {
-      "sha512": "uWfsvfWEvYdVYloZzlxIuX5pzQNYtXGiBMUK7p1PnuNLHHGL2yoWC9Rae+xQmnz6tneyNZeAEGNpS2KxKkab3g==",
+    "System.Reactive.Core/3.1.1": {
+      "sha512": "CKWC+UP1aM75taNX+sTBn2P97uHIUjKxq+z45iy7P91QGFqNFleR2tsqIC76HMVvYl7o8oWyMiycdsc9rC1Z/g==",
       "type": "package",
-      "path": "System.Reactive.Core/3.1.0",
+      "path": "System.Reactive.Core/3.1.1",
       "files": [
-        "System.Reactive.Core.3.1.0.nupkg.sha512",
+        "System.Reactive.Core.3.1.1.nupkg.sha512",
         "System.Reactive.Core.nuspec",
         "lib/net45/System.Reactive.Core.dll",
         "lib/net45/System.Reactive.Core.xml",
@@ -1934,12 +1934,12 @@
         "lib/wpa81/System.Reactive.Core.xml"
       ]
     },
-    "System.Reactive.Interfaces/3.1.0": {
-      "sha512": "36OuCsqlf7LJ8K72aGoOrWFzbRC1JdT+2jV0smhXwBz6rWx5P2bUgwYFlXamGmgGU3pBftTqSgAEIkTu11H4+Q==",
+    "System.Reactive.Interfaces/3.1.1": {
+      "sha512": "aNVY3QoRznGFeQ+w+bMqhD8ElNWoyYq+7XTQIoxKKjBOyTOjUqIMEf1wvSdtwC4y92zg2W9q38b4Sr6cYNHVLg==",
       "type": "package",
-      "path": "System.Reactive.Interfaces/3.1.0",
+      "path": "System.Reactive.Interfaces/3.1.1",
       "files": [
-        "System.Reactive.Interfaces.3.1.0.nupkg.sha512",
+        "System.Reactive.Interfaces.3.1.1.nupkg.sha512",
         "System.Reactive.Interfaces.nuspec",
         "lib/net45/System.Reactive.Interfaces.dll",
         "lib/net45/System.Reactive.Interfaces.xml",
@@ -1947,12 +1947,12 @@
         "lib/netstandard1.0/System.Reactive.Interfaces.xml"
       ]
     },
-    "System.Reactive.Linq/3.1.0": {
-      "sha512": "2cEqBOS+GmzXdOIeX6pDru8QKdD18lDt4PkWfhZSQXx/0MnJJBvVDt3SWB9YVDlCryxPtS+/9T1Wth3gCOMyKw==",
+    "System.Reactive.Linq/3.1.1": {
+      "sha512": "HwsZsoYRg51cLGBOEa0uoZ5+d4CMcHEg/KrbqePhLxoz/SLA+ULISphBtn3woABPATOQ6j5YgGZWh4jxnJ3KYQ==",
       "type": "package",
-      "path": "System.Reactive.Linq/3.1.0",
+      "path": "System.Reactive.Linq/3.1.1",
       "files": [
-        "System.Reactive.Linq.3.1.0.nupkg.sha512",
+        "System.Reactive.Linq.3.1.1.nupkg.sha512",
         "System.Reactive.Linq.nuspec",
         "lib/net45/System.Reactive.Linq.dll",
         "lib/net45/System.Reactive.Linq.xml",
@@ -1966,12 +1966,12 @@
         "lib/netstandard1.3/System.Reactive.Linq.xml"
       ]
     },
-    "System.Reactive.PlatformServices/3.1.0": {
-      "sha512": "EV1mITgtvmq6uiLQJJGYzXtmrMB6HXjGstQ5pqv6qnXFPY9obw37XXD6A8DwdK5X1tLbQT60QWMBtasjLItDSw==",
+    "System.Reactive.PlatformServices/3.1.1": {
+      "sha512": "jCJ3iGDLb4duOxZ/Uo3O7PssWE48uRp0fw92AlIwrMNaZRUmZNkZyqbl0nUT+joFARBYun8XiVIDQreMJKBedA==",
       "type": "package",
-      "path": "System.Reactive.PlatformServices/3.1.0",
+      "path": "System.Reactive.PlatformServices/3.1.1",
       "files": [
-        "System.Reactive.PlatformServices.3.1.0.nupkg.sha512",
+        "System.Reactive.PlatformServices.3.1.1.nupkg.sha512",
         "System.Reactive.PlatformServices.nuspec",
         "lib/net45/System.Reactive.PlatformServices.dll",
         "lib/net45/System.Reactive.PlatformServices.xml",
@@ -3248,7 +3248,7 @@
       "NETStandard.Library >= 1.6.1",
       "Splat >= 2.0.0",
       "System.Diagnostics.Contracts >= 4.3.0",
-      "System.Reactive >= 3.1.0",
+      "System.Reactive >= 3.1.1",
       "System.Runtime.Serialization.Primitives >= 4.3.0"
     ],
     ".NETStandard,Version=v1.2": []

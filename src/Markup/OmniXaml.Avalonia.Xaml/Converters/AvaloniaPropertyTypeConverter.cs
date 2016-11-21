@@ -47,7 +47,7 @@ namespace OmniXaml.Avalonia.Converters
             }
             else
             {
-                type = context.TypeDirectory.GetByPrefixedName(typeName);
+                type = context.BuildContext.PrefixedTypeResolver.GetTypeByPrefix(context.BuildContext.CurrentNode, typeName);
 
                 if (type == null)
                 {
