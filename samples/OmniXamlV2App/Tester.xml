@@ -5,15 +5,57 @@
         xmlns:vm="using:AvaloniaApp.ViewModels;assembly=AvaloniaApp"
         Title="Avalonia Test Application" Width="800" Height="600">
 
-  <ListBox Items="{Binding Items}" SelectionMode="Multiple">
-    <ListBox.ItemTemplate>
-      <DataTemplate DataType="vm:TestItem">
-        <StackPanel>
-          <TextBlock Text="{Binding Header}" FontSize="24" />
-          <TextBlock Text="{Binding SubHeader}" />
-        </StackPanel>
-      </DataTemplate>
-    </ListBox.ItemTemplate>
-  </ListBox>
+  <Grid>
+    <Grid.RowDefinitions>
+      <RowDefinition Height="Auto" />
+      <RowDefinition />
+    </Grid.RowDefinitions>
+    <StackPanel>
+      <Menu>
+        <MenuItem Header="Archivo" Items="{Binding Items}" />
+      </Menu>
+      <Button x:Name="MyButton" Content="{Binding Title}" />
+      <Button>
+        <Button.Content>
+          <Binding Path="#MyButton.Content" />
+        </Button.Content>
+      </Button>     
+
+      <Image Source="Mario.png" />
+
+    </StackPanel>
+    <ListBox Grid.Row="1" Items="{BindingExtension Items}">
+      <!--<ListBoxItem>
+        <Grid>
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="114"/>
+            <ColumnDefinition/>
+          </Grid.ColumnDefinitions>
+          <Image Source="mario.png"  />
+          <TextBox Grid.Column="1">It's-a me!</TextBox>
+        </Grid>
+      </ListBoxItem>
+      <ListBoxItem>
+        <Grid>
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="114"/>
+            <ColumnDefinition/>
+          </Grid.ColumnDefinitions>
+          <Image Source="mario.png"  />
+          <TextBox Grid.Column="1" Text="It's-a me!">           
+          </TextBox>
+        </Grid>
+      </ListBoxItem>-->
+
+      <ListBox.ItemTemplate>
+        <DataTemplate>
+          <Grid ColumnDefinitions="Auto,*">
+            <TextBlock Text="{Binding SubHeader}"></TextBlock>
+            <Button Grid.Column="1" Content="{Binding Header}" />
+          </Grid>
+        </DataTemplate>
+      </ListBox.ItemTemplate>
+    </ListBox>
+  </Grid>
 
 </Window>

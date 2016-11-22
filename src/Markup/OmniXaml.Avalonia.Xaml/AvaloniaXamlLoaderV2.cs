@@ -1,6 +1,5 @@
 ﻿namespace OmniXaml.Avalonia
 {
-    using System;
     using System.Reflection;
     using Ambient;
     using Context;
@@ -14,7 +13,6 @@
     using global::Avalonia.Styling;
     using Styling;
     using Templates;
-    using Tests;
     using TypeLocation;
 
     public class AvaloniaXamlLoaderV2 : IXamlLoader
@@ -127,7 +125,8 @@
 
         private ParseResult GetConstructionNode(string xaml)
         {
-            var sut = new XamlToTreeParser(metadataProvider, new[] {new InlineParser(directory)}, new Resolver(directory));
+            var resolver = new Resolver(directory);
+            var sut = new XamlToTreeParser(metadataProvider, new[] {new InlineParser(resolver) }, resolver);
             var tree = sut.Parse(xaml, new PrefixAnnotator());
             return tree;
         }
