@@ -3,10 +3,8 @@
     using System;
     using System.Linq;
     using System.Reflection;
+    using Attributes;
     using global::Avalonia.Controls;
-    using global::Avalonia.Controls.Templates;
-    using global::Avalonia.Metadata;
-    using global::Avalonia.Platform;
     using Glass.Core;
     using Metadata;
     using Templates;
@@ -37,7 +35,7 @@
             return new DependencyRegistration
             {
                 PropertyName = info.Name,
-                DependsOn = attribute.Name,                
+                DependsOn = attribute.Dependency,                
             };
         }
 
@@ -69,10 +67,9 @@
         private string GetContentProperty(Type type)
         {
             var contentProperties = from prop in type.GetRuntimeProperties()
-                                  where prop.GetCustomAttribute<global::Avalonia.Metadata.ContentAttribute>() != null
+                                  where prop.GetCustomAttribute<ContentAttribute>() != null
                                   select prop.Name;
-               
-
+                           
             return contentProperties.FirstOrDefault();
         }
     }

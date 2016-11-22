@@ -63,6 +63,14 @@
       <Project>{EB582467-6ABB-43A1-B052-E981BA910E3A}</Project>
       <Name>Avalonia.Visuals</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Markup\OmniXAMLv2\OmniXaml.Attributes\OmniXaml.Attributes.csproj">
+      <Project>{4153120e-85ed-4ceb-ad0b-d5372744dde8}</Project>
+      <Name>OmniXaml.Attributes</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Markup\OmniXAMLv2\OmniXaml\OmniXaml.csproj">
+      <Project>{84AE3F65-B4DC-43E0-B2D0-DF0B188E8602}</Project>
+      <Name>OmniXaml</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="..\Shared\SharedAssemblyInfo.cs">

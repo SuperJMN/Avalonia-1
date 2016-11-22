@@ -5,12 +5,12 @@ namespace OmniXaml.Avalonia.Templates
 {
     using System;
     using System.Reflection;
+    using Attributes;
     using Data;
     using global::Avalonia.Controls;
     using global::Avalonia.Controls.Templates;
     using global::Avalonia.Data;
     using global::Avalonia.Markup.Data;
-    using global::Avalonia.Metadata;
 
     public class TreeDataTemplate : ITreeDataTemplate
     {

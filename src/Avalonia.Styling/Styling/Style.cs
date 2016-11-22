@@ -3,11 +3,11 @@
 
 using System;
 using System.Collections.Generic;
-using System.Reactive.Linq;
-using Avalonia.Metadata;
 
 namespace Avalonia.Styling
 {
+    using OmniXaml.Attributes;
+
     /// <summary>
     /// Defines a style.
     /// </summary>

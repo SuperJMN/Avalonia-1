@@ -1,5 +1,8 @@
 ﻿namespace OmniXaml.Avalonia
 {
+    using System.Collections;
+    using System.Collections.Generic;
+    using System.Linq;
     using System.Reflection;
     using Ambient;
     using Context;
@@ -10,7 +13,9 @@
     using global::Avalonia.Input;
     using global::Avalonia.Markup;
     using global::Avalonia.Media;
+    using global::Avalonia.Platform;
     using global::Avalonia.Styling;
+    using Services;
     using Styling;
     using Templates;
     using TypeLocation;
@@ -18,17 +23,40 @@
     public class XamlLoader : IXamlLoader
     {
         private readonly ObjectBuilderContext contructionContext;
-        private readonly TypeDirectory directory;
+        private readonly ITypeDirectory directory;
         private readonly MetadataProvider metadataProvider;
 
         public XamlLoader()
         {
             metadataProvider = new MetadataProvider();
-            directory = GetTypeDirectory();
+            directory = GetCoolDirectory();
 
             contructionContext = new ObjectBuilderContext(
-                Registrator.GetSourceValueConverter(directory),
+                Registrator.GetSourceValueConverter(),
                 metadataProvider);
+        }
+
+        private ITypeDirectory GetCoolDirectory()
+        {
+            IEnumerable<Assembly> ForcedAssemblies = new[]
+            {
+                typeof(AvaloniaObject).GetTypeInfo().Assembly,
+                typeof(Control).GetTypeInfo().Assembly,
+                typeof(Style).GetTypeInfo().Assembly,
+                typeof(DataTemplate).GetTypeInfo().Assembly,
+                typeof(SolidColorBrush).GetTypeInfo().Assembly,
+                typeof(IValueConverter).GetTypeInfo().Assembly,
+                typeof(StyleInclude).GetTypeInfo().Assembly,
+            };
+
+            var loadedAssemblies = AvaloniaLocator.Current
+                .GetService<IRuntimePlatform>()
+                ?.GetLoadedAssemblies() ?? new Assembly[0];
+
+            var scanned = loadedAssemblies.Except(ForcedAssemblies);
+
+            var assemblies = ForcedAssemblies.Concat(scanned);
+            return new AttributeBasedTypeDirectory(assemblies.ToList());
         }
 
         public ConstructionResult Load(string xaml)
@@ -37,8 +65,11 @@
                 new InstanceCreator(contructionContext.SourceValueConverter, contructionContext, directory),
                 contructionContext,
                 new ContextFactory(directory, contructionContext));
+
             var cons = GetConstructionNode(xaml);
+
             var namescopeAnnotator = new NamescopeAnnotator(contructionContext.MetadataProvider);
+
             var trackingContext = new BuildContext(namescopeAnnotator, new AmbientRegistrator(), new AvaloniaLifeCycleSignaler())
             {
                 PrefixAnnotator = cons.PrefixAnnotator,
@@ -56,8 +87,11 @@
                 new InstanceCreator(contructionContext.SourceValueConverter, contructionContext, directory),
                 contructionContext,
                 new ContextFactory(directory, contructionContext));
+
             var cons = GetConstructionNode(xaml);
+
             var namescopeAnnotator = new NamescopeAnnotator(contructionContext.MetadataProvider);
+
             var trackingContext = new BuildContext(namescopeAnnotator, new AmbientRegistrator(), new AvaloniaLifeCycleSignaler())
             {
                 PrefixAnnotator = cons.PrefixAnnotator,

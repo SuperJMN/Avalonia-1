@@ -2,10 +2,11 @@
 // Licensed under the MIT license. See licence.md file in the project root for full license information.
 
 using Avalonia.Collections;
-using Avalonia.Metadata;
 
 namespace Avalonia.Media
 {
+    using OmniXaml.Attributes;
+
     public class TransformGroup : Transform
     {
         /// <summary>

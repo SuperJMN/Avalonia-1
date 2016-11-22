@@ -11,11 +11,10 @@
     using global::Avalonia.Media;
     using global::Avalonia.Media.Imaging;
     using global::Avalonia.Styling;
-    using Tests.Namespaces;
 
     public static class Registrator
     {
-        public static ISourceValueConverter GetSourceValueConverter(ITypeDirectory typeDirectory)
+        public static ISourceValueConverter GetSourceValueConverter()
         {
             var sourceValueConverter = new SourceValueConverter();
 

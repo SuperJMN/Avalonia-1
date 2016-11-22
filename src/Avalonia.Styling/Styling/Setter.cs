@@ -3,15 +3,15 @@
 
 using System;
 using System.Reactive.Disposables;
-using System.Reactive.Subjects;
 using System.Reflection;
 using Avalonia.Controls;
 using Avalonia.Data;
-using Avalonia.Metadata;
 using Avalonia.Reactive;
 
 namespace Avalonia.Styling
 {
+    using OmniXaml.Attributes;
+
     /// <summary>
     /// A setter for a <see cref="Style"/>.
     /// </summary>

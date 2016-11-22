@@ -7,13 +7,13 @@ using Avalonia.Input;
 using Avalonia.Input.Raw;
 using Avalonia.Interactivity;
 using Avalonia.LogicalTree;
-using Avalonia.Metadata;
-using Avalonia.Rendering;
 using Avalonia.VisualTree;
 using Avalonia.Layout;
 
 namespace Avalonia.Controls.Primitives
 {
+    using OmniXaml.Attributes;
+
     /// <summary>
     /// Displays a popup window.
     /// </summary>

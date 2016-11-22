@@ -4,7 +4,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.Specialized;
-using System.Linq;
 using Avalonia.Collections;
 using Avalonia.Controls.Generators;
 using Avalonia.Controls.Presenters;
@@ -12,10 +11,11 @@ using Avalonia.Controls.Primitives;
 using Avalonia.Controls.Templates;
 using Avalonia.Controls.Utils;
 using Avalonia.LogicalTree;
-using Avalonia.Metadata;
 
 namespace Avalonia.Controls
 {
+    using OmniXaml.Attributes;
+
     /// <summary>
     /// Displays a collection of items.
     /// </summary>

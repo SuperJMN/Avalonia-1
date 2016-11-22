@@ -4,9 +4,9 @@
 
 namespace OmniXaml.Avalonia.Templates
 {
+    using Attributes;
     using global::Avalonia.Controls;
     using global::Avalonia.Controls.Templates;
-    using global::Avalonia.Metadata;
     using global::Avalonia.Styling;
 
     public class ControlTemplate : IControlTemplate

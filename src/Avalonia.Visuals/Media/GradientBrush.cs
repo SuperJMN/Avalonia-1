@@ -2,10 +2,11 @@
 // Licensed under the MIT license. See licence.md file in the project root for full license information.
 
 using System.Collections.Generic;
-using Avalonia.Metadata;
 
 namespace Avalonia.Media
 {
+    using OmniXaml.Attributes;
+
     public abstract class GradientBrush : Brush
     {
         public static readonly StyledProperty<GradientSpreadMethod> SpreadMethodProperty =

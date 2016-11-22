@@ -3,8 +3,9 @@
 
 using System.Reflection;
 using System.Runtime.CompilerServices;
-using Avalonia.Metadata;
+using OmniXaml.Attributes;
 
 [assembly: AssemblyTitle("Avalonia.Styling")]
-[assembly: XmlnsDefinition("https://github.com/avaloniaui", "Avalonia.Styling")]
 [assembly: InternalsVisibleTo("Avalonia.Styling.UnitTests")]
+
+[assembly: XmlnsDefinition("https://github.com/avaloniaui", "Avalonia.Styling")]

@@ -3,10 +3,11 @@
 
 using System;
 using Avalonia.Input;
-using Avalonia.Metadata;
 
 namespace Avalonia.Controls.Primitives
 {
+    using OmniXaml.Attributes;
+
     public class Track : Control
     {
         public static readonly DirectProperty<Track, double> MinimumProperty =

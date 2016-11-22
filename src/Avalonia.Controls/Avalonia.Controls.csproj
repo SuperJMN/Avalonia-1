@@ -240,6 +240,14 @@
       <Project>{F1BAA01A-F176-4C6A-B39D-5B40BB1B148F}</Project>
       <Name>Avalonia.Styling</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Markup\OmniXAMLv2\OmniXaml.Attributes\OmniXaml.Attributes.csproj">
+      <Project>{4153120E-85ED-4CEB-AD0B-D5372744DDE8}</Project>
+      <Name>OmniXaml.Attributes</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Markup\OmniXAMLv2\OmniXaml\OmniXaml.csproj">
+      <Project>{84AE3F65-B4DC-43E0-B2D0-DF0B188E8602}</Project>
+      <Name>OmniXaml</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="project.json" />

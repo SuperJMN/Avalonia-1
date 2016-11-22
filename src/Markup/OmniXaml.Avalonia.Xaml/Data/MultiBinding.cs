@@ -9,11 +9,11 @@ namespace OmniXaml.Avalonia.Data
     using System.Linq;
     using System.Reactive.Linq;
     using System.Reactive.Subjects;
+    using Attributes;
     using global::Avalonia;
     using global::Avalonia.Controls;
     using global::Avalonia.Data;
     using global::Avalonia.Markup;
-    using global::Avalonia.Metadata;
 
     /// <summary>
     /// A XAML binding that calculates an aggregate value from multiple child <see cref="Bindings"/>.

@@ -4,13 +4,13 @@
 using System;
 using System.Reactive;
 using System.Reactive.Linq;
-using Avalonia.Data;
 using Avalonia.LogicalTree;
 using Avalonia.Media;
-using Avalonia.Metadata;
 
 namespace Avalonia.Controls
 {
+    using OmniXaml.Attributes;
+
     /// <summary>
     /// A control that displays a block of text.
     /// </summary>

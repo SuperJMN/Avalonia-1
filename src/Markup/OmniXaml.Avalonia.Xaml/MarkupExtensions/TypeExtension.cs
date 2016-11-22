@@ -4,7 +4,7 @@
 namespace OmniXaml.Avalonia.MarkupExtensions
 {
     using System;
-    using global::Avalonia.Metadata;
+    using Attributes;
     using Glass.Core;
     using OmniXaml;
 

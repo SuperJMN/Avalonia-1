@@ -6,10 +6,11 @@ using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.Linq;
 using Avalonia.Media;
-using Avalonia.Metadata;
 
 namespace Avalonia.Controls
 {
+    using OmniXaml.Attributes;
+
     /// <summary>
     /// Base class for controls that can contain multiple children.
     /// </summary>

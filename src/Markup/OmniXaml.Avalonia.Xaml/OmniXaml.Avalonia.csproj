@@ -144,6 +144,14 @@
       <Project>{4aefcfcf-5514-44b1-acef-93d40528a0bc}</Project>
       <Name>Glass.Core</Name>
     </ProjectReference>
+    <ProjectReference Include="..\OmniXAMLv2\OmniXaml.Attributes\OmniXaml.Attributes.csproj">
+      <Project>{4153120E-85ED-4CEB-AD0B-D5372744DDE8}</Project>
+      <Name>OmniXaml.Attributes</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\OmniXAMLv2\OmniXaml.Services\OmniXaml.Services.csproj">
+      <Project>{98E0E4A2-454C-446E-B585-1880FCD97541}</Project>
+      <Name>OmniXaml.Services</Name>
+    </ProjectReference>
     <ProjectReference Include="..\OmniXAMLv2\OmniXaml\OmniXaml.csproj">
       <Project>{84ae3f65-b4dc-43e0-b2d0-df0b188e8602}</Project>
       <Name>OmniXaml</Name>
