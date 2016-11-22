@@ -42,7 +42,7 @@ namespace OmniXaml.Avalonia.Styling
             {
                 if (loaded == null)
                 {
-                    var loader = new AvaloniaXamlLoaderV2();
+                    var loader = new XamlLoader();
                     
                     var assetLoader = AvaloniaLocator.Current.GetService<IAssetLoader>();
                     using (var stream = new StreamReader(assetLoader.Open(Source)))

@@ -13,7 +13,7 @@
 
     class App : Application
     {
-        private static readonly AvaloniaXamlLoaderV2 Loader = new AvaloniaXamlLoaderV2();
+        private static readonly XamlLoader Loader = new XamlLoader();
 
         public override void Initialize()
         {

@@ -15,13 +15,13 @@
     using Templates;
     using TypeLocation;
 
-    public class AvaloniaXamlLoaderV2 : IXamlLoader
+    public class XamlLoader : IXamlLoader
     {
         private readonly ObjectBuilderContext contructionContext;
         private readonly TypeDirectory directory;
         private readonly MetadataProvider metadataProvider;
 
-        public AvaloniaXamlLoaderV2()
+        public XamlLoader()
         {
             metadataProvider = new MetadataProvider();
             directory = GetTypeDirectory();
