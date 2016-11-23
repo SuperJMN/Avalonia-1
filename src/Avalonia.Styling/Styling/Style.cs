@@ -90,10 +90,6 @@ namespace Avalonia.Styling
 
                     foreach (var setter in Setters)
                     {
-                        if (control.GetType().Name == "MyButton" && ((Setter)setter).Property.Name == "Template")
-                        {
-                            System.Diagnostics.Debugger.Break();
-                        }
                         var sub = setter.Apply(this, control, match.ObservableResult);
                         subs.Add(sub);
                     }
