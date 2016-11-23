@@ -24,6 +24,8 @@ using TheArtOfDev.HtmlRenderer.Avalonia.Adapters;
 
 namespace Avalonia.Controls.Html
 {
+    using OmniXaml.Attributes;
+
     /// <summary>
     /// Provides HTML rendering using the text property.<br/>
     /// Avalonia control that will render html content in it's client rectangle.<br/>
@@ -243,6 +245,7 @@ namespace Avalonia.Controls.Html
         /// Gets or sets the text of this panel
         /// </summary>
         [Description("Sets the html of this control.")]
+        [Content]
         public string Text
         {
             get { return (string)GetValue(TextProperty); }

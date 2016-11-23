@@ -1,29 +1,17 @@
 ﻿namespace AvaloniaApp
 {
-    using System;
-    using System.IO;
     using Avalonia;
-    using Avalonia.Controls;
-    using Avalonia.Diagnostics;
     using Avalonia.Logging.Serilog;
-    using Avalonia.Platform;
     using OmniXaml.Avalonia;
     using Serilog;
     using ViewModels;
 
     class App : Application
     {
-        private static readonly XamlLoader Loader = new XamlLoader();
-
         public override void Initialize()
         {
-            var assetLoader = AvaloniaLocator.Current.GetService<IAssetLoader>();
-
-            using (var stream = new StreamReader(assetLoader.Open(new Uri("resm:AvaloniaApp.App.xaml?assembly=AvaloniaApp"))))
-            {
-                var xaml = stream.ReadToEnd();
-                Loader.Load(xaml, this);
-            }
+            XamlService.Current = new XamlService();
+            XamlService.Current.Load(this);
         }
 
         static void Main()
@@ -34,7 +22,8 @@
                 .UseDirect2D1()
                 .SetupWithoutStarting();
 
-            var window = (Window)Loader.Load(File.ReadAllText("MyCustomWindow.xaml")).Instance;
+            
+            var window = new MyCustomWindow();
             window.DataContext = new MainWindowViewModel();
 
             window.Show();

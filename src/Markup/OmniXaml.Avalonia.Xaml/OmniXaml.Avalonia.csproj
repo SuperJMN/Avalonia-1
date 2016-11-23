@@ -99,6 +99,7 @@
     <Compile Include="Templates\MemberSelector.cs" />
     <Compile Include="Templates\Template.cs" />
     <Compile Include="Templates\TreeDataTemplate.cs" />
+    <Compile Include="XamlService.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="project.json" />
@@ -115,6 +116,10 @@
     <ProjectReference Include="..\..\Avalonia.Controls\Avalonia.Controls.csproj">
       <Project>{D2221C82-4A25-4583-9B43-D791E3F6820C}</Project>
       <Name>Avalonia.Controls</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Avalonia.HtmlRenderer\Avalonia.HtmlRenderer.csproj">
+      <Project>{5FB2B005-0A7F-4DAD-ADD4-3ED01444E63D}</Project>
+      <Name>Avalonia.HtmlRenderer</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\Avalonia.Input\Avalonia.Input.csproj">
       <Project>{62024B2D-53EB-4638-B26B-85EEAA54866E}</Project>

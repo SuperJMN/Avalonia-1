@@ -188,6 +188,12 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MyCustomWindow.xaml.cs">
+      <DependentUpon>MyCustomWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TesterWindow.xaml.cs">
+      <DependentUpon>TesterWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ViewModels\EditorViewModel.cs" />
     <Compile Include="ViewModels\MainWindowViewModel.cs" />
     <Compile Include="ViewModels\TestItem.cs" />
@@ -199,7 +205,6 @@
       <DependentUpon>App.xaml</DependentUpon>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Compile>
-    <Compile Include="MyCustomWindow.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -222,6 +227,10 @@
     <ProjectReference Include="..\..\src\Avalonia.DotNetFrameworkRuntime\Avalonia.DotNetFrameworkRuntime.csproj">
       <Project>{4A1ABB09-9047-4BD5-A4AD-A055E52C5EE0}</Project>
       <Name>Avalonia.DotNetFrameworkRuntime</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\src\Avalonia.HtmlRenderer\Avalonia.HtmlRenderer.csproj">
+      <Project>{5fb2b005-0a7f-4dad-add4-3ed01444e63d}</Project>
+      <Name>Avalonia.HtmlRenderer</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\src\Avalonia.Input\Avalonia.Input.csproj">
       <Project>{62024B2D-53EB-4638-B26B-85EEAA54866E}</Project>
@@ -255,6 +264,10 @@
       <Project>{3e10a5fa-e8da-48b1-ad44-6a5b6cb7750f}</Project>
       <Name>Avalonia.Themes.Default</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\src\Markup\Avalonia.Markup\Avalonia.Markup.csproj">
+      <Project>{6417E941-21BC-467B-A771-0DE389353CE6}</Project>
+      <Name>Avalonia.Markup</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\src\Markup\OmniXaml.Avalonia.Xaml\OmniXaml.Avalonia.csproj">
       <Project>{fb8a5225-7584-49a4-8978-fa1861aa91b4}</Project>
       <Name>OmniXaml.Avalonia</Name>
@@ -282,10 +295,9 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <None Include="MyCustomWindow.xaml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <EmbeddedResource Include="MyCustomWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
-    </None>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <None Include="github_icon.png">
@@ -298,9 +310,9 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Tester.xml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
+    <EmbeddedResource Include="TesterWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets" Condition="Exists('..\..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" />
