@@ -1,5 +1,6 @@
 ﻿namespace OmniXaml.Avalonia
 {
+    using System;
     using System.Collections.Generic;
     using System.Reflection;
     using Ambient;
@@ -45,10 +46,23 @@
 
         public ConstructionResult Load(string xaml, object rootInstance)
         {
+            return Load(xaml, rootInstance, null);
+        }
+
+        private ParseResult GetConstructionNode(string xaml)
+        {
+            var resolver = new Resolver(directory);
+            var sut = new XamlToTreeParser(metadataProvider, new[] {new InlineParser(resolver) }, resolver);
+            var tree = sut.Parse(xaml, new PrefixAnnotator());
+            return tree;
+        }
+
+        public ConstructionResult Load(string xaml, object rootInstance, Uri uri)
+        {
             var objectBuilder = new AvaloniaObjectBuilder(
-                new InstanceCreator(contructionContext.SourceValueConverter, contructionContext, directory),
-                contructionContext,
-                new ContextFactory(directory, contructionContext));
+               new InstanceCreator(contructionContext.SourceValueConverter, contructionContext, directory),
+               contructionContext,
+               new ContextFactory(directory, contructionContext));
 
             var cons = GetConstructionNode(xaml);
 
@@ -60,16 +74,17 @@
                 PrefixedTypeResolver = new PrefixedTypeResolver(cons.PrefixAnnotator, directory)
             };
 
+            trackingContext.Bag.Add("Uri", CreateBaseUri(uri));
+
             var inflatedInstance = objectBuilder.Inflate(cons.Root, trackingContext, rootInstance);
             return new ConstructionResult(inflatedInstance, namescopeAnnotator);
         }
 
-        private ParseResult GetConstructionNode(string xaml)
+        private Uri CreateBaseUri(Uri uri)
         {
-            var resolver = new Resolver(directory);
-            var sut = new XamlToTreeParser(metadataProvider, new[] {new InlineParser(resolver) }, resolver);
-            var tree = sut.Parse(xaml, new PrefixAnnotator());
-            return tree;
+            var file = uri.UserInfo;
+            var index = uri.OriginalString.IndexOf(file);
+            return new Uri($"{uri.OriginalString.Remove(index)}");
         }
     }
 }

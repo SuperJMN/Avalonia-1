@@ -51,9 +51,9 @@ namespace Avalonia.Shared.PlatformSupport
         /// A base URI to use if <paramref name="uri"/> is relative.
         /// </param>
         /// <returns>True if the asset could be found; otherwise false.</returns>
-        public bool Exists(Uri uri, Uri baseUri = null)
+        public bool Exists(Uri uri)
         {
-            return GetAsset(uri, baseUri) != null;
+            return GetAsset(uri) != null;
         }
 
         /// <summary>
@@ -67,9 +67,9 @@ namespace Avalonia.Shared.PlatformSupport
         /// <exception cref="FileNotFoundException">
         /// The resource was not found.
         /// </exception>
-        public Stream Open(Uri uri, Uri baseUri = null)
+        public Stream Open(Uri uri)
         {
-            var asset = GetAsset(uri, baseUri);
+            var asset = GetAsset(uri);
 
             if (asset == null)
             {
@@ -79,11 +79,11 @@ namespace Avalonia.Shared.PlatformSupport
             return asset.GetStream();
         }
 
-        private IAssetDescriptor GetAsset(Uri uri, Uri baseUri)
+        private IAssetDescriptor GetAsset(Uri uri)
         {
             if (!uri.IsAbsoluteUri || uri.Scheme == "resm")
             {
-                var asm = GetAssembly(uri) ?? GetAssembly(baseUri) ?? _defaultAssembly;
+                var asm = GetAssembly(uri.Host) ?? _defaultAssembly;
 
                 if (asm == null && _defaultAssembly == null)
                 {
@@ -94,7 +94,10 @@ namespace Avalonia.Shared.PlatformSupport
 
                 IAssetDescriptor rv;
 
-                var resourceKey = uri.AbsolutePath;
+                var replace = uri.PathAndQuery.Replace("/", ".");
+                
+                
+                var resourceKey = replace.StartsWith(".") ? uri.Host + replace : uri.Host + "." +  replace;
 
 #if __IOS__
                 // TODO: HACK: to get iOS up and running. Using Shared projects for resources

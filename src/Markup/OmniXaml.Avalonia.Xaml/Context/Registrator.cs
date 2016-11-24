@@ -32,7 +32,7 @@
             sourceValueConverter.Add(typeof(IBrush), context => new BrushTypeConverter().ConvertFrom(context, CultureInfo.CurrentCulture, context.Value));
             sourceValueConverter.Add(typeof(Geometry), context => new GeometryTypeConverter().ConvertFrom(context, CultureInfo.CurrentCulture, context.Value));
             sourceValueConverter.Add(typeof(Point), context => new PointTypeConverter().ConvertFrom(context, CultureInfo.CurrentCulture, context.Value));
-            sourceValueConverter.Add(typeof(List<Point>), context => new PointsListTypeConverter().ConvertFrom(context, CultureInfo.CurrentCulture, context.Value));
+            sourceValueConverter.Add(typeof(IList<Point>), context => new PointsListTypeConverter().ConvertFrom(context, CultureInfo.CurrentCulture, context.Value));
             sourceValueConverter.Add(typeof(RelativePoint), context => new RelativePointTypeConverter().ConvertFrom(context, CultureInfo.CurrentCulture, context.Value));
             sourceValueConverter.Add(typeof(Color), context => new ColorTypeConverter().ConvertFrom(context, CultureInfo.CurrentCulture, context.Value));
             sourceValueConverter.Add(typeof(RelativeRect), context => new RelativeRectTypeConverter().ConvertFrom(context, CultureInfo.CurrentCulture, context.Value));

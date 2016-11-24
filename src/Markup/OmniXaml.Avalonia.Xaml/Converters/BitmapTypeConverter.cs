@@ -34,7 +34,7 @@ namespace OmniXaml.Avalonia.Converters
                     return new Bitmap((string)context.Value);
                 default:
                     var assets = AvaloniaLocator.Current.GetService<IAssetLoader>();
-                    return new Bitmap(assets.Open(uri, baseUri));
+                    return new Bitmap(assets.Open(uri));
             }
         }
 

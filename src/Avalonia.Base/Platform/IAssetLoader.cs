@@ -29,7 +29,7 @@ namespace Avalonia.Platform
         /// A base URI to use if <paramref name="uri"/> is relative.
         /// </param>
         /// <returns>True if the asset could be found; otherwise false.</returns>
-        bool Exists(Uri uri, Uri baseUri = null);
+        bool Exists(Uri uri);
 
         /// <summary>
         /// Opens the resource with the requested URI.
@@ -42,6 +42,6 @@ namespace Avalonia.Platform
         /// <exception cref="FileNotFoundException">
         /// The resource was not found.
         /// </exception>
-        Stream Open(Uri uri, Uri baseUri = null);
+        Stream Open(Uri uri);
     }
 }

@@ -1,11 +1,11 @@
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using Avalonia.Controls;
-using Avalonia.Markup.Xaml;
 
 namespace ControlCatalog.Pages
 {
+    using OmniXaml.Avalonia;
+
     public class TreeViewPage : UserControl
     {
         public TreeViewPage()
@@ -16,7 +16,7 @@ namespace ControlCatalog.Pages
 
         private void InitializeComponent()
         {
-            AvaloniaXamlLoader.Load(this);
+            XamlService.Current.Load(this);
         }
 
         private IList<Node> CreateNodes(int level)

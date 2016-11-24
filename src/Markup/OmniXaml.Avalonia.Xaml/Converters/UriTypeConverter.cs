@@ -20,14 +20,35 @@ namespace OmniXaml.Avalonia.Converters
 
         public object ConvertFrom(ConverterValueContext context, CultureInfo culture, object value)
         {
-            object baseUri;
-            if (context.BuildContext.Bag.TryGetValue("Uri", out baseUri))
+            Uri uri;
+            var tryAbsolute = new Uri((string)value, UriKind.RelativeOrAbsolute);
+            if (tryAbsolute.IsAbsoluteUri)
             {
-                var b = (string) baseUri;
-                return new Uri(new Uri(b, UriKind.Absolute), new Uri((string)value));
+                uri = tryAbsolute;
+            }
+            else
+            {
+                object absolutelyUri;
+                if (context.BuildContext.Bag.TryGetValue("Uri", out absolutelyUri))
+                {
+                    var baseUri = (Uri)absolutelyUri;
+                    var relativeUri = new Uri((string)value, UriKind.Relative);
+
+                    var finalUri = new Uri(baseUri, relativeUri);
+
+                    uri = finalUri;
+                }
+                else
+                {
+                    throw new InvalidOperationException($"Cannot get the base Uri for {value}");
+                }
             }
 
-            return new Uri((string)value);
+            if (!uri.IsWellFormedOriginalString())
+            {
+                throw new InvalidOperationException($"Invalid Uri {value}");
+            }
+            return uri;
         }
 
         public object ConvertTo(ConverterValueContext context, CultureInfo culture, object value, Type destinationType)

@@ -1,6 +1,6 @@
 <UserControl xmlns="https://github.com/avaloniaui"
-        xmlns:pages="clr-namespace:ControlCatalog.Pages;assembly=ControlCatalog"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+        xmlns:pages="using:ControlCatalog.Pages;assembly=ControlCatalog"
+        xmlns:x="special">
   <TabControl Classes="sidebar">
     <TabControl.Transition>
       <CrossFade Duration="0.25"/>

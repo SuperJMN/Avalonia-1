@@ -5,6 +5,8 @@ using Avalonia.Markup.Xaml;
 
 namespace ControlCatalog.Pages
 {
+    using OmniXaml.Avalonia;
+
     public class CarouselPage : UserControl
     {
         private Carousel _carousel;
@@ -15,14 +17,14 @@ namespace ControlCatalog.Pages
         public CarouselPage()
         {
             this.InitializeComponent();
-            _left.Click += (s, e) => _carousel.Previous();
-            _right.Click += (s, e) => _carousel.Next();
-            _transition.SelectionChanged += TransitionChanged;
+            //_left.Click += (s, e) => _carousel.Previous();
+            //_right.Click += (s, e) => _carousel.Next();
+            //_transition.SelectionChanged += TransitionChanged;
         }
 
         private void InitializeComponent()
         {
-            AvaloniaXamlLoader.Load(this);
+            XamlService.Current.Load(this);
             _carousel = this.FindControl<Carousel>("carousel");
             _left = this.FindControl<Button>("left");
             _right = this.FindControl<Button>("right");

@@ -1,7 +1,7 @@
 <Application xmlns="https://github.com/avaloniaui">
   <Application.Styles>
-    <StyleInclude Source="resm:Avalonia.Themes.Default.DefaultTheme.xaml?assembly=Avalonia.Themes.Default"/>
-    <StyleInclude Source="resm:Avalonia.Themes.Default.Accents.BaseLight.xaml?assembly=Avalonia.Themes.Default"/>
+    <StyleInclude Source="resm:[Avalonia.Themes.Default]/DefaultTheme.xaml"/>
+    <StyleInclude Source="resm:[Avalonia.Themes.Default]/Accents/BaseLight.xaml" />
 
     <Style Selector="TextBlock.h1">
       <Setter Property="Foreground" Value="#212121"/>
@@ -14,6 +14,6 @@
       <Setter Property="FontSize" Value="13"/>
     </Style>
 
-    <StyleInclude Source="resm:ControlCatalog.SideBar.xaml"/>
+    <StyleInclude Source="SideBar.xaml"/>
   </Application.Styles>
 </Application>

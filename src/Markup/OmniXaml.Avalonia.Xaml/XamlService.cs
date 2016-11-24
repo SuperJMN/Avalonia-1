@@ -23,11 +23,11 @@
 
         public static XamlService Current
         {
-            get { return s_current; }
+            get { return s_current ?? (s_current = new XamlService()); }
             set { s_current = value; }
         }
 
-        private IXamlLoader loader;
+        private readonly XamlLoader loader;
 
         public XamlService()
         {
@@ -65,7 +65,7 @@
             {
                 var initialize = rootInstance as ISupportInitialize;
                 initialize?.BeginInit();
-                return Load(stream, rootInstance);
+                return Load(stream, rootInstance, uri);
             }
         }
 
@@ -98,7 +98,7 @@
 
         private object Load(Stream stream, object rootInstance = null, Uri uri = null)
         {
-            var result = loader.Load(new StreamReader(stream).ReadToEnd(), rootInstance).Instance;
+            var result = loader.Load(new StreamReader(stream).ReadToEnd(), rootInstance, uri).Instance;
 
             var topLevel = result as TopLevel;
 
@@ -113,9 +113,12 @@
         private IEnumerable<Uri> GetUrisFor(Type type)
         {
             var asm = type.GetTypeInfo().Assembly.GetName().Name;
-            var typeName = type.FullName;
-            yield return new Uri("resm:" + typeName + ".xaml?assembly=" + asm);
-            yield return new Uri("resm:" + typeName + ".paml?assembly=" + asm);
+            var typeName = type.Namespace + "." + type.Name;
+            var path = typeName.Replace(".", "/");
+            var i = asm.Count() + 1;
+            path = path.Remove(0, i);
+            yield return new Uri($"resm:[{asm}]/{path}.xaml" );
+            yield return new Uri($"resm:[{asm}]/{path}.paml");
 
         }
     }

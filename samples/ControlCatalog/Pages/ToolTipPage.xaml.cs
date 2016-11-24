@@ -3,6 +3,8 @@ using Avalonia.Markup.Xaml;
 
 namespace ControlCatalog.Pages
 {
+    using OmniXaml.Avalonia;
+
     public class ToolTipPage : UserControl
     {
         public ToolTipPage()
@@ -12,7 +14,7 @@ namespace ControlCatalog.Pages
 
         private void InitializeComponent()
         {
-            AvaloniaXamlLoader.Load(this);
+            XamlService.Current.Load(this);
         }
     }
 }

@@ -1,5 +1,6 @@
 <UserControl xmlns="https://github.com/avaloniaui"
-             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+             xmlns:mut="https://github.com/avaloniaui/mutable"
+             xmlns:x="special">
   <StackPanel Orientation="Vertical" Gap="4">
     <TextBlock Classes="h1">Button</TextBlock>
     <TextBlock Classes="h2">A button control</TextBlock>
@@ -17,8 +18,8 @@
           <Button.Styles>
             <Style>
               <Style.Resources>
-                <SolidColorBrush x:Key="ThemeBorderMidBrush">Red</SolidColorBrush>
-                <SolidColorBrush x:Key="ThemeControlDarkBrush">DarkRed</SolidColorBrush>
+                <mut:SolidColorBrush x:Key="ThemeBorderMidBrush">Red</mut:SolidColorBrush>
+                <mut:SolidColorBrush x:Key="ThemeControlDarkBrush">DarkRed</mut:SolidColorBrush>
               </Style.Resources>
             </Style>
           </Button.Styles>          

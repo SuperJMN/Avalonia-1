@@ -1,6 +1,8 @@
 ﻿namespace AvaloniaApp
 {
+    using System;
     using Avalonia;
+    using Avalonia.DotNetFrameworkRuntime;
     using Avalonia.Logging.Serilog;
     using OmniXaml.Avalonia;
     using Serilog;
@@ -10,12 +12,13 @@
     {
         public override void Initialize()
         {
-            XamlService.Current = new XamlService();
             XamlService.Current.Load(this);
         }
 
         static void Main()
         {
+            UriParser.Register(new ResourceManagerUriParser(), "resm", 0);
+            
             InitializeLogging();
             AppBuilder.Configure<App>()
                 .UseWin32()

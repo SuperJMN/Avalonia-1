@@ -4,6 +4,8 @@ using Avalonia.Markup.Xaml;
 
 namespace ControlCatalog
 {
+    using OmniXaml.Avalonia;
+
     public class MainView : UserControl
     {
         public MainView()
@@ -13,7 +15,7 @@ namespace ControlCatalog
 
         private void InitializeComponent()
         {
-            AvaloniaXamlLoader.Load(this);
+            XamlService.Current.Load(this);
         }
     }
 }

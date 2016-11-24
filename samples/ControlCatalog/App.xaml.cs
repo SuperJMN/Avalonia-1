@@ -2,11 +2,13 @@ using Avalonia;
 
 namespace ControlCatalog
 {
+    using OmniXaml.Avalonia;
+
     public class App : Application
     {
         public override void Initialize()
         {
-            new XamlLoader().Load(this);
+            XamlService.Current.Load(this);
         }
     }
 }

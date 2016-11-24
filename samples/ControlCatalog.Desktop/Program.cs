@@ -8,11 +8,15 @@ using Serilog;
 
 namespace ControlCatalog
 {
+    using Avalonia.DotNetFrameworkRuntime;
+
     internal class Program
     {
         static void Main(string[] args)
         {
             InitializeLogging();
+
+            UriParser.Register(new ResourceManagerUriParser(), "resm", 0);
 
             // TODO: Make this work with GTK/Skia/Cairo depending on command-line args
             // again.
