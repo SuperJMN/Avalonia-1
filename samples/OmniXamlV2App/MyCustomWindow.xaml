@@ -4,5 +4,6 @@
         Title="Avalonia Test Application" Width="800" Height="600"
         xmlns:local="using:AvaloniaApp;Assembly=AvaloniaApp">
 
-    <local:MyUserControl></local:MyUserControl>
+    <local:MyButton>Hola</local:MyButton>
+    
 </Window>

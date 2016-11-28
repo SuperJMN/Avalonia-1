@@ -1,8 +1,23 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-    
+
 <local:MyUserControl xmlns="https://github.com/avaloniaui"
                xmlns:local="using:AvaloniaApp;Assembly=AvaloniaApp">
 
-    <Button>Hola</Button>
+    <!--<local:MyUserControl.Template>
+        <ControlTemplate>
+            <ContentPresenter Name="PART_ContentPresenter"
+                        Background="{TemplateBinding Background}"
+                        BorderBrush="{TemplateBinding BorderBrush}"
+                        BorderThickness="{TemplateBinding BorderThickness}"
+                        Content="{TemplateBinding Content}"
+                        ContentTemplate="{TemplateBinding ContentTemplate}"
+                        Padding="{TemplateBinding Padding}"/>
+        </ControlTemplate>
+    </local:MyUserControl.Template>-->
+    
+    <Grid>
+        <Button>Hola</Button>
+    </Grid>
 
 </local:MyUserControl>
+
