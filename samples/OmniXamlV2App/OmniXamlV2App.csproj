@@ -191,8 +191,8 @@
     <Compile Include="MyCustomWindow.xaml.cs">
       <DependentUpon>MyCustomWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="TesterWindow.xaml.cs">
-      <DependentUpon>TesterWindow.xaml</DependentUpon>
+    <Compile Include="MyUserControl.xaml.cs">
+      <DependentUpon>MyUserControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="ViewModels\EditorViewModel.cs" />
     <Compile Include="ViewModels\MainWindowViewModel.cs" />
@@ -307,8 +307,9 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="TesterWindow.xaml">
+    <EmbeddedResource Include="MyUserControl.xaml">
       <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

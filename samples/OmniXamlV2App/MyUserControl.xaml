@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+    
+<local:MyUserControl xmlns="https://github.com/avaloniaui"
+               xmlns:local="using:AvaloniaApp;Assembly=AvaloniaApp">
+
+    <Button>Hola</Button>
+
+</local:MyUserControl>

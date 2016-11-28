@@ -3,9 +3,9 @@
     using Avalonia.Controls;
     using OmniXaml.Avalonia;
 
-    public class TesterWindow : Window
+    public class MyUserControl : UserControl
     {
-        public TesterWindow()
+        public MyUserControl()
         {
             XamlService.Current.Load(this);
         }
