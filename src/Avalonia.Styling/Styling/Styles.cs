@@ -6,6 +6,8 @@ using Avalonia.Collections;
 
 namespace Avalonia.Styling
 {
+    using System.Diagnostics;
+
     /// <summary>
     /// A style that consists of a number of child styles.
     /// </summary>

@@ -4,16 +4,21 @@
 
     public class AvaloniaLifeCycleSignaler : IInstanceLifecycleSignaler
     {
-        public void BeforeAssigments(object instance)
-        {
-            var isi = instance as ISupportInitialize;
+        public void OnBegin(object instance)
+        {          
+            var isi = instance as ISupportInitialize;            
             isi?.BeginInit();
         }
 
-        public void AfterAssigments(object instance)
+        public void EndEnd(object instance)
         {
             var isi = instance as ISupportInitialize;
             isi?.EndInit();
+        }
+
+        public void AfterAssociatedToParent(object instance)
+        {
+
         }
     }
 }

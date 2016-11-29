@@ -4,6 +4,7 @@
 namespace OmniXaml.Avalonia.Styling
 {
     using System;
+    using System.Diagnostics;
     using System.IO;
     using Avalonia;
     using global::Avalonia;
@@ -54,7 +55,7 @@ namespace OmniXaml.Avalonia.Styling
         {
             if (Source != null)
             {
-                Loaded.Attach(control, container);
+                 Loaded.Attach(control, container);
             }
         }
 

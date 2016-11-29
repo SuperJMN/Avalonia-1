@@ -6,6 +6,7 @@ using System.Globalization;
 
 namespace Avalonia.Markup.Xaml.Converters
 {
+    using System.Diagnostics;
     using OmniXaml;
     using OmniXaml.Avalonia.Converters;
     using OmniXaml.Avalonia.Parsers;
@@ -24,20 +25,24 @@ namespace Avalonia.Markup.Xaml.Converters
 
         public object ConvertFrom(ConverterValueContext context, CultureInfo culture, object value)
         {
-            var parser = new SelectorParser((t, prefix) =>
-            {
-                var actualPrefix = prefix ?? "";
-                var typeByPrefix = context.BuildContext.PrefixedTypeResolver.GetTypeByPrefix(context.BuildContext.CurrentNode, t);
-
-                if (typeByPrefix == null)
-                {
-                    throw new Exception($@"Cannot find the type {t} with the prefix ""{actualPrefix}""");
-                }
-
-                return typeByPrefix;
-            });
+            var parser = new SelectorParser((typeName, prefix) => ResolveTypeFromPrefix(context, prefix, typeName));
 
             return parser.Parse((string)value);
+        }
+
+        private static Type ResolveTypeFromPrefix(ConverterValueContext context, string prefix, string typeName)
+        {
+            var finalPrefix = prefix ?? string.Empty;
+            var prefixedType = finalPrefix + ":" + typeName;
+
+            var typeByPrefix = context.BuildContext.PrefixedTypeResolver.GetTypeByPrefix(context.BuildContext.CurrentNode, prefixedType);
+
+            if (typeByPrefix == null)
+            {
+                throw new Exception($@"Cannot find the type '{prefixedType}'");
+            }
+
+            return typeByPrefix;
         }
 
         public object ConvertTo(ConverterValueContext context, CultureInfo culture, object value, Type destinationType)

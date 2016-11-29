@@ -6,6 +6,8 @@ using System.Collections.Generic;
 
 namespace Avalonia.Styling
 {
+    using System.Diagnostics;
+
     /// <summary>
     /// A selector in a <see cref="Style"/>.
     /// </summary>

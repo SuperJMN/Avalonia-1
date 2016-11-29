@@ -25,14 +25,16 @@
                 }
                 else
                 {
-                    Collection.UniversalAdd(assignmentTarget.Member.GetValue(assignmentTarget.Target.Instance), compatibleValue);
+                    Collection.UniversalAdd(assignmentTarget.Member.GetValue(assignmentTarget.Target.Instance), compatibleValue);                    
                 }                
             }
             else
             {
                 var context = contextFactory.CreateConverterContext(assignmentTarget.Member.MemberType, compatibleValue, trackingContext);
                 PropertyAccessor.SetValue(assignmentTarget.Target.Instance, assignmentTarget.Member, assignmentTarget.Value, context);
-            }            
+            }
+
+            OnInstanceAssociated(trackingContext, compatibleValue);
         }
     }
 }
