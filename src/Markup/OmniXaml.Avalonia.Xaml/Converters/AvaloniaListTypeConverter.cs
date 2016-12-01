@@ -4,11 +4,12 @@
 namespace OmniXaml.Avalonia.Converters
 {
     using System;
+    using System.ComponentModel;
     using System.Globalization;
     using global::Avalonia.Collections;
     using global::Avalonia.Utilities;
 
-    public class AvaloniaListTypeConverter<T> : ITypeConverter
+    public class AvaloniaListTypeConverter<T> : TypeConverter
     {
         public bool CanConvertFrom(ConverterValueContext context, Type sourceType)
         {

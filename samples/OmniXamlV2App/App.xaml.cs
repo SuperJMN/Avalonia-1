@@ -6,6 +6,7 @@
     using Avalonia.Logging.Serilog;
     using OmniXaml.Avalonia;
     using Serilog;
+    using Serilog.Events;
     using ViewModels;
 
     class App : Application
@@ -46,7 +47,8 @@
         {
 #if DEBUG
             SerilogLogger.Initialize(new LoggerConfiguration()
-                .MinimumLevel.Warning()
+                .WriteTo.LiterateConsole()
+                .WriteTo.RollingFile("log-{Date}.txt")
                 .WriteTo.Trace(outputTemplate: "{Area}: {Message}")
                 .CreateLogger());
 #endif

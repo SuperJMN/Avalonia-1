@@ -4,27 +4,33 @@
 namespace OmniXaml.Avalonia.Converters
 {
     using System;
+    using System.ComponentModel;
     using System.Globalization;
     using global::Avalonia;
 
-    public class ThicknessTypeConverter : ITypeConverter
+    public class ThicknessTypeConverter : TypeConverter
     {
-        public bool CanConvertFrom(ConverterValueContext context, Type sourceType)
+        public ThicknessTypeConverter()
+        {
+            
+        }
+
+        public override bool CanConvertFrom(ITypeDescriptorContext context, Type sourceType)
         {
             return sourceType == typeof(string);
         }
 
-        public bool CanConvertTo(ConverterValueContext context, Type destinationType)
+        public override bool CanConvertTo(ITypeDescriptorContext context, Type destinationType)
         {
             return false;
         }
 
-        public object ConvertFrom(ConverterValueContext context, CultureInfo culture, object value)
+        public override object ConvertFrom(ITypeDescriptorContext context, CultureInfo culture, object value)
         {
             return Thickness.Parse((string)value, culture);
         }
 
-        public object ConvertTo(ConverterValueContext context, CultureInfo culture, object value, Type destinationType)
+        public override object ConvertTo(ITypeDescriptorContext context, CultureInfo culture, object value, Type destinationType)
         {
             throw new NotImplementedException();
         }

@@ -20,7 +20,7 @@
             directory = new AttributeBasedTypeDirectory(referenceAssemblies);
 
             contructionContext = new ObjectBuilderContext(
-                Registrator.GetSourceValueConverter(),
+                Registrator.GetSourceValueConverter(referenceAssemblies),
                 metadataProvider);
         }
 

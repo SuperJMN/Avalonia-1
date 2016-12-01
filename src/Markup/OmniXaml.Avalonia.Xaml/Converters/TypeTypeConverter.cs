@@ -1,31 +1,30 @@
 ﻿namespace OmniXaml.Avalonia.Converters
 {
     using System;
+    using System.ComponentModel;
     using System.Globalization;
 
-    public class TypeTypeConverter : ITypeConverter
+    public class TypeTypeConverter : TypeConverter
     {
-        public bool CanConvertFrom(ConverterValueContext context, Type sourceType)
+        public override bool CanConvertFrom(ITypeDescriptorContext context, Type sourceType)
         {
             return sourceType == typeof(string);
         }
 
-        public object ConvertFrom(ConverterValueContext context, CultureInfo culture, object value)
+        public override object ConvertFrom(ITypeDescriptorContext context, CultureInfo culture, object value)
         {
-            var prefixedName = (string) value;
-            return context.BuildContext.PrefixedTypeResolver.GetTypeByPrefix(context.BuildContext.CurrentNode, prefixedName);
-        }
+            var realContext = (ConverterValueContext) context.GetService(typeof(ConverterValueContext));
 
-        public bool CanConvertTo(ConverterValueContext context, Type destinationType)
+            var prefixedName = (string)value;
+            return realContext.BuildContext.PrefixedTypeResolver.GetTypeByPrefix(realContext.BuildContext.CurrentNode, prefixedName);
+        }
+       
+        public override bool CanConvertTo(ITypeDescriptorContext context, Type destinationType)
         {
             return destinationType == typeof(string);
         }
 
-        public object ConvertTo(
-            ConverterValueContext context,
-            CultureInfo culture,
-            object value,
-            Type destinationType)
+        public override object ConvertTo(ITypeDescriptorContext context,CultureInfo culture,object value,Type destinationType)
         {
            throw new NotImplementedException();
         }        
