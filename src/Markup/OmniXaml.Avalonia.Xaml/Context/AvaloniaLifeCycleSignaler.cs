@@ -1,5 +1,6 @@
 ﻿namespace OmniXaml.Avalonia.Context
 {
+    using System.Diagnostics;
     using global::Avalonia;
 
     public class AvaloniaLifeCycleSignaler : IInstanceLifecycleSignaler
@@ -10,9 +11,15 @@
             isi?.BeginInit();
         }
 
-        public void EndEnd(object instance)
+        public void OnEnd(object instance)
         {
             var isi = instance as ISupportInitialize;
+
+            if (instance.GetType().Name.Equals("MyCustomWindow"))
+            {
+                Debugger.Break();
+            }
+
             isi?.EndInit();
         }
 

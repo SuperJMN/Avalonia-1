@@ -26,7 +26,9 @@ namespace Avalonia
 
 namespace Avalonia.Diagnostics
 {
-	public class DevTools : UserControl
+    using OmniXaml.Avalonia;
+
+    public class DevTools : UserControl
     {
         private static Dictionary<Window, Window> s_open = new Dictionary<Window, Window>();
         private IDisposable _keySubscription;
@@ -98,7 +100,7 @@ namespace Avalonia.Diagnostics
 
         private void InitializeComponent()
         {
-            AvaloniaXamlLoader.Load(this);
+            XamlService.Current.Load(this);
         }
 
         private void RawKeyDown(RawKeyEventArgs e)

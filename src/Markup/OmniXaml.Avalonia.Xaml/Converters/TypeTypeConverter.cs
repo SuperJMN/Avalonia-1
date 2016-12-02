@@ -16,7 +16,14 @@
             var realContext = (ConverterValueContext) context.GetService(typeof(ConverterValueContext));
 
             var prefixedName = (string)value;
-            return realContext.BuildContext.PrefixedTypeResolver.GetTypeByPrefix(realContext.BuildContext.CurrentNode, prefixedName);
+            var typeByPrefix = realContext.BuildContext.PrefixedTypeResolver.GetTypeByPrefix(realContext.BuildContext.CurrentNode, prefixedName);
+
+            if (typeByPrefix == null)
+            {
+                throw new TypeNotFoundException($"Cannot find the type {prefixedName}");
+            }
+
+            return typeByPrefix;
         }
        
         public override bool CanConvertTo(ITypeDescriptorContext context, Type destinationType)

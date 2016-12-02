@@ -9,6 +9,8 @@ using Avalonia.Media;
 
 namespace Avalonia.Diagnostics.Views
 {
+    using OmniXaml.Avalonia;
+
     public class TreePageView : UserControl
     {
         private Control _adorner;
@@ -48,7 +50,7 @@ namespace Avalonia.Diagnostics.Views
 
         private void InitializeComponent()
         {
-            AvaloniaXamlLoader.Load(this);
+            XamlService.Current.Load(this);
             _tree = this.FindControl<TreeView>("tree");
         }
 
