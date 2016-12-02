@@ -43,7 +43,7 @@ namespace OmniXaml.Avalonia.Styling
             {
                 if (loaded == null)
                 {
-                    loaded = (IStyle)XamlService.Current.LoadUri(Source);                                       
+                    loaded = (IStyle)XamlService.Current.LoadUri(Source).Instance;                                       
                 }
 
                 return loaded;

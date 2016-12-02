@@ -57,7 +57,7 @@
             return forcedAssemblies.Concat(scanned).ToList();
         }
 
-        public object LoadUri(Uri uri, object rootInstance = null)
+        public ConstructionResult LoadUri(Uri uri, object rootInstance = null)
         {
             var assetLocator = AvaloniaLocator.Current.GetService<IAssetLoader>();
 
@@ -69,7 +69,7 @@
             }
         }
 
-        public object Load(object rootInstance)
+        public ConstructionResult Load(object rootInstance)
         {
             var assetLocator = AvaloniaLocator.Current.GetService<IAssetLoader>();
 
@@ -96,18 +96,18 @@
             throw new FileNotFoundException("Unable to find view for " + type.FullName);
         }
 
-        private object Load(Stream stream, object rootInstance = null, Uri uri = null)
+        private ConstructionResult Load(Stream stream, object rootInstance = null, Uri uri = null)
         {
-            var result = loader.Load(new StreamReader(stream).ReadToEnd(), rootInstance, uri).Instance;
+            var constructionResult = loader.Load(new StreamReader(stream).ReadToEnd(), rootInstance, uri);
 
-            var topLevel = result as TopLevel;
+            var topLevel = constructionResult.Instance as TopLevel;
 
             if (topLevel != null)
             {
                 DelayedBinding.ApplyBindings(topLevel);
             }
 
-            return result;
+            return constructionResult;
         }
 
         private IEnumerable<Uri> GetUrisFor(Type type)

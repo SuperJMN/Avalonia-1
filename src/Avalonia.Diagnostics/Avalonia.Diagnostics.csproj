@@ -91,6 +91,10 @@
       <Project>{FB8A5225-7584-49A4-8978-FA1861AA91B4}</Project>
       <Name>OmniXaml.Avalonia</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Markup\OmniXAMLv2\OmniXaml\OmniXaml.csproj">
+      <Project>{84AE3F65-B4DC-43E0-B2D0-DF0B188E8602}</Project>
+      <Name>OmniXaml</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="..\Shared\SharedAssemblyInfo.cs">

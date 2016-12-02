@@ -14,18 +14,11 @@
         public void OnEnd(object instance)
         {
             var isi = instance as ISupportInitialize;
-
-            if (instance.GetType().Name.Equals("MyCustomWindow"))
-            {
-                Debugger.Break();
-            }
-
             isi?.EndInit();
         }
 
         public void AfterAssociatedToParent(object instance)
         {
-
         }
     }
 }

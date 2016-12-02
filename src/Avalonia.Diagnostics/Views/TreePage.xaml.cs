@@ -50,8 +50,8 @@ namespace Avalonia.Diagnostics.Views
 
         private void InitializeComponent()
         {
-            XamlService.Current.Load(this);
-            _tree = this.FindControl<TreeView>("tree");
+            var constructionResult = XamlService.Current.Load(this);
+            _tree = (TreeView) constructionResult.NamescopeAnnotator.Find("tree", this);
         }
 
         private void TreeViewItemMaterialized(object sender, ItemContainerEventArgs e)
