@@ -55,6 +55,10 @@
       <Project>{EB582467-6ABB-43A1-B052-E981BA910E3A}</Project>
       <Name>Avalonia.Visuals</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Markup\OmniXAMLv2\OmniXaml.Attributes\OmniXaml.Attributes.csproj">
+      <Project>{4153120E-85ED-4CEB-AD0B-D5372744DDE8}</Project>
+      <Name>OmniXaml.Attributes</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="..\Shared\SharedAssemblyInfo.cs">

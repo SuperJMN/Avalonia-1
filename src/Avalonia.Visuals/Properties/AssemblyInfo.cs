@@ -5,6 +5,7 @@ using System.Reflection;
 using OmniXaml.Attributes;
 
 [assembly: AssemblyTitle("Avalonia.Visuals")]
+[assembly: XmlnsDefinition("https://github.com/avaloniaui", "Avalonia")]
 [assembly: XmlnsDefinition("https://github.com/avaloniaui", "Avalonia.Animation")]
 [assembly: XmlnsDefinition("https://github.com/avaloniaui", "Avalonia.Media")]
 [assembly: XmlnsDefinition("https://github.com/avaloniaui/mutable", "Avalonia.Media.Mutable")]

@@ -27,7 +27,10 @@
                 }
                 else
                 {
-                    Collection.UniversalAdd(assignmentTarget.Member.GetValue(assignmentTarget.Target.Instance), compatibleValue);                    
+                    var collection = assignmentTarget.Member.GetValue(assignmentTarget.Target.Instance);
+                    var child = new KeyedInstance(compatibleValue, assignmentTarget.Target.Key);
+
+                    Associate(new ChildAssociation(collection, child), trackingContext);                                       
                 }                
             }
             else
