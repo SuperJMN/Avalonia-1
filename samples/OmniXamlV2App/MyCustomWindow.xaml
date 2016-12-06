@@ -1,6 +1,7 @@
 ﻿<Window xmlns="https://github.com/avaloniaui"
         xmlns:x="special"
         xmlns:vm="using:AvaloniaApp.ViewModels;assembly=AvaloniaApp"
+        x:Class="AvaloniaApp.MyCustomWindow;assembly=AvaloniaApp"
         Title="Avalonia Test Application" Width="800" Height="600">
 
   <Grid RowDefinitions="Auto,*,Auto" ColumnDefinitions="*,*">
