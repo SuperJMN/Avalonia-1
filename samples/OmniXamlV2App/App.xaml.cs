@@ -49,6 +49,7 @@
         {
 #if DEBUG
             SerilogLogger.Initialize(new LoggerConfiguration()
+                .MinimumLevel.Warning()
                 .WriteTo.LiterateConsole()
                 .WriteTo.RollingFile("log-{Date}.txt")
                 .WriteTo.Trace(outputTemplate: "{Area}: {Message}")
