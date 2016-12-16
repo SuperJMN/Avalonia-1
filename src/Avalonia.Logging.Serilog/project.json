@@ -1,6 +1,7 @@
 ﻿{
   "supports": {},
   "dependencies": {
+    "Serilog": "2.3.0",
     "System.Collections": "4.3.0"
   },
   "frameworks": {
