@@ -1,0 +1,16 @@
+Microsoft.Reactive.Testing
+Moq
+System.ComponentModel.Annotations
+System.Reactive
+System.Reactive.Core
+System.Reactive.Interfaces
+System.Reactive.Linq
+System.Reactive.PlatformServices
+System.Reactive.Windows.Threading
+xunit
+xunit.abstractions
+xunit.assert
+xunit.core
+xunit.extensibility.core
+xunit.extensibility.execution
+xunit.runner.visualstudio

@@ -1,0 +1,14 @@
+AutoFixture
+AutoFixture.AutoMoq
+Moq
+System.Reactive.Core
+System.Reactive.Interfaces
+System.Reactive.Linq
+System.Reactive.PlatformServices
+xunit
+xunit.abstractions
+xunit.assert
+xunit.core
+xunit.extensibility.core
+xunit.extensibility.execution
+xunit.runner.visualstudio
