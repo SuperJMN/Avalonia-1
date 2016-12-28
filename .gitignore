@@ -161,3 +161,9 @@ tools/
 artifacts/
 nuget
 /src/Markup/Avalonia.Markup.Xaml/OmniXAML/
+
+## GIT
+
+*.lock.json
+*.nuget.props
+*.nuget.targets

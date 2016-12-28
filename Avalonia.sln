@@ -62,10 +62,18 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Catalog", "Catalog", "{1CA0
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Avalonia.Diagnostics", "src\Avalonia.Diagnostics\Avalonia.Diagnostics.csproj", "{7062AE20-5DCC-4442-9645-8195BDECE63E}"
 EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "PlatformSupport", "src\Shared\PlatformSupport\PlatformSupport.shproj", "{E4D9629C-F168-4224-3F51-A5E482FFBC42}"
+EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "RenderHelpers", "src\Shared\RenderHelpers\RenderHelpers.shproj", "{3C4C0CB4-0C0F-4450-A37B-148C84FF905F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Shared", "Shared", "{9B6FB5D6-2DE0-4543-A698-81BC1E5564A9}"
+EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		src\Shared\RenderHelpers\RenderHelpers.projitems*{3c4c0cb4-0c0f-4450-a37b-148c84ff905f}*SharedItemsImports = 13
 		src\Shared\RenderHelpers\RenderHelpers.projitems*{3e908f67-5543-4879-a1dc-08eace79b3cd}*SharedItemsImports = 4
 		src\Shared\PlatformSupport\PlatformSupport.projitems*{4a1abb09-9047-4bd5-a4ad-a055e52c5ee0}*SharedItemsImports = 4
+		src\Shared\PlatformSupport\PlatformSupport.projitems*{e4d9629c-f168-4224-3f51-a5e482ffbc42}*SharedItemsImports = 13
 	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Ad-Hoc|Any CPU = Ad-Hoc|Any CPU
@@ -1076,5 +1084,7 @@ Global
 		{D0A739B9-3C68-4BA6-A328-41606954B6BD} = {1CA05CE4-D82B-4E7B-B946-3D88A5B00C16}
 		{2B888490-D14A-4BCA-AB4B-48676FA93C9B} = {1CA05CE4-D82B-4E7B-B946-3D88A5B00C16}
 		{1CA05CE4-D82B-4E7B-B946-3D88A5B00C16} = {26D32F32-0C67-411D-B43C-70C905377E8B}
+		{E4D9629C-F168-4224-3F51-A5E482FFBC42} = {9B6FB5D6-2DE0-4543-A698-81BC1E5564A9}
+		{3C4C0CB4-0C0F-4450-A37B-148C84FF905F} = {9B6FB5D6-2DE0-4543-A698-81BC1E5564A9}
 	EndGlobalSection
 EndGlobal

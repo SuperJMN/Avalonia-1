@@ -1,0 +1,11 @@
+﻿{
+  "dependencies": {
+    "SharpDX.Direct2D1": "3.1.1"
+  },
+  "frameworks": {
+    "net462": {}
+  },
+  "runtimes": {
+    "win": {}
+  }
+}
