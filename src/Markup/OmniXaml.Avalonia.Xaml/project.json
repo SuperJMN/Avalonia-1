@@ -1,9 +1,0 @@
-﻿{
-  "supports": {},
-  "dependencies": {
-    "System.ComponentModel.TypeConverter": "4.3.0"
-  },
-  "frameworks": {
-    "netstandard1.2": {}
-  }
-}

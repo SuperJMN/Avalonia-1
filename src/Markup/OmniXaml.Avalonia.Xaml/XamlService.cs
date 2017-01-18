@@ -8,7 +8,6 @@
     using Data;
     using global::Avalonia;
     using global::Avalonia.Controls;
-    using global::Avalonia.Controls.Html;
     using global::Avalonia.Markup;
     using global::Avalonia.Media;
     using global::Avalonia.Platform;
@@ -16,7 +15,7 @@
     using OmniXaml;
     using Styling;
     using Templates;
-
+    
     public class XamlService
     {
         private static XamlService s_current;
@@ -45,7 +44,7 @@
                 typeof(SolidColorBrush).GetTypeInfo().Assembly,
                 typeof(IValueConverter).GetTypeInfo().Assembly,
                 typeof(StyleInclude).GetTypeInfo().Assembly,
-                typeof(HtmlLabel).GetTypeInfo().Assembly,
+                //typeof(HtmlLabel).GetTypeInfo().Assembly,
             };
 
             var runtimePlatform = AvaloniaLocator.Current.GetService<IRuntimePlatform>();

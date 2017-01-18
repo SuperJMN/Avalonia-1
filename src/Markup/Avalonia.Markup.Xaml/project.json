@@ -1,9 +1,0 @@
-﻿{
-  "supports": {},
-  "dependencies": {
-    "System.Reactive": "3.0.0"
-  },
-  "frameworks": {
-    "netstandard1.2": {}
-  }
-}

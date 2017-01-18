@@ -1,9 +1,8 @@
 ﻿{
   "dependencies": {
-    "Serilog": "2.3.0",
     "Serilog.Sinks.Literate": "2.0.0",
-    "Serilog.Sinks.RollingFile": "3.2.0",
-	"Serilog.Sinks.Trace": "2.1.0"
+    "Serilog.Sinks.RollingFile": "3.3.0",
+    "Serilog.Sinks.Trace": "2.1.0"
   },
   "frameworks": {
     "net462": {}

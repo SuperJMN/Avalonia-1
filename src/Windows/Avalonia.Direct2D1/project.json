@@ -7,5 +7,28 @@
   },
   "runtimes": {
     "win": {}
+  },
+  "packOptions": {
+    "description": "Avalonia.Direct2D1",
+    "tags": [
+      "XAML",
+      "MVVM",
+      "GUI",
+      "UI",
+      "Avalonia",
+      "AvaloniaUI",
+      "WPF"
+    ],    
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/AvaloniaUI/Avalonia.git"
+    },
+    "licenseUrl": "https://github.com/AvaloniaUI/Avalonia/blob/master/licence.md",
+    "owners": [
+      "@grokys"
+    ],
+    "summary": "Avalonia is a GUI Framework",
+    "requireLicenseAcceptance": false
   }
+
 }
